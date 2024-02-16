@@ -6,11 +6,11 @@ public class TargetLocater : MonoBehaviour
 {
 
     [SerializeField] GameObject weapon;
-     Transform target;
-     void Start()
+    Transform target;
+      void Start()
     {
         target = FindObjectOfType<EnemyMovement>().transform;
-    }
+     }
 
      void Update()
     {
@@ -19,6 +19,11 @@ public class TargetLocater : MonoBehaviour
 
     void AimWeapon()
     {
-        transform.LookAt(target);
+        if( target!= null)
+        {
+            transform.LookAt(target);
+        }
+          
+        
     }
 }
