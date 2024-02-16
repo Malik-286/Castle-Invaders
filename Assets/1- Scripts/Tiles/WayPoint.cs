@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class WayPoint : MonoBehaviour
 {
-     void Start()
-    {
-        
-    }
+    [SerializeField] bool isPlaceable;
+    [SerializeField] List<GameObject> towers = new List<GameObject>();
 
-     void Update()
+      void OnMouseOver()
     {
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            if(isPlaceable)
+            {
+                Debug.Log(gameObject.name);
+                GameObject clone = Instantiate(towers[0], transform.position, Quaternion.identity);
+                Debug.Log("Tower Placed");
+                isPlaceable = false;
+            }
+            
+        }
     }
 }

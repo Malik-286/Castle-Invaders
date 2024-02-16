@@ -128,6 +128,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
   m_PrefabInstance: {fileID: 1729025431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &30545805
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.977886
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049131714819384361, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+      propertyPath: m_Name
+      value: Tower 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
 --- !u!114 &61251253 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2173788325785269513, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
@@ -214,6 +275,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2480964423024502018, guid: e9c65dc2a7bdce24a8ef568f48998bc8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -288,6 +353,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -348,14 +421,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: -1,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -433,6 +510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffd5b74ef05dfa43bc13d698dfcb1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &287560433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
+  m_PrefabInstance: {fileID: 30545805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &309633195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,6 +571,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -565,14 +655,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -642,6 +736,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -711,6 +813,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (0, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -801,6 +911,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (4, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -932,6 +1050,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -996,6 +1122,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (4, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1017,6 +1151,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 4708040754269063539, guid: 16df52c040ab78d4c9d481039e09c523, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8198300634811191910, guid: 16df52c040ab78d4c9d481039e09c523, type: 3}
       propertyPath: m_Name
       value: (4, 0)
@@ -1133,14 +1271,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: -1,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1201,14 +1343,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1273,6 +1419,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1378,7 +1532,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &722083077 stripped
 Transform:
@@ -1441,6 +1595,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1505,6 +1667,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (4, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1521,6 +1691,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 2173788325785269513, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2431959275320681660, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1637,14 +1811,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: -1,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (0, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1661,6 +1839,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 2173788325785269513, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2431959275320681660, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1781,6 +1963,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (4, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1830,6 +2020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 740987510992423594, guid: a8f1bd03ce3048445957bcf4bc52ef7f, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3864742498464340767, guid: a8f1bd03ce3048445957bcf4bc52ef7f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1950,6 +2144,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2010,14 +2212,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2082,6 +2288,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2185,7 +2399,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20.547, y: 0, z: 0}
 --- !u!4 &972623187 stripped
 Transform:
@@ -2259,6 +2473,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2319,14 +2541,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 5,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2391,6 +2617,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2476,6 +2710,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2561,6 +2803,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2625,6 +2875,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (3, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2685,14 +2943,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2709,6 +2971,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 4708040754269063539, guid: 16df52c040ab78d4c9d481039e09c523, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8198300634811191910, guid: 16df52c040ab78d4c9d481039e09c523, type: 3}
       propertyPath: m_Name
       value: (2, 0)
@@ -2839,6 +3105,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2908,6 +3182,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (-1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2972,6 +3254,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3036,6 +3326,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (5, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3110,6 +3408,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (3, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3179,6 +3485,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3243,6 +3557,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (0, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3303,14 +3625,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3376,14 +3702,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 5,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3453,6 +3783,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3469,6 +3807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 2173788325785269513, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2431959275320681660, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3585,14 +3927,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 4,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (5, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3667,6 +4013,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (3, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3813,6 +4167,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (0, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3885,6 +4247,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2480964423024502018, guid: e9c65dc2a7bdce24a8ef568f48998bc8, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3916,6 +4282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 2173788325785269513, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2431959275320681660, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4037,6 +4407,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (2, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4112,14 +4490,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 5,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4185,14 +4567,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4269,14 +4655,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4346,6 +4736,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (1, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4367,6 +4765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 2173788325785269513, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2431959275320681660, guid: c9c26c7e5bfd8cd42af42fb8352b9cea, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4513,6 +4915,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (4, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4578,14 +4988,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 5,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (7, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4650,6 +5064,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (5, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4666,6 +5088,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 207246841}
     m_Modifications:
+    - target: {fileID: 4708040754269063539, guid: 16df52c040ab78d4c9d481039e09c523, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8198300634811191910, guid: 16df52c040ab78d4c9d481039e09c523, type: 3}
       propertyPath: m_Name
       value: (1, 0)
@@ -4786,6 +5212,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (4, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4862,14 +5296,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
-      propertyPath: m_text
-      value: 6,0
-      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: (6, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4949,6 +5387,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (3, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5018,6 +5464,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: (0, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 287560433}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5089,6 +5543,10 @@ PrefabInstance:
     - target: {fileID: 2271149940307216180, guid: a917c06e93f63064b84c849845c2ae44, type: 3}
       propertyPath: m_text
       value: 5,0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013587892751913031, guid: a917c06e93f63064b84c849845c2ae44, type: 3}
+      propertyPath: isPlaceable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5201,6 +5659,10 @@ PrefabInstance:
     - target: {fileID: 6272006012927113438, guid: 5e4165e123b0b0e45ac9005cf5b1a242, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6272006012927113438, guid: 5e4165e123b0b0e45ac9005cf5b1a242, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
