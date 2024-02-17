@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_LocalPosition.x
@@ -30,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 235188987086560764, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52,9 +52,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 792507270730226490, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: m_text
+      value: 0,0
+      objectReference: {fileID: 0}
     - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Name
       value: Tile Straight_Path
+      objectReference: {fileID: 0}
+    - target: {fileID: 880802434891700060, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2275497066228943205, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
       propertyPath: m_Mesh
@@ -64,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: -8469494145858465668, guid: 1c653cfa1a46c7248b5aa77ea7624db8, type: 3}
+    - target: {fileID: 4371123626058320969, guid: 0cf6e8ee0aa7eee45bb8aaee4db6a545, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
