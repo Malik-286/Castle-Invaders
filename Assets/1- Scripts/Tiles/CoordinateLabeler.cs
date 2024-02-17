@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [ExecuteAlways]
@@ -13,7 +12,7 @@ public class CoordinateLabeler : MonoBehaviour
      void Awake()
     {
         tileText = GetComponent<TextMeshPro>();
-        DisplayCoordniates();
+       
     }
 
      void Update()
@@ -26,12 +25,22 @@ public class CoordinateLabeler : MonoBehaviour
         }
     }
 
-    void DisplayCoordniates()
-    {
-        coordinate.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinate.y = Mathf.RoundToInt(transform.parent.position.y / UnityEditor.EditorSnapSettings.move.y);
-        tileText.text = coordinate.x.ToString()+","+coordinate.y.ToString();
-    }
+    
+        void DisplayCoordniates()
+        {
+            coordinate.x = Mathf.RoundToInt(transform.parent.position.x / 10);
+            coordinate.y = Mathf.RoundToInt(transform.parent.position.y / 10);
+
+             if (!Application.isPlaying)
+            {
+                tileText.text = coordinate.x.ToString() + "," + coordinate.y.ToString();
+            }
+            else
+            {
+                tileText.text = "";  
+            }
+        }
+
 
     void UpdateTilesName()
     {
