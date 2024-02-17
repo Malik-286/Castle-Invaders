@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    [SerializeField] int currentHealth;
-    [SerializeField] int maxHealth = 3;
+    [SerializeField] int currentHealthPoints;
+    [SerializeField] int maxHealthPoints = 3;
+    [SerializeField] int difficultyRamp = 1;
 
-    void Start()
+    void OnEnable()
     {
-        currentHealth = maxHealth;
+        currentHealthPoints = maxHealthPoints;
     }
 
      void Update()
@@ -22,9 +23,11 @@ public class EnemyHealth : MonoBehaviour
 
     void ProcessHit()
     {
-        currentHealth--;
-        if (currentHealth <= 0)
+        currentHealthPoints--;
+
+        if (currentHealthPoints <= 0)
         {
+            maxHealthPoints += difficultyRamp;
             Destroy(gameObject);
         }
          
