@@ -17,10 +17,11 @@ public class CoordinateLabeler : MonoBehaviour
 
      void Update()
     {
-        if (!Application.isPlaying)
+        if (Application.isPlaying)
         {
-            DisplayCoordniates();
             UpdateTilesName();
+            DisplayCoordniates();
+            
 
         }
     }
