@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 { 
-    static T instance;
+     static T instance;
 
-    public T GetInstance()
+    public static T GetInstance()
     {
         return instance;
     }
-
     protected virtual void Awake()
     {
         if (instance != null && instance != this.gameObject)

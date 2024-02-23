@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GamePlayUI : MonoBehaviour
 {
-    // Start is called before the first frame update
+     GameManager gameManager;
+
     void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+     void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoToMainMenu()
     {
-        
+        gameManager.LoadScene(0);
     }
 }
