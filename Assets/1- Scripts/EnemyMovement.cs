@@ -9,8 +9,8 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         FindPath();
-        ReturnToStart();
         StartCoroutine(FollowPath());
+        ReturnToStart();
     }
 
     void FindPath()
