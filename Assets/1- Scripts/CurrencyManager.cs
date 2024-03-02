@@ -15,7 +15,12 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
     public int GetCurrentGold()
     {
+        if(currentGold <= 0)
+        {
+            currentGold = 0;         
+        }
         return currentGold;
+
     }
 
     public void IncreaseGold(int amountToIncrease)

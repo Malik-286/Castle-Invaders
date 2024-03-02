@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,8 +29,13 @@ public class GameManager : Singleton<GameManager>
 
     public void RestartCurrentLevel()
     {
-        int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(index);
+        
+        SceneManager.LoadScene(GetCurrentSceneIndex());
+    }
+
+    public int GetCurrentSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 }
 

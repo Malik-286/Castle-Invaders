@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GamePlayUI : MonoBehaviour
 {
@@ -23,10 +24,26 @@ public class GamePlayUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI enemiesKillsCountText;
     public int enemiesKillsCout;
 
+    [Header("Player Health Variables")]
+    [SerializeField] Slider healthSlider;
+    PlayerCastleHealth playerHealth;
 
+
+    [Header("Rewards Panel Variables")]
+    [SerializeField] GameObject giftPanel;
+
+
+    [Header("Death Panel Variables")]
+    [SerializeField] GameObject deathPanel;
+
+    [Header("Towers Panel Variables")]
+    [SerializeField] GameObject towersPanel;
+
+    [Header("Win Panel Variables")]
+    [SerializeField] GameObject winPanel;
 
     GameManager gameManager;
-
+ 
     void Start()
     {
         
@@ -35,12 +52,18 @@ public class GamePlayUI : MonoBehaviour
         UpdateCurrentLevelText();
         levelStartupTime = levelCompletionTime;
         enemiesKillsCout = 0;
+        playerHealth = FindObjectOfType<PlayerCastleHealth>();
+        healthSlider.maxValue = playerHealth.GetMaxHealth();
+        giftPanel.SetActive(false);
+        deathPanel.SetActive(false);
+
     }
 
     void Update()
     {
         UpdateGamePlayTimer();
         UpdateEnemiesKills();
+        UpdatePlayerHealthSlider();
     }
 
    
@@ -80,6 +103,31 @@ public class GamePlayUI : MonoBehaviour
     void UpdateEnemiesKills()
     {
         enemiesKillsCountText.text = enemiesKillsCout.ToString();
+    }
+
+    void UpdatePlayerHealthSlider()
+    {
+        healthSlider.value = playerHealth.GetCurretHealth();
+    }
+
+    public void ActivateGiftPanel()
+    {
+        giftPanel.SetActive(true);
+    }
+
+    public void ActivateDeathPanel()
+    {
+        deathPanel.SetActive(true);
+    }
+
+    public void DisableTowersPanel()
+    {
+        towersPanel.SetActive(false);
+    }
+
+    public void ActivateWinPanel()
+    {
+        winPanel.SetActive(true);
     }
 
 }

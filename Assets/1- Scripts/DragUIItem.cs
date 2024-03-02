@@ -19,10 +19,15 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 
     WayPoint wayPoint;
+    CurrencyManager currencyManager;
+    GamePlayUI gamePlayUI;
+ 
     void Start()
     {
         mOriginalPosition = UIDragElement.localPosition;
         wayPoint = FindObjectOfType<WayPoint>();
+        currencyManager = FindObjectOfType<CurrencyManager>();
+        gamePlayUI = FindObjectOfType<GamePlayUI>();
     }
  
     public void OnBeginDrag(PointerEventData data)
@@ -91,7 +96,13 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
  
     public void CreateObject(Vector3 position)
     {
-         
+        if (currencyManager.GetCurrentGold() <= 5)
+        {
+            Debug.Log("Not Enough Coins");
+            gamePlayUI.ActivateGiftPanel();
+            return;
+        }
+
         if (PrefabToInstantiate == null)
         {
             Debug.Log("No prefab to instantiate");
@@ -99,9 +110,9 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
 
         if (PositionWithinCell(position))
-        {
-
+        {         
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
+            SpendGold(obj);
             wayPoint.SetPlaceable(false);
         }
     }
@@ -111,4 +122,21 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
          return true;
     }
+
+    void SpendGold(GameObject obj)
+    {
+        if(obj.CompareTag("Tower0"))
+        {
+            currencyManager.DecreaseGold(10);
+        }else if(obj.CompareTag("Tower1"))
+        {
+            currencyManager.DecreaseGold(20);
+        }
+        else if(obj.CompareTag("Tower2"))
+        {
+            currencyManager.DecreaseGold(30);
+        }
+    }
+
+   
 }

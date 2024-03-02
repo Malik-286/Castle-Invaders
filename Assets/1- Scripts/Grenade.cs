@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] float delay = 5f;
+    [SerializeField] GameObject explosionEffect;
+    [SerializeField] float radius;
+
+    float countDown;
+ 
+
+    bool hasExploded = false;
+     void Start()
     {
-        
+        countDown = delay;
     }
 
-    // Update is called once per frame
-    void Update()
+     void Update()
     {
-        transform.Rotate(0, 1, 0);
+        countDown -= Time.deltaTime;
+        if (countDown <= 0 && hasExploded == false) 
+        {
+            Expolde();
+        }
+     }
+
+    void Expolde()
+    {
+
+       GameObject gernadeClone = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        
+        hasExploded = true;
+        Destroy(gernadeClone, 0.9f);
+        Destroy(gameObject);
     }
 }

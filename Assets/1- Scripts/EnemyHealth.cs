@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
 
     CurrencyManager currencyManager;
     GamePlayUI gamePlayUI;
+    PlayerCastleHealth playerHealth;
     void OnEnable()
     {
         currentHealthPoints = maxHealthPoints;
@@ -20,14 +21,11 @@ public class EnemyHealth : MonoBehaviour
     {
         currencyManager = FindObjectOfType<CurrencyManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
+        playerHealth = FindObjectOfType<PlayerCastleHealth>();
 
     }
 
-    void Update()
-    {
-        
-    }
-
+    
     
 
     void ProcessHit()
@@ -38,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
         {
             maxHealthPoints += difficultyRamp;
             gamePlayUI.enemiesKillsCout++;
+            currencyManager.IncreaseGold(5);
             Destroy(gameObject);
         }
          
@@ -48,5 +47,14 @@ public class EnemyHealth : MonoBehaviour
             ProcessHit();        
     }
 
-    
+      void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerCastle"))
+        {
+            playerHealth.LoseHealth(10);
+        }
+         
+    }
+
+
 }
