@@ -22,6 +22,8 @@ public class GamePlayUI : MonoBehaviour
     [Header("Enemies Kills Count Variables")]
 
     [SerializeField] TextMeshProUGUI enemiesKillsCountText;
+    [SerializeField] TextMeshProUGUI totalPoolEnemiesCountText;
+
     public int enemiesKillsCout;
 
     [Header("Player Health Variables")]
@@ -42,6 +44,9 @@ public class GamePlayUI : MonoBehaviour
     [Header("Win Panel Variables")]
     [SerializeField] GameObject winPanel;
 
+    [Header("Enemies Pool Variables")]
+    [SerializeField] int totalPoolEnemies;
+
     GameManager gameManager;
  
     void Start()
@@ -56,14 +61,20 @@ public class GamePlayUI : MonoBehaviour
         healthSlider.maxValue = playerHealth.GetMaxHealth();
         giftPanel.SetActive(false);
         deathPanel.SetActive(false);
+        GetTotalPoolEnemies();
 
     }
 
     void Update()
     {
         UpdateGamePlayTimer();
-        UpdateEnemiesKills();
-        UpdatePlayerHealthSlider();
+        UpdateEnemiesCountText();
+        UpdatePlayerHealthSlider();    
+    }
+
+    public int GetPoolEnemies()
+    {
+        return totalPoolEnemies;
     }
 
    
@@ -100,9 +111,11 @@ public class GamePlayUI : MonoBehaviour
     }
 
 
-    void UpdateEnemiesKills()
+    void UpdateEnemiesCountText()
     {
-        enemiesKillsCountText.text = enemiesKillsCout.ToString();
+        
+        enemiesKillsCountText.text = totalPoolEnemies.ToString()+"/"+enemiesKillsCout.ToString();
+        
     }
 
     void UpdatePlayerHealthSlider()
@@ -125,9 +138,25 @@ public class GamePlayUI : MonoBehaviour
         towersPanel.SetActive(false);
     }
 
-    public void ActivateWinPanel()
+    public IEnumerator ActivateWinPanel()
     {
+        yield return new WaitForSeconds(2);
         winPanel.SetActive(true);
     }
 
+
+
+
+      void GetTotalPoolEnemies()
+    {
+
+        GameObject[] enemyPools = GameObject.FindGameObjectsWithTag("EnemiesPool");
+
+ 
+        foreach (GameObject pool in enemyPools)
+        {            
+            totalPoolEnemies += pool.GetComponent<ObjectPool>().GetNumberOfPools()+1;
+        }
+    }
+   
 }

@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     [SerializeField] int currentHealthPoints;
-    [SerializeField] int maxHealthPoints = 3;
+    [SerializeField] int maxHealthPoints = 5;
     [SerializeField] int difficultyRamp = 1;
  
 
@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     void OnEnable()
     {
         currentHealthPoints = maxHealthPoints;
+        currentHealthPoints = Random.Range(2, maxHealthPoints);
     }
     void Start()
     {

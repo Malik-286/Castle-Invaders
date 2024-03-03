@@ -9,8 +9,11 @@ public class PlayerCastleHealth : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     [SerializeField] bool bIsDestroyed = false;
     [SerializeField] GameObject  destroyParticles;
-      
-     GameObject[] enemiesArray;
+    [SerializeField] GameObject castleWinParticles;
+    [SerializeField] GameObject smokeParticles;
+
+
+    GameObject[] enemiesArray;
      GameObject[] enemiesPool;
 
  
@@ -23,6 +26,8 @@ public class PlayerCastleHealth : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.enabled = false;
         gamePlayUI = FindObjectOfType<GamePlayUI>();
+        castleWinParticles.SetActive(false);
+        smokeParticles.SetActive(false);
 
     }
 
@@ -44,6 +49,7 @@ public class PlayerCastleHealth : MonoBehaviour
     public void LoseHealth(int amountToLose)
     {
         currentHealth -= amountToLose;
+        smokeParticles.SetActive(true);
      }
 
 
@@ -67,6 +73,9 @@ public class PlayerCastleHealth : MonoBehaviour
 
     void DestroyAllEnemies()
     {
+         smokeParticles.SetActive(false);
+         gamePlayUI.DisableTowersPanel();
+         castleWinParticles.SetActive(true);
 
          GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
