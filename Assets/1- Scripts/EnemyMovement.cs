@@ -6,11 +6,15 @@ public class EnemyMovement : MonoBehaviour
 {
      [SerializeField] List<WayPoint> path = new List<WayPoint>();
      [SerializeField]  [Range(0,3)] float moveSpeed = 1f;
+
+    Grenade grenade;
     void Start()
     {
         FindPath();
         StartCoroutine(FollowPath());
         ReturnToStart();
+        grenade = GetComponentInChildren<Grenade>();
+        
     }
 
     void FindPath()
@@ -48,8 +52,12 @@ public class EnemyMovement : MonoBehaviour
 
            
         }
-
-        Destroy(gameObject);
+        if(grenade != null)
+        {
+            grenade.Expolde();
+        }
+                        
+           Destroy(gameObject);
     }
 
   

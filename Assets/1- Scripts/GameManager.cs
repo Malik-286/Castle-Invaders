@@ -64,17 +64,21 @@ public class GameManager : Singleton<GameManager>
 
     void CheckPlayerWin()
     {
-        if (objectPool.GetNumberOfPools() <= 0 && !CheckIfAnyEnemyisAlive())
+        if (objectPool != null)
         {
-            Debug.Log("Player has won the game");
-            StartCoroutine(gamePlayUI.ActivateWinPanel());
-            return;
+            if (objectPool.GetNumberOfPools() <= 0 && !CheckIfAnyEnemyisAlive())
+            {
+                Debug.Log("Player has won the game");
+                StartCoroutine(gamePlayUI.ActivateWinPanel());
+                return;
+            }
+            else
+            {
+                Debug.Log("War is happening...");
+                return;
+            }
         }
-        else
-        {
-            Debug.Log("War is happening...");
-            return;
-        }
+         
     }
 
     bool CheckIfAnyEnemyisAlive()
