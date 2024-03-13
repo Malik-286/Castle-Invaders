@@ -31,9 +31,6 @@ public class GamePlayUI : MonoBehaviour
     PlayerCastleHealth playerHealth;
 
 
-    [Header("Rewards Panel Variables")]
-    [SerializeField] GameObject giftPanel;
-
 
     [Header("Death Panel Variables")]
     [SerializeField] GameObject deathPanel;
@@ -48,20 +45,23 @@ public class GamePlayUI : MonoBehaviour
     [SerializeField] int totalPoolEnemies;
 
     GameManager gameManager;
+    AudioManager audioManager;
  
     void Start()
     {
-        
-
+ 
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.GetComponent<AudioSource>().enabled = true;
         gameManager = FindObjectOfType<GameManager>();
         UpdateCurrentLevelText();
         levelStartupTime = levelCompletionTime;
         enemiesKillsCout = 0;
         playerHealth = FindObjectOfType<PlayerCastleHealth>();
         healthSlider.maxValue = playerHealth.GetMaxHealth();
-        giftPanel.SetActive(false);
         deathPanel.SetActive(false);
         GetTotalPoolEnemies();
+        audioManager.StartGameplayMusic();  
+        
 
     }
 
@@ -123,10 +123,6 @@ public class GamePlayUI : MonoBehaviour
         healthSlider.value = playerHealth.GetCurretHealth();
     }
 
-    public void ActivateGiftPanel()
-    {
-        giftPanel.SetActive(true);
-    }
 
     public void ActivateDeathPanel()
     {

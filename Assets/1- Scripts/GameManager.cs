@@ -7,9 +7,9 @@ public class GameManager : Singleton<GameManager>
 {
 
 
-    PlayerCastleHealth playerCastleHealth;
     GamePlayUI gamePlayUI;
     ObjectPool objectPool;
+    LevelUnLocker levelUnlocker;
 
 
     protected override void Awake()
@@ -20,9 +20,9 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        playerCastleHealth = FindObjectOfType<PlayerCastleHealth>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
         objectPool = FindObjectOfType<ObjectPool>();
+        levelUnlocker = FindObjectOfType<LevelUnLocker>();
     }
 
 
@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-
+   
 
 
     public void StartGame()
@@ -70,6 +70,8 @@ public class GameManager : Singleton<GameManager>
             {
                 Debug.Log("Player has won the game");
                 StartCoroutine(gamePlayUI.ActivateWinPanel());
+                levelUnlocker.UnlockLevel(GetCurrentSceneIndex());
+
                 return;
             }
             else

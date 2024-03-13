@@ -99,7 +99,8 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (currencyManager.GetCurrentGold() <= 5)
         {
             Debug.Log("Not Enough Coins");
-            gamePlayUI.ActivateGiftPanel();
+            // Active Shop Panel Here
+            Debug.Log("Calling this methosd from Class DragUIiTEM");
             return;
         }
 
