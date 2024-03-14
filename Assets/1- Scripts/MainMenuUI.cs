@@ -10,16 +10,20 @@ public class MainMenuUI : MonoBehaviour
 
 
     GameManager gameManager;
+    AudioManager audioManager;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         DeactivateUIPanels();
   
     }
 
     public void PressPlayButton()
-    {         
-          gameManager.StartGame();     
+    {   
+        audioManager.audioSource.Stop();
+        gameManager.StartGame();
+         
     }
 
     void DeactivateUIPanels()
