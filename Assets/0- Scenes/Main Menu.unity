@@ -16676,8 +16676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bccf1fb31e1df448d4070aff050e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuMusic: {fileID: 8300000, guid: 3b6b03e09480f0a4d8a011a6fdb9ea38, type: 3}
-  gameplayMusic: {fileID: 8300000, guid: dab41456da7492848b90a759074d24af, type: 3}
+  audioSource: {fileID: 0}
 --- !u!20 &534659824024925979
 Camera:
   m_ObjectHideFlags: 0
@@ -17199,7 +17198,7 @@ GameObject:
   - component: {fileID: 1070832413646608545}
   - component: {fileID: 1101946008447366112}
   m_Layer: 0
-  m_Name: Switch
+  m_Name: Switch Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17570,7 +17569,7 @@ GameObject:
   - component: {fileID: 1378723839377047054}
   - component: {fileID: 1272349788051865510}
   m_Layer: 0
-  m_Name: Switch
+  m_Name: Switch Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17830,6 +17829,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1272441736331455580}
         m_TargetAssemblyTypeName: hardartcore.CasualGUI.SpriteChanger, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8215631367390709488}
+        m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+        m_MethodName: EnableOrDisableMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19386,9 +19397,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3b6b03e09480f0a4d8a011a6fdb9ea38, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a18123c022dda874ea28d891a8a64211, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.07
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -23159,13 +23170,28 @@ GameObject:
   - component: {fileID: 3846132499753524641}
   - component: {fileID: 6325429319771648188}
   - component: {fileID: 5373197449806018648}
+  - component: {fileID: 8215631367390709488}
   m_Layer: 5
-  m_Name: SettingsDialog
+  m_Name: Settings Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &8215631367390709488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215631367390709487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2c541ececd3974ba376fefc27408de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSwitch: {fileID: 1272349788051865510}
+  musicSwitch: {fileID: 1101946008447366112}
 --- !u!1 &8218083664268545588
 GameObject:
   m_ObjectHideFlags: 0

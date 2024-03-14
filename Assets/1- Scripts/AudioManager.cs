@@ -6,11 +6,8 @@ public class AudioManager : Singleton<AudioManager>
 {
 
     [HideInInspector]
-    AudioSource audioSource;
-    GameManager gameManager;
-
-    [SerializeField] AudioClip mainMenuMusic;
-    [SerializeField] AudioClip gameplayMusic;
+   public AudioSource audioSource;
+  
 
 
     protected override void Awake()
@@ -21,15 +18,10 @@ public class AudioManager : Singleton<AudioManager>
       void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        gameManager = FindObjectOfType<GameManager>();
-        StartGameplayMusic();
-
+  
     }
 
-      void Update()
-    {
-        
-    }
+    
 
     public void PlaySingleShotAudio(AudioClip audioClip, float soundEffect)
     {
@@ -37,20 +29,6 @@ public class AudioManager : Singleton<AudioManager>
     }
 
 
-    public void StartMainMenuMusic()
-    {
-        audioSource.clip = mainMenuMusic;
-        audioSource.loop = true;
-        audioSource.Play();
-    }
-
-    public void StartGameplayMusic()
-    {
-        audioSource.clip = gameplayMusic;
-        audioSource.loop = true;
-        audioSource.Play();
-    }
-
-
+  
 
 }

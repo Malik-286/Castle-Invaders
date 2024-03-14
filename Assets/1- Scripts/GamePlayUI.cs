@@ -60,8 +60,7 @@ public class GamePlayUI : MonoBehaviour
         healthSlider.maxValue = playerHealth.GetMaxHealth();
         deathPanel.SetActive(false);
         GetTotalPoolEnemies();
-        audioManager.StartGameplayMusic();  
-        
+         
 
     }
 

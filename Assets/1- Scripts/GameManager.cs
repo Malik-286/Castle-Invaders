@@ -37,7 +37,7 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {    
-            SceneManager.LoadScene(1);           
+         SceneManager.LoadScene(2);           
     }
 
     public void LoadScene(int index)
