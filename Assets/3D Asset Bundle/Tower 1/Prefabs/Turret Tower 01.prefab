@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4519941387849242}
   - component: {fileID: 33089451506451912}
   - component: {fileID: 23466980061535014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4939996705135754}
   - component: {fileID: -9058858143400840906}
-  m_Layer: 0
+  - component: {fileID: 2979082479675455443}
+  m_Layer: 7
   m_Name: Turret Tower 01
   m_TagString: Tower1
   m_Icon: {fileID: 0}
@@ -133,6 +134,27 @@ MonoBehaviour:
   weapon: {fileID: 1199203527274774}
   range: 21
   towerShootingParticles: {fileID: 1706180527423275282}
+--- !u!65 &2979082479675455443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326093064322132}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.0511973, y: 5.003953, z: 3.5272064}
+  m_Center: {x: 0.054085165, y: 2.7007358, z: 0.09898993}
 --- !u!1 &1414511323558576
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +166,7 @@ GameObject:
   - component: {fileID: 4795538350151362}
   - component: {fileID: 33586998647412368}
   - component: {fileID: 23027622446349308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret Tower 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +249,7 @@ GameObject:
   - component: {fileID: 4685262419282889249}
   - component: {fileID: 1706180527423275282}
   - component: {fileID: 650004437465095572}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Particle System '
   m_TagString: Untagged
   m_Icon: {fileID: 0}

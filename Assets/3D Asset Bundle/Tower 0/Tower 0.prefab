@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7372305258173463623}
   - component: {fileID: 8017357118970444057}
   - component: {fileID: 8250136701354826706}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: 320349586558670929}
   - component: {fileID: 2119698688312219376}
   - component: {fileID: 5947923684195287911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BallistaTopMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4922,7 +4922,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7370247665391310898}
   - component: {fileID: 6829869022104496356}
-  m_Layer: 0
+  - component: {fileID: 3648465201218247868}
+  m_Layer: 7
   m_Name: Tower 0
   m_TagString: Tower0
   m_Icon: {fileID: 0}
@@ -4944,7 +4945,7 @@ Transform:
   - {fileID: 5359701610005920592}
   - {fileID: 320349586558670929}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6829869022104496356
 MonoBehaviour:
@@ -4961,6 +4962,27 @@ MonoBehaviour:
   weapon: {fileID: 402042750508390704}
   range: 20
   towerShootingParticles: {fileID: 8017357118970444057}
+--- !u!65 &3648465201218247868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232090131702037040}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.7537603, y: 4.905623, z: 4.1967616}
+  m_Center: {x: 0.07204199, y: 2.6812217, z: 0.08937907}
 --- !u!1 &8818414741067363484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,7 +4994,7 @@ GameObject:
   - component: {fileID: 5359701610005920592}
   - component: {fileID: 6143406181757779216}
   - component: {fileID: 8163293440613790179}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BalistaBaseMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

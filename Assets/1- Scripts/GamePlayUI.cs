@@ -136,7 +136,7 @@ public class GamePlayUI : MonoBehaviour
 
     public IEnumerator ActivateWinPanel()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         winPanel.SetActive(true);
     }
 

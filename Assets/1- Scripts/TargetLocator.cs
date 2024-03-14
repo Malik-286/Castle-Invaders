@@ -23,19 +23,32 @@ public class TargetLocater : MonoBehaviour
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         Transform closestTarget = null;
-        float maxDistancce = Mathf.Infinity;
+        float maxDistance = Mathf.Infinity;
 
-        foreach (Enemy enemy in enemies) 
+        foreach (Enemy enemy in enemies)
         {
-            float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (targetDistance < maxDistancce)
+            // Check if the enemy is on a different layer than the tower
+            if (enemy.gameObject.layer != gameObject.layer)
             {
-                closestTarget = enemy.transform;
-                maxDistancce = targetDistance;
+                float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (targetDistance < maxDistance)
+                {
+                    closestTarget = enemy.transform;
+                    maxDistance = targetDistance;
+                }
             }
         }
-            target = closestTarget;
 
+        target = closestTarget;
+
+        if (target != null)
+        {
+            Debug.Log("Found target: " + target.name + ", distance: " + Vector3.Distance(transform.position, target.position));
+        }
+        else
+        {
+            Debug.Log("No target found.");
+        }
     }
   
 

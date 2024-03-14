@@ -88,8 +88,9 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             Vector3 worldPoint = hit.point;
 
-       
-            CreateObject(worldPoint);
+
+            //  CreateObject(worldPoint);
+            CheckSpaceForTower(worldPoint, 1.0f);
         }
     }
 
@@ -139,5 +140,24 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
     }
 
-   
+
+    void CheckSpaceForTower(Vector3 position, float radius)
+    {
+        Collider[] colliders = Physics.OverlapSphere(position, radius);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].CompareTag("Tower0") || colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2"))
+            {
+                Debug.Log("Cannot place tower here, space is occupied by another tower.");
+                return;
+            }
+        }
+
+        CreateObject(position);
+    }
+
+
+
+
 }

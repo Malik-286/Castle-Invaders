@@ -70,13 +70,15 @@ public class GameManager : Singleton<GameManager>
             {
                 Debug.Log("Player has won the game");
                 StartCoroutine(gamePlayUI.ActivateWinPanel());
-                levelUnlocker.UnlockLevel(GetCurrentSceneIndex());
-
+                if(levelUnlocker != null)
+                {
+                    levelUnlocker.UnlockLevel(GetCurrentSceneIndex());
+                }
+                
                 return;
             }
             else
             {
-                Debug.Log("War is happening...");
                 return;
             }
         }

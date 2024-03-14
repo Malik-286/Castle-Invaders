@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4996313882869104551}
   - component: {fileID: 2693648922323075424}
-  m_Layer: 0
+  - component: {fileID: 3895637019629435169}
+  m_Layer: 7
   m_Name: Tower 2
   m_TagString: Tower2
   m_Icon: {fileID: 0}
@@ -48,6 +49,27 @@ MonoBehaviour:
   weapon: {fileID: 1337959238329459342}
   range: 20
   towerShootingParticles: {fileID: 1801986905032261951}
+--- !u!65 &3895637019629435169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137598522216010046}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.7500916, z: 1}
+  m_Center: {x: 0, y: 1.193623, z: 0}
 --- !u!1 &1337959238329459342
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +81,7 @@ GameObject:
   - component: {fileID: 6411332780754533587}
   - component: {fileID: 7313540073607535490}
   - component: {fileID: 2418130145562059626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646456971728950637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SCALED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +198,7 @@ GameObject:
   - component: {fileID: 7700727664491949970}
   - component: {fileID: 1801986905032261951}
   - component: {fileID: 3505969361089764017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5004,7 +5026,7 @@ GameObject:
   - component: {fileID: 4732382703015155022}
   - component: {fileID: 2159150827745777687}
   - component: {fileID: 1697910553729628060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HM_cannon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
