@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] GameObject[] ui_Panels;
+    [SerializeField] GameObject[] UI_Panels;
   
 
 
@@ -24,7 +24,7 @@ public class MainMenuUI : MonoBehaviour
 
     void DeactivateUIPanels()
     {
-        foreach (GameObject panels in ui_Panels)
+        foreach (GameObject panels in UI_Panels)
         {
             panels.SetActive(false);
         }
