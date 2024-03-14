@@ -126,6 +126,7 @@ public class GamePlayUI : MonoBehaviour
 
     public void ActivateDeathPanel()
     {
+        timeText.text = ("00:00");
         deathPanel.SetActive(true);
     }
 
@@ -137,6 +138,7 @@ public class GamePlayUI : MonoBehaviour
     public IEnumerator ActivateWinPanel()
     {
         yield return new WaitForSeconds(3);
+        timeText.text = ("00:00");
         winPanel.SetActive(true);
     }
 
