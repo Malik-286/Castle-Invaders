@@ -5,6 +5,16 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 {
 
+    [SerializeField] AudioClip touchSFX;
+    [SerializeField] AudioClip destroySFX;
+    [SerializeField] AudioClip winSFX;
+    [SerializeField] AudioClip enemyDeathSFX;
+    [SerializeField] AudioClip towerPlacingSFX;
+    [SerializeField] AudioClip shootingSFX;
+    [SerializeField] AudioClip gernadeSFX;
+
+
+
     [HideInInspector]
    public AudioSource audioSource;
   
@@ -28,7 +38,32 @@ public class AudioManager : Singleton<AudioManager>
         audioSource.PlayOneShot(audioClip,soundEffect);
     }
 
+    public void PlayTouchSoundEffect()
+    {
+        audioSource.PlayOneShot(touchSFX, 0.8f);
+    }
 
-  
+    public void PlayDeathSoundEffect()
+    {
+        audioSource.PlayOneShot(destroySFX, 1.1f);
+    }
 
+    public void PlayTowerPlacingSoundEffect()
+    {
+        audioSource.PlayOneShot(destroySFX, 1.0f);
+    }
+
+    public void PlayWinSoundEffect()
+    {
+        audioSource.PlayOneShot(destroySFX, 1.0f);
+    }
+
+    public void PlayShootingSoundEffect()
+    {
+        audioSource.PlayOneShot(shootingSFX, 0.6f);
+    }
+    public void PlayGernadeSoundEffect()
+    {
+        audioSource.PlayOneShot(gernadeSFX, 1.2f);
+    }
 }

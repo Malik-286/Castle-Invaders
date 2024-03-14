@@ -22,6 +22,7 @@ public class MainMenuUI : MonoBehaviour
     public void PressPlayButton()
     {   
         audioManager.audioSource.Stop();
+        audioManager.PlayTouchSoundEffect();
         gameManager.StartGame();
          
     }

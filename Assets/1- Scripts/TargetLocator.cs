@@ -11,6 +11,12 @@ public class TargetLocater : MonoBehaviour
     Transform target;
     
 
+    AudioManager audioManager;
+
+      void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
     void Update()
     {
         FindClosestTarget();
@@ -77,7 +83,7 @@ public class TargetLocater : MonoBehaviour
     {
         
             var emissionModule = towerShootingParticles.emission;
-            emissionModule.enabled = isActive;
+            emissionModule.enabled = isActive; 
        
     }
 }

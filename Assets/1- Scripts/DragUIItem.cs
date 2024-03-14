@@ -20,15 +20,17 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     WayPoint wayPoint;
     CurrencyManager currencyManager;
+    AudioManager audioManager;
     GamePlayUI gamePlayUI;
- 
+  
     void Start()
     {
         mOriginalPosition = UIDragElement.localPosition;
         wayPoint = FindObjectOfType<WayPoint>();
         currencyManager = FindObjectOfType<CurrencyManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
-    }
+     }
  
     public void OnBeginDrag(PointerEventData data)
     {
@@ -89,8 +91,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Vector3 worldPoint = hit.point;
 
 
-            //  CreateObject(worldPoint);
-            CheckSpaceForTower(worldPoint, 1.0f);
+             CheckSpaceForTower(worldPoint, 1.0f);
         }
     }
 
@@ -100,7 +101,8 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (currencyManager.GetCurrentGold() <= 5)
         {
             Debug.Log("Not Enough Coins");
-            // Active Shop Panel Here
+            gamePlayUI.EnableShopPanel();
+            
             Debug.Log("Calling this methosd from Class DragUIiTEM");
             return;
         }
@@ -114,8 +116,13 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (PositionWithinCell(position))
         {         
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
+         
             SpendGold(obj);
             wayPoint.SetPlaceable(false);
+            if(audioManager != null)
+            {
+                audioManager.PlayTowerPlacingSoundEffect();
+            }
         }
     }
 

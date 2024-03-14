@@ -41,6 +41,9 @@ public class GamePlayUI : MonoBehaviour
     [Header("Win Panel Variables")]
     [SerializeField] GameObject winPanel;
 
+    [Header("Shop Panel Variables")]
+    [SerializeField] GameObject shopPanel;
+
     [Header("Enemies Pool Variables")]
     [SerializeField] int totalPoolEnemies;
 
@@ -126,6 +129,7 @@ public class GamePlayUI : MonoBehaviour
 
     public void ActivateDeathPanel()
     {
+        audioManager.PlayDeathSoundEffect();
         timeText.text = ("00:00");
         deathPanel.SetActive(true);
     }
@@ -139,6 +143,7 @@ public class GamePlayUI : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         timeText.text = ("00:00");
+        audioManager.PlayWinSoundEffect();
         winPanel.SetActive(true);
     }
 
@@ -155,6 +160,15 @@ public class GamePlayUI : MonoBehaviour
         {            
             totalPoolEnemies += pool.GetComponent<ObjectPool>().GetNumberOfPools()+1;
         }
+    }
+
+    public void EnableShopPanel()
+    {
+        shopPanel.SetActive(true);
+    }
+    public void DisableShopPanel()
+    {
+        shopPanel.SetActive(false);
     }
    
 }
