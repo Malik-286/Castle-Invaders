@@ -64,6 +64,7 @@ public class GamePlayUI : MonoBehaviour
         deathPanel.SetActive(false);
         GetTotalPoolEnemies();
         audioManager.audioSource.Play();
+        shopPanel.SetActive(false);
          
 
     }
@@ -158,7 +159,7 @@ public class GamePlayUI : MonoBehaviour
  
         foreach (GameObject pool in enemyPools)
         {            
-            totalPoolEnemies += pool.GetComponent<ObjectPool>().GetNumberOfPools()+1;
+            totalPoolEnemies += pool.GetComponent<ObjectPool>().GetNumberOfPools();
         }
     }
 
