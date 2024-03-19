@@ -11,7 +11,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
      [SerializeField] private RectTransform Canvas;
 
-     private Vector2 mOriginalLocalPointerPosition;
+    private Vector2 mOriginalLocalPointerPosition;
     private Vector3 mOriginalPanelLocalPosition;
     private Vector2 mOriginalPosition;
 
@@ -154,7 +154,8 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].CompareTag("Tower0") || colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2"))
+            if (colliders[i].CompareTag("Tower0") || colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||
+                colliders[i].CompareTag("Tower3") || colliders[i].CompareTag("Tower4") || colliders[i].CompareTag("Tower5"))
             {
                 Debug.Log("Cannot place tower here, space is occupied by another tower.");
                 return;

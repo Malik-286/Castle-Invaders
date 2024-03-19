@@ -8,15 +8,17 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] GameObject weapon;
     [SerializeField] float range = 15f;
     [SerializeField] ParticleSystem towerShootingParticles;
+     
     Transform target;
-    
 
     AudioManager audioManager;
+
 
       void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
     }
+
     void Update()
     {
         FindClosestTarget();
@@ -81,9 +83,18 @@ public class TargetLocater : MonoBehaviour
 
     void Attack(bool isActive)
     {
-        
-            var emissionModule = towerShootingParticles.emission;
-            emissionModule.enabled = isActive; 
        
+
+          var emissionModule = towerShootingParticles.emission;
+        if(emissionModule.enabled == false)
+        {
+            emissionModule.enabled = isActive;
+        }
+             
+       
+        // destroy tower after 15 seconds
+        Destroy(gameObject, 12);
+        // play some destroy particle effects
+
     }
 }
