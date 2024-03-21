@@ -49,14 +49,7 @@ public class TargetLocater : MonoBehaviour
 
         target = closestTarget;
 
-        if (target != null)
-        {
-            Debug.Log("Found target: " + target.name + ", distance: " + Vector3.Distance(transform.position, target.position));
-        }
-        else
-        {
-            Debug.Log("No target found.");
-        }
+        
     }
   
 
@@ -90,11 +83,9 @@ public class TargetLocater : MonoBehaviour
         {
             emissionModule.enabled = isActive;
         }
+        // check if there is no enemy alive then stop particle effect
              
-       
-        // destroy tower after 15 seconds
-        Destroy(gameObject, 12);
-        // play some destroy particle effects
+  
 
     }
 }

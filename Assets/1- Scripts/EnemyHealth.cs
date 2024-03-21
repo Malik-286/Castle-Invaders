@@ -45,7 +45,8 @@ public class EnemyHealth : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {       
-            ProcessHit();        
+            ProcessHit();
+        Debug.Log("Colliding Particles");
     }
 
       void OnCollisionEnter(Collision collision)

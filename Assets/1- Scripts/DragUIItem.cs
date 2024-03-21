@@ -116,13 +116,14 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (PositionWithinCell(position))
         {         
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
-         
+            Destroy(obj, 15f);
             SpendGold(obj);
             wayPoint.SetPlaceable(false);
             if(audioManager != null)
             {
                 audioManager.PlayTowerPlacingSoundEffect();
             }
+                      
         }
     }
 
@@ -148,6 +149,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     }
 
 
+
     void CheckSpaceForTower(Vector3 position, float radius)
     {
         Collider[] colliders = Physics.OverlapSphere(position, radius);
@@ -163,9 +165,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
 
         CreateObject(position);
+        
     }
-
-
-
 
 }
