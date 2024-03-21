@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -47,6 +48,10 @@ public class GamePlayUI : MonoBehaviour
     [Header("Enemies Pool Variables")]
     [SerializeField] int totalPoolEnemies;
 
+    [Header("Scene Startup Image")]
+    [SerializeField] Image sceneStartupImage;
+
+
     GameManager gameManager;
     AudioManager audioManager;
  
@@ -65,7 +70,10 @@ public class GamePlayUI : MonoBehaviour
         GetTotalPoolEnemies();
         audioManager.audioSource.Play();
         shopPanel.SetActive(false);
-         
+
+
+        sceneStartupImage.gameObject.SetActive(true);
+        StartCoroutine(FadeImageToTransparentWhite(1.5f));
 
     }
 
@@ -145,7 +153,13 @@ public class GamePlayUI : MonoBehaviour
         yield return new WaitForSeconds(3);
         timeText.text = ("00:00");
         audioManager.PlayWinSoundEffect();
-        winPanel.SetActive(true);
+        bool isActivated = false;
+        if(winPanel != null && isActivated == false)
+        {
+            winPanel.SetActive(true);
+            isActivated = true;
+        }
+         
     }
 
 
@@ -171,5 +185,23 @@ public class GamePlayUI : MonoBehaviour
     {
         shopPanel.SetActive(false);
     }
-   
+
+    IEnumerator FadeImageToTransparentWhite(float fadeDuration)
+    {
+        Color startColor = Color.black;
+        Color targetColor = new Color(0f, 0f, 0f, 0f); // Transparent white
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            sceneStartupImage.color = Color.Lerp(startColor, targetColor, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+         sceneStartupImage.color = targetColor;
+
+         Destroy(sceneStartupImage, 2f);
+    }
 }

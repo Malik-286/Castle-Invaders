@@ -135,16 +135,24 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     void SpendGold(GameObject obj)
     {
-        if(obj.CompareTag("Tower0"))
+        if(obj.CompareTag("Tower1"))
         {
             currencyManager.DecreaseGold(10);
-        }else if(obj.CompareTag("Tower1"))
+        }else if(obj.CompareTag("Tower2"))
         {
             currencyManager.DecreaseGold(20);
         }
-        else if(obj.CompareTag("Tower2"))
+        else if(obj.CompareTag("Tower3"))
         {
             currencyManager.DecreaseGold(30);
+        }
+        else if (obj.CompareTag("Tower4"))
+        {
+            currencyManager.DecreaseGold(40);
+        }
+        else if (obj.CompareTag("Tower5"))
+        {
+            currencyManager.DecreaseGold(50);
         }
     }
 
@@ -156,7 +164,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].CompareTag("Tower0") || colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||
+            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||
                 colliders[i].CompareTag("Tower3") || colliders[i].CompareTag("Tower4") || colliders[i].CompareTag("Tower5"))
             {
                 Debug.Log("Cannot place tower here, space is occupied by another tower.");
