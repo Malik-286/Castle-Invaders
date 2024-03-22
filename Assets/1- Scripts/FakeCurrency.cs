@@ -15,7 +15,7 @@ public class FakeCurrency : MonoBehaviour
     }
     public void GetFakeCurrency()
     {
-        currencyManager.IncreaseGold(1000);
+        currencyManager.IncreaseGold(200);
         currencyManager.SaveCurrencyData();
     }
 }

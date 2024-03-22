@@ -19,6 +19,9 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip machineGunSound;
 
 
+    [Header("Coins Collection Sound Effect")]
+
+    [SerializeField] AudioClip coinsCollectionSFX;
 
     [HideInInspector]
    public AudioSource audioSource;
@@ -75,5 +78,10 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayMachineGunSoundEffect()
     {
          audioSource.PlayOneShot(machineGunSound, 1.2f);      
+    }
+
+    public void PlayCoinsCollectionSoundEffect()
+    {
+        audioSource.PlayOneShot(coinsCollectionSFX, 1.5f);
     }
 }
