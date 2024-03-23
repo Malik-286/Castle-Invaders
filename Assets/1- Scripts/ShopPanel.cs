@@ -9,6 +9,7 @@ public class ShopPanel : MonoBehaviour
    
     
     [SerializeField] GameObject purchaseFailedPanel;
+    [SerializeField] GameObject purchasedSucessPanel;
  
 
      CurrencyManager currencyManager;
@@ -28,6 +29,7 @@ public class ShopPanel : MonoBehaviour
     void Awake()
     {
         purchaseFailedPanel.SetActive(false);
+        purchasedSucessPanel.SetActive(false);
         adsStaus = PlayerPrefs.GetString("AdsStatusKey");
         currencyManager = FindObjectOfType<CurrencyManager>();
     }
@@ -38,19 +40,23 @@ public class ShopPanel : MonoBehaviour
         {
             adsStaus = "disabled";
             PlayerPrefs.SetString("AdsStatusKey", adsStaus);
-        }else if(product.definition.id == starterPack_ProductID && currencyManager != null)
+            purchasedSucessPanel.SetActive(true);
+        }
+        else if(product.definition.id == starterPack_ProductID && currencyManager != null)
         {
             currencyManager.IncreaseGold(500);
             adsStaus = "disabled";
             PlayerPrefs.SetString("AdsStatusKey", adsStaus);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 500 has been added to you account with new balance of :"+currencyManager.GetCurrentGold());
+            purchasedSucessPanel.SetActive(true);
         }
         else if (product.definition.id == coinsPack500_ProductID && currencyManager != null)
         {
             currencyManager.IncreaseGold(500);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 500 has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
+            purchasedSucessPanel.SetActive(true);
 
         }
         else if (product.definition.id == coinsPack1000_ProductID && currencyManager != null)
@@ -58,6 +64,7 @@ public class ShopPanel : MonoBehaviour
             currencyManager.IncreaseGold(1000);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 1000 has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
+            purchasedSucessPanel.SetActive(true);
 
         }
         else if (product.definition.id == coinsPack2500_ProductID && currencyManager != null)
@@ -65,6 +72,7 @@ public class ShopPanel : MonoBehaviour
             currencyManager.IncreaseGold(5000);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 5K has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
+            purchasedSucessPanel.SetActive(true);
 
         }
         else if (product.definition.id == coinsPack5000_ProductID && currencyManager != null)
@@ -72,6 +80,7 @@ public class ShopPanel : MonoBehaviour
             currencyManager.IncreaseGold(10000);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 10K has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
+            purchasedSucessPanel.SetActive(true);
 
         }
 
@@ -80,6 +89,6 @@ public class ShopPanel : MonoBehaviour
     public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
     {
         purchaseFailedPanel.SetActive(true);
-     }
+    }
 
 }
