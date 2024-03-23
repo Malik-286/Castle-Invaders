@@ -19,6 +19,6 @@ public class WinPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        gameManager.LoadScene(0);
+        gameManager.LoadScene(1);
     }
 }

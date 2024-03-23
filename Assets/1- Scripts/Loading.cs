@@ -16,6 +16,12 @@ public class Loading : MonoBehaviour
 
 
     float currentValue;
+
+
+      void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
     void Update()
     {
         gameStudioLogo.fillAmount += Time.smoothDeltaTime * logoFillSpeed;

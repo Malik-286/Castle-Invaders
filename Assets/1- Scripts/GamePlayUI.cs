@@ -23,8 +23,7 @@ public class GamePlayUI : MonoBehaviour
     [Header("Enemies Kills Count Variables")]
 
     [SerializeField] TextMeshProUGUI enemiesKillsCountText;
-    [SerializeField] TextMeshProUGUI totalPoolEnemiesCountText;
-
+ 
     public int enemiesKillsCout;
 
     [Header("Player Health Variables")]
@@ -51,6 +50,10 @@ public class GamePlayUI : MonoBehaviour
     [Header("Scene Startup Image")]
     [SerializeField] Image sceneStartupImage;
 
+    [Header("Pause Panel")]
+    [SerializeField] GameObject pausePanel;
+
+
 
     GameManager gameManager;
     AudioManager audioManager;
@@ -70,6 +73,7 @@ public class GamePlayUI : MonoBehaviour
         GetTotalPoolEnemies();
         audioManager.audioSource.Play();
         shopPanel.SetActive(false);
+        pausePanel.SetActive(false);
 
 
         sceneStartupImage.gameObject.SetActive(true);
@@ -203,5 +207,11 @@ public class GamePlayUI : MonoBehaviour
          sceneStartupImage.color = targetColor;
 
          Destroy(sceneStartupImage, 2f);
+    }
+
+    public void PauseGame()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0.0f;       
     }
 }

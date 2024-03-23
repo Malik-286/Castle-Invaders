@@ -6,10 +6,22 @@ public class CurrencyManager : Singleton<CurrencyManager>
 {
 
     [SerializeField] int currentGold;
+    [SerializeField] const int defaultGold = 50;
+
+
     protected override void Awake()
     {
         base.Awake();
         LoadCurrencyData();
+    }
+
+    void Start()
+    {
+        if (currentGold <= 0)
+        {
+            currentGold = defaultGold;
+            SaveCurrencyData();
+        }
     }
 
 

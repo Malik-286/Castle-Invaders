@@ -13,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     AudioManager audioManager;
     void Start()
     {
+        Time.timeScale = 1.0f;
         gameManager = FindObjectOfType<GameManager>();
         audioManager = FindObjectOfType<AudioManager>();
         DeactivateUIPanels();
