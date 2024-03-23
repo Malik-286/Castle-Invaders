@@ -14,21 +14,37 @@ public class Banner : Singleton<Banner>
 #else
   private string _adUnitId = "unused";
 #endif
+
+
+    BannerView _bannerView;
+
     protected override void Awake()
     {
         base.Awake();
     }
 
 
-    public void Start()
+      void Start()
     {
-         MobileAds.Initialize((InitializationStatus initStatus) => {});
-         CreateBannerView();
-         LoadAd();
+        CheckAdsStatus();
     }
 
+    void CheckAdsStatus()
+    {
+        if (PlayerPrefs.GetString("AdsStatusKey") == "disabled")
+        {
+            Debug.Log("Cant show ads becasuse ads are disabled with purchase.");
+            return;
+        }
+        else
+        {
+            MobileAds.Initialize((InitializationStatus initStatus) => { });
+            CreateBannerView();
+            LoadAd();
+        }
+        
+    }
 
-    BannerView _bannerView;
 
  
     public void CreateBannerView()

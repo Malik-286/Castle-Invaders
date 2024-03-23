@@ -5,22 +5,19 @@ using UnityEngine;
 
 public class GiftPanel : MonoBehaviour
 {
+
+
     [SerializeField] TextMeshProUGUI timeCountText;
     [SerializeField] GameObject coinsAnimationPanel;
 
-
    
-  
+
 
     public void ActivateCoinsAnimationPanel()
     {
        coinsAnimationPanel.SetActive(true);
-        if (AudioManager.instance != null)
-        {
-            AudioManager.instance.PlayCoinsCollectionSoundEffect();
-
-            StartCoroutine(DeactivateRewardsPanel());
-        }
+       
+        StartCoroutine(DeactivateRewardsPanel());       
     }
     
         

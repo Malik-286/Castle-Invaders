@@ -82,6 +82,6 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayCoinsCollectionSoundEffect()
     {
-        audioSource.PlayOneShot(coinsCollectionSFX, 1.5f);
+        audioSource.PlayOneShot(coinsCollectionSFX, 2.0f);
     }
 }

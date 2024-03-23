@@ -24,15 +24,28 @@ public class Interstitial : Singleton<Interstitial>
         base.Awake();
     }
 
-    public void Start()
+    void Start()
     {
-         MobileAds.Initialize((InitializationStatus initStatus) =>   {  });
-         LoadInterstitialAd();
+        CheckAdsStatus();
     }
 
+    void CheckAdsStatus()
+    {
+        if (PlayerPrefs.GetString("AdsStatusKey") == "disabled")
+        {
+            Debug.Log("Cant show ads becasuse ads are disabled with purchase.");
+            return;
+        }
+        else
+        {
+            MobileAds.Initialize((InitializationStatus initStatus) => { });
+            LoadInterstitialAd();
+            ShowInterstitialAd();
+        }
 
- 
-  public void LoadInterstitialAd()
+    }
+
+    public void LoadInterstitialAd()
     {
         // Clean up the old ad before loading a new one.
         if (_interstitialAd != null)

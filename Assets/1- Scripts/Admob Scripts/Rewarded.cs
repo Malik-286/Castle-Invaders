@@ -17,13 +17,15 @@ public class Rewarded : MonoBehaviour
 
     RewardedAd rewardedAd;
     CurrencyManager currencyManager;
-
+    AudioManager audioManager;
 
     public void Start()
     {
-         MobileAds.Initialize((InitializationStatus initStatus) => { });
-        currencyManager = FindObjectOfType<CurrencyManager>();
+        MobileAds.Initialize((InitializationStatus initStatus) => { });
         LoadRewardedAd();
+        currencyManager = FindObjectOfType<CurrencyManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+       
     }
 
  
@@ -71,6 +73,11 @@ public class Rewarded : MonoBehaviour
                 // Rewarding the user
                 currencyManager.IncreaseGold(100);
                 currencyManager.SaveCurrencyData();
+                if (audioManager != null)
+                {
+                    audioManager.PlayCoinsCollectionSoundEffect();
+                    
+                }
 
             });
 

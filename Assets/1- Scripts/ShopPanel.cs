@@ -23,14 +23,21 @@ public class ShopPanel : MonoBehaviour
 
 
     [Header("Ads Status")]
-    public string adsStaus = "enabled";
+
+    public string adsStatus;
+    public string defaultAdsStatus = "enabled";
 
 
     void Awake()
     {
+        adsStatus = PlayerPrefs.GetString("AdsStatusKey");
+        if(adsStatus == string.Empty)
+        {
+            this.adsStatus = "enabled";
+        }
+
         purchaseFailedPanel.SetActive(false);
         purchasedSucessPanel.SetActive(false);
-        adsStaus = PlayerPrefs.GetString("AdsStatusKey");
         currencyManager = FindObjectOfType<CurrencyManager>();
     }
 
@@ -38,15 +45,15 @@ public class ShopPanel : MonoBehaviour
     {
         if (product.definition.id == removeAds_ProductID)
         {
-            adsStaus = "disabled";
-            PlayerPrefs.SetString("AdsStatusKey", adsStaus);
+            adsStatus = "disabled";
+            PlayerPrefs.SetString("AdsStatusKey", adsStatus);
             purchasedSucessPanel.SetActive(true);
         }
         else if(product.definition.id == starterPack_ProductID && currencyManager != null)
         {
             currencyManager.IncreaseGold(500);
-            adsStaus = "disabled";
-            PlayerPrefs.SetString("AdsStatusKey", adsStaus);
+            adsStatus = "disabled";
+            PlayerPrefs.SetString("AdsStatusKey", adsStatus);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 500 has been added to you account with new balance of :"+currencyManager.GetCurrentGold());
             purchasedSucessPanel.SetActive(true);
