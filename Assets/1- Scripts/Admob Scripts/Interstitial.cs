@@ -26,7 +26,7 @@ public class Interstitial : Singleton<Interstitial>
 
     void Start()
     {
-        CheckAdsStatus();
+         InvokeRepeating("CheckAdsStatus", 30f,30f);
     }
 
     void CheckAdsStatus()
@@ -40,7 +40,7 @@ public class Interstitial : Singleton<Interstitial>
         {
             MobileAds.Initialize((InitializationStatus initStatus) => { });
             LoadInterstitialAd();
-            ShowInterstitialAd();
+        
         }
 
     }
@@ -75,6 +75,7 @@ public class Interstitial : Singleton<Interstitial>
                           + ad.GetResponseInfo());
 
                 _interstitialAd = ad;
+                ShowInterstitialAd();
                 
                 
             });
@@ -87,7 +88,6 @@ public class Interstitial : Singleton<Interstitial>
         {
             Debug.Log("Showing interstitial ad.");
             _interstitialAd.Show();
-            ShowInterstitialAd();
             RegisterEventHandlers(_interstitialAd);
             RegisterReloadHandler(_interstitialAd);
          }

@@ -8,9 +8,7 @@ public class GameManager : Singleton<GameManager>
 
 
     GamePlayUI gamePlayUI;
-    ObjectPool objectPool;
-    LevelUnLocker levelUnlocker;
-
+ 
 
     protected override void Awake()
     {
@@ -21,17 +19,10 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         gamePlayUI = FindObjectOfType<GamePlayUI>();
-        objectPool = FindObjectOfType<ObjectPool>();
-        levelUnlocker = FindObjectOfType<LevelUnLocker>();
-    }
+     }
 
 
-      void Update()
-    {
-        CheckPlayerWin();
-    }
-
-
+    
    
 
 
@@ -61,35 +52,6 @@ public class GameManager : Singleton<GameManager>
         return SceneManager.GetActiveScene().buildIndex;
     }
 
-
-    void CheckPlayerWin()
-    {
-        if (objectPool != null)
-        {
-            if (objectPool.GetNumberOfPools() <= 0 && !CheckIfAnyEnemyisAlive())
-            {
-                Debug.Log("Player has won the game");
-                StartCoroutine(gamePlayUI.ActivateWinPanel());
-                if(levelUnlocker != null)
-                {
-                    levelUnlocker.UnlockLevel(GetCurrentSceneIndex());
-                }
-                
-                return;
-            }
-            else
-            {
-                return;
-            }
-        }
-         
-    }
-
-    bool CheckIfAnyEnemyisAlive()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        return enemies.Length > 0;
-    }
 
 }
 

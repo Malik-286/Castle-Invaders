@@ -8,22 +8,18 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] GameObject weapon;
     [SerializeField] float range = 15f;
     [SerializeField] ParticleSystem towerShootingParticles;
-     
+
     Transform target;
 
-    AudioManager audioManager;
-
-
-      void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-    }
 
     void Update()
     {
         FindClosestTarget();
         AimWeapon();
     }
+
+
+
 
 
 
@@ -48,44 +44,60 @@ public class TargetLocater : MonoBehaviour
         }
 
         target = closestTarget;
+       
 
-        
+
     }
-  
+
 
     void AimWeapon()
     {
-        if (target != null)
+        float targetDistance = Vector3.Distance(transform.position, target.position);
+
+        if (target == null)
         {
-            float targetDistance = Vector3.Distance(transform.position, target.position);
-            weapon.transform.LookAt(target);
-            if (targetDistance < range)
-            {
-                Attack(true);
-            }
-            else
-            {
-                Attack(false);
-            }
+            Attack(false); // No target in range, stop shooting
+             return;
+        }
+        
+        weapon.transform.LookAt(target);
+        if (targetDistance < range)
+        {
+            Attack(true); // Target within range, start shooting
         }
         else
         {
-            Attack(false);  
+            Attack(false); // Target out of range, stop shooting
         }
     }
 
     void Attack(bool isActive)
     {
-       
 
-          var emissionModule = towerShootingParticles.emission;
-        if(emissionModule.enabled == false)
+        var emissionModule = towerShootingParticles.emission;
+        if (isActive)
         {
-            emissionModule.enabled = isActive;
+            if (!emissionModule.enabled)
+            {
+                emissionModule.enabled = true; // Enable particle emission
+
+            }
         }
-        // check if there is no enemy alive then stop particle effect
-             
-  
+        else
+        {
+            emissionModule.enabled = false; // Disable particle emission
+        }
 
     }
+
+    void OnDrawGizmos()
+    {
+         Gizmos.color = Color.green;
+ 
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
+
 }
+
+
+

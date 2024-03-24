@@ -95,8 +95,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3640910613813063112}
-  - component: {fileID: 1891509846811772481}
   - component: {fileID: 5732702373118800857}
+  - component: {fileID: 1891509846811772481}
   m_Layer: 7
   m_Name: turret_4
   m_TagString: Tower4
@@ -121,21 +121,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1891509846811772481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827527953152362316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeef3ac072165534599ffd1334c56e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 7779824066000985118}
-  range: 10
-  towerShootingParticles: {fileID: 3234438956576590588}
 --- !u!65 &5732702373118800857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,6 +142,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.0380363, y: 5.587699, z: 5.631528}
   m_Center: {x: 0.111227036, y: 3.9891696, z: 0.14553499}
+--- !u!114 &1891509846811772481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827527953152362316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeef3ac072165534599ffd1334c56e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 7779824066000985118}
+  range: 10
+  towerShootingParticles: {fileID: 3234438956576590588}
 --- !u!1 &2490746941108019703
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class PlayerCastleHealth : MonoBehaviour
     Animator animator;
     GamePlayUI gamePlayUI;
 
+ 
     void Start()
     {
         currentHealth = maxHealth;
@@ -28,6 +29,8 @@ public class PlayerCastleHealth : MonoBehaviour
         gamePlayUI = FindObjectOfType<GamePlayUI>();
         castleWinParticles.SetActive(false);
         smokeParticles.SetActive(false);
+
+ 
 
     }
 
@@ -43,7 +46,7 @@ public class PlayerCastleHealth : MonoBehaviour
 
      void Update()
     {
-        CheckPlayerHealht();
+        CheckPlayerHealth();
     }
 
     public void LoseHealth(int amountToLose)
@@ -55,7 +58,7 @@ public class PlayerCastleHealth : MonoBehaviour
 
     
 
-    void CheckPlayerHealht()
+    void CheckPlayerHealth()
     {
         if (currentHealth <= 0 && bIsDestroyed == false)
         {
@@ -67,6 +70,7 @@ public class PlayerCastleHealth : MonoBehaviour
             destroyParticles.SetActive(true);
             Debug.Log("Castle Destroyed..!");
             gamePlayUI.ActivateDeathPanel();
+    
  
         }
     }

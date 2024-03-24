@@ -445,7 +445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 137868011065440556}
+  - {fileID: 7133616700041843534}
   - {fileID: 3559348313710829022}
   - {fileID: 5188760794325475375}
   - {fileID: 7262962667843634372}
@@ -824,9 +824,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 5425877084622582703}
-  range: 8
-  towerShootingParticles: {fileID: 1726983234905959457}
---- !u!1001 &4470503747780388812
+  range: 7
+  towerShootingParticles: {fileID: 8422020149148108355}
+--- !u!1001 &6709263757416631726
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -837,6 +837,10 @@ PrefabInstance:
     - target: {fileID: 1269347133635422408, guid: f87b1452c6462c0419707facd87707a7, type: 3}
       propertyPath: m_Name
       value: MuzzelFlash_ParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269347133635422408, guid: f87b1452c6462c0419707facd87707a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4603704941837639392, guid: f87b1452c6462c0419707facd87707a7, type: 3}
       propertyPath: m_RootOrder
@@ -887,13 +891,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f87b1452c6462c0419707facd87707a7, type: 3}
---- !u!4 &137868011065440556 stripped
+--- !u!4 &7133616700041843534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4603704941837639392, guid: f87b1452c6462c0419707facd87707a7, type: 3}
-  m_PrefabInstance: {fileID: 4470503747780388812}
+  m_PrefabInstance: {fileID: 6709263757416631726}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1726983234905959457 stripped
+--- !u!198 &8422020149148108355 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3025593642168306669, guid: f87b1452c6462c0419707facd87707a7, type: 3}
-  m_PrefabInstance: {fileID: 4470503747780388812}
+  m_PrefabInstance: {fileID: 6709263757416631726}
   m_PrefabAsset: {fileID: 0}

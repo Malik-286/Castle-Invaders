@@ -341,8 +341,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5665052825418159323}
-  - component: {fileID: 47496918457476907}
   - component: {fileID: 7408803852882353179}
+  - component: {fileID: 47496918457476907}
   m_Layer: 7
   m_Name: turret_5
   m_TagString: Tower5
@@ -367,21 +367,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &47496918457476907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5972993007551535783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeef3ac072165534599ffd1334c56e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 8384137763921791913}
-  range: 12
-  towerShootingParticles: {fileID: 2374556063390974784}
 --- !u!65 &7408803852882353179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -403,6 +388,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.0380363, y: 5.587699, z: 5.631528}
   m_Center: {x: 0.111227036, y: 3.9891696, z: 0.14553499}
+--- !u!114 &47496918457476907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972993007551535783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeef3ac072165534599ffd1334c56e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 8384137763921791913}
+  range: 10
+  towerShootingParticles: {fileID: 2374556063390974784}
 --- !u!1 &6128163568486717974
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +837,10 @@ PrefabInstance:
     - target: {fileID: 1269347133635422408, guid: f87b1452c6462c0419707facd87707a7, type: 3}
       propertyPath: m_Name
       value: MuzzelFlash_ParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269347133635422408, guid: f87b1452c6462c0419707facd87707a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4603704941837639392, guid: f87b1452c6462c0419707facd87707a7, type: 3}
       propertyPath: m_RootOrder
