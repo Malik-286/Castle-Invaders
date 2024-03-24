@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class BattleManager : MonoBehaviour
     LevelUnLocker levelUnlocker;
     GameManager gameManager;
     PlayerCastleHealth playerCastleHealth;
-     
+
 
 
     void Start()
@@ -58,19 +57,19 @@ public class BattleManager : MonoBehaviour
             {
                 Debug.Log("Player has won the game");
                 StartCoroutine(gamePlayUI.ActivateWinPanel());
-      
+                
                 if (levelUnlocker != null)
                 {
                     levelUnlocker.UnlockLevel(gameManager.GetCurrentSceneIndex());
                 }
+              
             }
         }
 
 
-
     }
 
-    bool CheckIfAnyEnemyisAlive(ObjectPool pool)
+    public bool CheckIfAnyEnemyisAlive(ObjectPool pool)
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         return enemies.Length > 0;

@@ -40,6 +40,7 @@ public class GamePlayUI : MonoBehaviour
 
     [Header("Win Panel Variables")]
     [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject winParticles;
 
     [Header("Shop Panel Variables")]
     [SerializeField] GameObject shopPanel;
@@ -74,6 +75,8 @@ public class GamePlayUI : MonoBehaviour
         audioManager.audioSource.Play();
         shopPanel.SetActive(false);
         pausePanel.SetActive(false);
+        winParticles.SetActive(false);
+        winPanel.SetActive(false);
 
 
         sceneStartupImage.gameObject.SetActive(true);
@@ -85,7 +88,8 @@ public class GamePlayUI : MonoBehaviour
     {
         UpdateGamePlayTimer();
         UpdateEnemiesCountText();
-        UpdatePlayerHealthSlider();    
+        UpdatePlayerHealthSlider();
+        FixTimeToZero();
     }
 
     public int GetPoolEnemies()
@@ -143,7 +147,6 @@ public class GamePlayUI : MonoBehaviour
     public void ActivateDeathPanel()
     {
         audioManager.PlayDeathSoundEffect();
-        timeText.text = ("00:00");
         deathPanel.SetActive(true);
     }
 
@@ -155,13 +158,17 @@ public class GamePlayUI : MonoBehaviour
     public IEnumerator ActivateWinPanel()
     {
         yield return new WaitForSeconds(3);
-        timeText.text = ("00:00");
         audioManager.PlayWinSoundEffect();
         bool isActivated = false;
         if(winPanel != null && isActivated == false)
         {
+           
             winPanel.SetActive(true);
             isActivated = true;
+            winParticles.SetActive(true);
+
+            audioManager.PlayBattleWinSoundEffect();
+           
         }
          
     }
@@ -213,5 +220,14 @@ public class GamePlayUI : MonoBehaviour
     {
         pausePanel.SetActive(true);
         Time.timeScale = 0.0f;       
+    }
+
+    void FixTimeToZero()
+    {
+        if(deathPanel.activeInHierarchy || winPanel.activeInHierarchy)
+        {
+            timeText.text = ("00:00");
+        }
+        
     }
 }

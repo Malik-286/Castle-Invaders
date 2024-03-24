@@ -10,15 +10,22 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] ParticleSystem towerShootingParticles;
 
     Transform target;
+ BattleManager battleManager;
+ 
+      void Start()
+    {
+ 
+        battleManager = FindObjectOfType<BattleManager>();
+    }
 
 
     void Update()
     {
+        
         FindClosestTarget();
         AimWeapon();
+      
     }
-
-
 
 
 
@@ -52,20 +59,22 @@ public class TargetLocater : MonoBehaviour
 
     void AimWeapon()
     {
-        float targetDistance = Vector3.Distance(transform.position, target.position);
-
         if (target == null)
         {
             Attack(false); // No target in range, stop shooting
-             return;
+            return;
         }
-        
+
+        float targetDistance = Vector3.Distance(transform.position, target.position);
+  
+
         weapon.transform.LookAt(target);
+
         if (targetDistance < range)
         {
             Attack(true); // Target within range, start shooting
-        }
-        else
+         }
+        else if (targetDistance > range)
         {
             Attack(false); // Target out of range, stop shooting
         }
