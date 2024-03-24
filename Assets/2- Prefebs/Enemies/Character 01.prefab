@@ -779,8 +779,9 @@ Transform:
   m_Children:
   - {fileID: 2696184643177800183}
   - {fileID: 3378168815520772997}
+  - {fileID: 4422190598691076629}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7862429627333643368
 Animator:
@@ -856,6 +857,7 @@ MonoBehaviour:
   currentHealthPoints: 0
   maxHealthPoints: 30
   difficultyRamp: 1
+  deathParticles: {fileID: 5938268369834113783}
 --- !u!136 &8641593574400914084
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1038,3 +1040,74 @@ Transform:
   m_Father: {fileID: 7955888329614727731}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3850437501181582638
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5589329350977031484}
+    m_Modifications:
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424033485823879129, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+      propertyPath: m_Name
+      value: Enemy Blast Effect (Oragne)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+--- !u!4 &4422190598691076629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 590330450661664571, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+  m_PrefabInstance: {fileID: 3850437501181582638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5938268369834113783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7424033485823879129, guid: 6fa348441b499ca4382bda8cba169493, type: 3}
+  m_PrefabInstance: {fileID: 3850437501181582638}
+  m_PrefabAsset: {fileID: 0}

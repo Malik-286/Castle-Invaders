@@ -8,7 +8,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int currentHealthPoints;
     [SerializeField] int maxHealthPoints = 5;
     [SerializeField] int difficultyRamp = 1;
- 
+    [SerializeField] GameObject deathParticles;
+
+
 
     CurrencyManager currencyManager;
     GamePlayUI gamePlayUI;
@@ -23,7 +25,8 @@ public class EnemyHealth : MonoBehaviour
         currencyManager = FindObjectOfType<CurrencyManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
         playerHealth = FindObjectOfType<PlayerCastleHealth>();
-
+        deathParticles.SetActive(false);
+ 
     }
 
     
@@ -38,7 +41,8 @@ public class EnemyHealth : MonoBehaviour
             maxHealthPoints += difficultyRamp;
             gamePlayUI.enemiesKillsCout++;
             currencyManager.IncreaseGold(5);
-            Destroy(gameObject);
+            deathParticles.SetActive(true);
+            Destroy(gameObject, 0.1f);
         }
          
     }
@@ -46,8 +50,7 @@ public class EnemyHealth : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {       
             ProcessHit();
-        Debug.Log("Colliding Particles");
-    }
+     }
 
       void OnCollisionEnter(Collision collision)
     {
