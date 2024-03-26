@@ -6,7 +6,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
 {
 
     [SerializeField] int currentGold;
-    [SerializeField] const int defaultGold = 50;
+      const int defaultGold = 50;
 
 
     protected override void Awake()
@@ -26,13 +26,8 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
 
     public int GetCurrentGold()
-    {
-        if(currentGold <= 0)
-        {
-            currentGold = 0;         
-        }
+    {    
         return currentGold;
-
     }
 
     public void IncreaseGold(int amountToIncrease)
@@ -64,4 +59,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
         Data data = SaveSystem.LoadData();
         this.currentGold = data.gold;
     }
+
+
+     
 }

@@ -3,23 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
-{ 
-     public static T instance;
+{
+      static T instance;
 
-    public static T GetInstance()
+    public static T Instance
     {
-        return instance;
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<T>();
+                if (instance == null)
+                {
+                    Debug.LogError($"No instance of {typeof(T)} found in the scene.");
+                }
+            }
+            return instance;
+        }
     }
+
     protected virtual void Awake()
     {
-        if (instance != null && instance != this.gameObject)
+        if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         else
         {
-            DontDestroyOnLoad(this.gameObject);
+            instance = this as T;
+            DontDestroyOnLoad(gameObject);
         }
     }
-
 }
