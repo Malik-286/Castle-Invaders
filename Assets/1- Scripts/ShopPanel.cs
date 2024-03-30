@@ -18,7 +18,7 @@ public class ShopPanel : MonoBehaviour
       const string removeAds_ProductID = "com.aspiregamesstudio.castleinvaders.removeads";
       const string coinsPack500_ProductID = "com.aspiregamesstudio.castleinvaders.coins500";
       const string coinsPack1000_ProductID = "com.aspiregamesstudio.castleinvaders.coins1000";
-      const string coinsPack5000_ProductID = "com.aspiregamesstudio.castleinvaders.coins5000";
+      const string coinsPack5000_ProductID = "com.aspiregamesstudio.castleinvaders.coins5000";  
       const string coinsPack10000_ProductID = "com.aspiregamesstudio.castleinvaders.coins10000";
 
 
@@ -76,9 +76,10 @@ public class ShopPanel : MonoBehaviour
         }
         else if (product.definition.id == coinsPack5000_ProductID && currencyManager != null)
         {
+                                           
             currencyManager.IncreaseGold(5000);
             currencyManager.SaveCurrencyData();
-            Debug.Log("Coins 5K has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
+            Debug.Log("Coins 5K has been added to your account with new balance of :" + currencyManager.GetCurrentGold());
             purchasedSucessPanel.SetActive(true);
 
         }

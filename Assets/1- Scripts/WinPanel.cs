@@ -12,14 +12,18 @@ public class WinPanel : MonoBehaviour
 
     GameManager gameManager;
     BattleManager battleManager;
+    GamePlayUI gamePlayUI;
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         battleManager = FindObjectOfType<BattleManager>();
+        gamePlayUI = FindObjectOfType<GamePlayUI>();
+
 
         winRewardText.text = battleManager.winAmountToReward.ToString() + " Coins";
         battleManager.RewardPlayerForWin();
         battleManager.DestroyAllTowers();
+        gamePlayUI.DisableTowersPanel();
     }
 
     public void LoadNextLevel()

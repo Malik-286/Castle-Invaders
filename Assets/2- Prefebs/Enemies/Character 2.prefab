@@ -574,7 +574,7 @@ Transform:
   - {fileID: 4568799072674703335}
   - {fileID: 6837757264193446669}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 156.164, z: 0}
 --- !u!95 &5198239993096432463
 Animator:
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealthPoints: 0
-  maxHealthPoints: 50
+  maxHealthPoints: 30
   difficultyRamp: 1
   deathParticles: {fileID: 6246917851476242045}
 --- !u!114 &3946219783732235248
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: []
-  moveSpeed: 0.8
+  moveSpeed: 0.5
 --- !u!114 &-1895180303946989649
 MonoBehaviour:
   m_ObjectHideFlags: 0
