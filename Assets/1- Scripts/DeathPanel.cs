@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DeathPanel : MonoBehaviour
 {
 
+
+    [SerializeField] TextMeshProUGUI deathRewardText;
+
+ 
     GameManager gameManager;
-     void Start()
+    BattleManager battleManager;
+    void Start()
     {
-     gameManager = FindObjectOfType<GameManager>();   
+        gameManager = FindObjectOfType<GameManager>();
+        battleManager = FindObjectOfType<BattleManager>();
+
+        deathRewardText.text = battleManager.loseAmountToReward.ToString() + " Coins";
+        battleManager.RewardPlayerForLose();
+        battleManager.DestroyAllTowers();
+
     }
 
     public void PlayAgain()
@@ -20,5 +32,8 @@ public class DeathPanel : MonoBehaviour
     {
         gameManager.LoadScene(0);
     }
- 
+
+    
+
+
 }

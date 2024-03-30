@@ -12,17 +12,10 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip towerPlacingSFX;
     [SerializeField] AudioClip shootingSFX;
     [SerializeField] AudioClip gernadeSFX;
- 
-
-
-    [Header("Machine Guns Sound Effect")]
-
-    [SerializeField] AudioClip machineGunSound;
-
-
-    [Header("Coins Collection Sound Effect")]
-
     [SerializeField] AudioClip coinsCollectionSFX;
+
+
+
 
     [HideInInspector]
    public AudioSource audioSource;
@@ -76,10 +69,6 @@ public class AudioManager : Singleton<AudioManager>
         audioSource.PlayOneShot(gernadeSFX, 1.2f);
     }
 
-    public void PlayMachineGunSoundEffect()
-    {
-         audioSource.PlayOneShot(machineGunSound, 1.2f);      
-    }
 
     public void PlayCoinsCollectionSoundEffect()
     {
@@ -88,6 +77,6 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayBattleWinSoundEffect()
     {
-        audioSource.PlayOneShot(winSFX, 2.0f);
+         audioSource.PlayOneShot(winSFX, 2.0f);
     }
 }

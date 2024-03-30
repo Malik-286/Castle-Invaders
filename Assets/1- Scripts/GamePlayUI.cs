@@ -158,7 +158,6 @@ public class GamePlayUI : MonoBehaviour
     public IEnumerator ActivateWinPanel()
     {
         yield return new WaitForSeconds(3);
-        audioManager.PlayWinSoundEffect();
         bool isActivated = false;
         if(winPanel != null && isActivated == false)
         {
@@ -166,8 +165,6 @@ public class GamePlayUI : MonoBehaviour
             winPanel.SetActive(true);
             isActivated = true;
             winParticles.SetActive(true);
-
-            audioManager.PlayBattleWinSoundEffect();
            
         }
          

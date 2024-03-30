@@ -24,6 +24,14 @@ public class CurrencyManager : Singleton<CurrencyManager>
         }
     }
 
+    void Update()
+    {
+        currentGold = (int)Mathf.Clamp(currentGold, 0, Mathf.Infinity);
+    }
+
+
+
+
 
     public int GetCurrentGold()
     {    
@@ -59,6 +67,8 @@ public class CurrencyManager : Singleton<CurrencyManager>
         Data data = SaveSystem.LoadData();
         this.currentGold = data.gold;
     }
+
+
 
 
      

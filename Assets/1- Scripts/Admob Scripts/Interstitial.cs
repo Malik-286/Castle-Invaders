@@ -26,7 +26,7 @@ public class Interstitial : Singleton<Interstitial>
 
     void Start()
     {
-         InvokeRepeating("CheckAdsStatus", 60f,60f);
+         InvokeRepeating("CheckAdsStatus", 70f,70f);
     }
 
     void CheckAdsStatus()

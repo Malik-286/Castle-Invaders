@@ -6,10 +6,11 @@ public class PausePanel : MonoBehaviour
 {
 
 
-     GameObject towersPanel;
+    GameObject towersPanel;
     GameManager gameManager;
      void Start()
     {
+         
         towersPanel = GameObject.FindGameObjectWithTag("TowersPanel");
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -28,8 +29,9 @@ public class PausePanel : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1.0f;
-        gameObject.SetActive(false);
         towersPanel.SetActive(true);
+        gameObject.SetActive(false);
+         
     }
 
     public void GoToMianMenu()

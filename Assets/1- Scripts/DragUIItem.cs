@@ -102,8 +102,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             Debug.Log("Not Enough Coins");
             gamePlayUI.EnableShopPanel();
-            
-            Debug.Log("Calling this methosd from Class DragUIiTEM");
+                       
             return;
         }
 

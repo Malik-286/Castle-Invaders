@@ -18,8 +18,8 @@ public class ShopPanel : MonoBehaviour
       const string removeAds_ProductID = "com.aspiregamesstudio.castleinvaders.removeads";
       const string coinsPack500_ProductID = "com.aspiregamesstudio.castleinvaders.coins500";
       const string coinsPack1000_ProductID = "com.aspiregamesstudio.castleinvaders.coins1000";
-      const string coinsPack2500_ProductID = "com.aspiregamesstudio.castleinvaders.coins5000";
-      const string coinsPack5000_ProductID = "com.aspiregamesstudio.castleinvaders.coins10000";
+      const string coinsPack5000_ProductID = "com.aspiregamesstudio.castleinvaders.coins5000";
+      const string coinsPack10000_ProductID = "com.aspiregamesstudio.castleinvaders.coins10000";
 
 
     [Header("Ads Status")]
@@ -74,7 +74,7 @@ public class ShopPanel : MonoBehaviour
             purchasedSucessPanel.SetActive(true);
 
         }
-        else if (product.definition.id == coinsPack2500_ProductID && currencyManager != null)
+        else if (product.definition.id == coinsPack5000_ProductID && currencyManager != null)
         {
             currencyManager.IncreaseGold(5000);
             currencyManager.SaveCurrencyData();
@@ -82,7 +82,7 @@ public class ShopPanel : MonoBehaviour
             purchasedSucessPanel.SetActive(true);
 
         }
-        else if (product.definition.id == coinsPack5000_ProductID && currencyManager != null)
+        else if (product.definition.id == coinsPack10000_ProductID && currencyManager != null)
         {
             currencyManager.IncreaseGold(10000);
             currencyManager.SaveCurrencyData();
