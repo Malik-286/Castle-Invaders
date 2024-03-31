@@ -13,11 +13,14 @@ public class WinPanel : MonoBehaviour
     GameManager gameManager;
     BattleManager battleManager;
     GamePlayUI gamePlayUI;
+    AudioManager audioManager;
+    
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         battleManager = FindObjectOfType<BattleManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
+        audioManager = FindObjectOfType<AudioManager>();
 
 
         winRewardText.text = battleManager.winAmountToReward.ToString() + " Coins";
@@ -35,12 +38,14 @@ public class WinPanel : MonoBehaviour
     {
          int index = gameManager.GetCurrentSceneIndex()+1;
          gameManager.LoadScene(index);
+         audioManager.audioSource.Play();
          Debug.Log("Loading Next Level: " + index);
     }
 
     public void GoToMainMenu()
     {
         gameManager.LoadScene(1);
+        audioManager.audioSource.Play();
     }
 
  
