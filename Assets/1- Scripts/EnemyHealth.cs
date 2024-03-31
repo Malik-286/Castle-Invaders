@@ -6,8 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
 
     [SerializeField] int currentHealthPoints;
-    [SerializeField] int maxHealthPoints = 5;
     [SerializeField] int difficultyRamp = 1;
+    [SerializeField] int maxHealthPoints;
     [SerializeField] GameObject deathParticles;
 
 
@@ -18,8 +18,9 @@ public class EnemyHealth : MonoBehaviour
     void OnEnable()
     {
         currentHealthPoints = maxHealthPoints;
-        currentHealthPoints = Random.Range(2, maxHealthPoints);
     }
+
+   
     void Start()
     {
         currencyManager = FindObjectOfType<CurrencyManager>();
@@ -29,9 +30,8 @@ public class EnemyHealth : MonoBehaviour
  
     }
 
-    
-    
 
+  
     void ProcessHit()
     {
         currentHealthPoints--;

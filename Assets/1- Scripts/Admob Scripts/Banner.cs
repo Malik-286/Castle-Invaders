@@ -41,6 +41,7 @@ public class Banner : Singleton<Banner>
             MobileAds.Initialize((InitializationStatus initStatus) => { });
             CreateBannerView();
             LoadAd();
+            
         }
         
     }

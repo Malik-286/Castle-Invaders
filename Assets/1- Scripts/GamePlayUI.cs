@@ -54,7 +54,8 @@ public class GamePlayUI : MonoBehaviour
     [Header("Pause Panel")]
     [SerializeField] GameObject pausePanel;
 
-
+    [Header("Pause Panel")]
+    [SerializeField] GameObject giftPanel;
 
     GameManager gameManager;
     AudioManager audioManager;
@@ -77,6 +78,7 @@ public class GamePlayUI : MonoBehaviour
         pausePanel.SetActive(false);
         winParticles.SetActive(false);
         winPanel.SetActive(false);
+        giftPanel.SetActive(false);
 
 
         fadeImage.gameObject.SetActive(true);

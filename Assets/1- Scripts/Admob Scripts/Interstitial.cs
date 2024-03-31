@@ -7,6 +7,8 @@ using UnityEngine;
 public class Interstitial : Singleton<Interstitial>
 {
 
+    public float firstLoad, secondLoad;
+
 #if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-1387627577986386/3116246139";
 #elif UNITY_IPHONE
@@ -26,7 +28,7 @@ public class Interstitial : Singleton<Interstitial>
 
     void Start()
     {
-         InvokeRepeating("CheckAdsStatus", 70f,70f);
+          InvokeRepeating("CheckAdsStatus", firstLoad,secondLoad);
     }
 
     void CheckAdsStatus()

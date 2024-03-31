@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
     GameManager gameManager;
     CurrencyManager currencyManager;
     PlayerCastleHealth playerCastleHealth;
+    EnemyHealth enemyHealth;
  
     public int winAmountToReward, loseAmountToReward;
   
@@ -23,8 +24,12 @@ public class BattleManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         playerCastleHealth = FindObjectOfType<PlayerCastleHealth>();
         currencyManager = FindObjectOfType<CurrencyManager>();
+        enemyHealth = FindObjectOfType<EnemyHealth>();
  
          CalculateRewardAmounts();
+        Invoke("SetEnemyHealht", 3.0f);
+        Invoke("SetEnemyHealht", 6.0f);
+
     }
 
 
@@ -110,8 +115,6 @@ public class BattleManager : MonoBehaviour
             Destroy(tower.gameObject);
         }
     }
-
-
 
 
 }
