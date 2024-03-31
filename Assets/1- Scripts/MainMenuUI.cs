@@ -11,6 +11,8 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] float loadingPanelWaitTime = 1.5f;
     [SerializeField] TextMeshProUGUI loadingText;
 
+    [SerializeField] GameObject levelsPanel;
+
     GameManager gameManager;
     AudioManager audioManager;
     void Start()
@@ -20,17 +22,17 @@ public class MainMenuUI : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         DeactivateUIPanels();
         loadingPanel.SetActive(false);
-
+        levelsPanel.SetActive(false);
     }
 
 
 
     public void PressPlayButton()
     {
-        StartCoroutine(StartGame());
+          levelsPanel.SetActive(true);
     }
 
-    IEnumerator StartGame()
+   public IEnumerator StartGame()
     {   
         audioManager.audioSource.Stop();
         audioManager.PlayTouchSoundEffect();
@@ -47,7 +49,7 @@ public class MainMenuUI : MonoBehaviour
         loadingText.text = "Loading...";
 
         yield return new WaitForSeconds(loadingPanelWaitTime);
-        gameManager.StartGame();
+       
          
     }
 
@@ -58,4 +60,6 @@ public class MainMenuUI : MonoBehaviour
             panels.SetActive(false);
         }
     }
+
+     
 }

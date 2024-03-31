@@ -10,7 +10,7 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] ParticleSystem towerShootingParticles;
 
     Transform target;
- BattleManager battleManager;
+    BattleManager battleManager;
  
       void Start()
     {

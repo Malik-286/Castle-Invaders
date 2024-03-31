@@ -99,9 +99,6 @@ public class BattleManager : MonoBehaviour
 
         loseAmountToReward = gameManager.GetCurrentSceneIndex() * Random.Range(5, 20);
 
-
-        Debug.Log("Here is the win rewarded amount : " + winAmountToReward + " and here is lose rewarded amount " + loseAmountToReward);
-
     }
 
     public void DestroyAllTowers()

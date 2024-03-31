@@ -42,5 +42,13 @@ public class PausePanel : MonoBehaviour
         }
     }
 
+    public void RestartGame()
+    {
+        if(gameManager != null)
+        {
+            // implement reload game logic here
+        }
+    }
+
 
 }

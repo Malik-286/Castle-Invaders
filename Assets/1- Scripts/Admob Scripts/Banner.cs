@@ -10,7 +10,7 @@ public class Banner : Singleton<Banner>
 #if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-1387627577986386/2885145995";
 #elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
+  private string _adUnitId = "ca-app-pub-1387627577986386/5807102043";
 #else
   private string _adUnitId = "unused";
 #endif

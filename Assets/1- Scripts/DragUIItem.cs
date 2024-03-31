@@ -30,7 +30,9 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         currencyManager = FindObjectOfType<CurrencyManager>();
         audioManager = FindObjectOfType<AudioManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
-     }
+    }
+
+   
  
     public void OnBeginDrag(PointerEventData data)
     {
@@ -101,7 +103,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (currencyManager.GetCurrentGold() <= 5)
         {
             Debug.Log("Not Enough Coins");
-            gamePlayUI.EnableShopPanel();
+             gamePlayUI.EnableShopPanel();
                        
             return;
         }
@@ -148,10 +150,6 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         else if (obj.CompareTag("Tower4"))
         {
             currencyManager.DecreaseGold(40);
-        }
-        else if (obj.CompareTag("Tower5"))
-        {
-            currencyManager.DecreaseGold(50);
         }
     }
 

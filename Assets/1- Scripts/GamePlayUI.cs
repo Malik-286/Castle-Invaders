@@ -49,7 +49,7 @@ public class GamePlayUI : MonoBehaviour
     [SerializeField] int totalPoolEnemies;
 
     [Header("Scene Startup Image")]
-    [SerializeField] Image sceneStartupImage;
+    [SerializeField] Image fadeImage;
 
     [Header("Pause Panel")]
     [SerializeField] GameObject pausePanel;
@@ -79,7 +79,7 @@ public class GamePlayUI : MonoBehaviour
         winPanel.SetActive(false);
 
 
-        sceneStartupImage.gameObject.SetActive(true);
+        fadeImage.gameObject.SetActive(true);
         StartCoroutine(FadeImageToTransparentWhite(1.5f));
 
     }
@@ -193,7 +193,7 @@ public class GamePlayUI : MonoBehaviour
     {
         shopPanel.SetActive(false);
     }
-
+    
     IEnumerator FadeImageToTransparentWhite(float fadeDuration)
     {
         Color startColor = Color.black;
@@ -203,15 +203,17 @@ public class GamePlayUI : MonoBehaviour
 
         while (elapsedTime < fadeDuration)
         {
-            sceneStartupImage.color = Color.Lerp(startColor, targetColor, elapsedTime / fadeDuration);
+            fadeImage.color = Color.Lerp(startColor, targetColor, elapsedTime / fadeDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-         sceneStartupImage.color = targetColor;
+        fadeImage.color = targetColor;
 
-         Destroy(sceneStartupImage, 2f);
+         Destroy(fadeImage.gameObject, 2f);
     }
+
+    
 
     public void PauseGame()
     {

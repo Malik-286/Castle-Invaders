@@ -10,9 +10,17 @@ public class ShopPanel : MonoBehaviour
     
     [SerializeField] GameObject purchaseFailedPanel;
     [SerializeField] GameObject purchasedSucessPanel;
- 
 
-     CurrencyManager currencyManager;
+    [SerializeField] TextMeshProUGUI starterPackTimeText;
+    [SerializeField] float toltalSeconds;
+
+    [SerializeField] GameObject starterPackButton;
+    const string starterPackPurchasedKey = "StarterPackPurchased";  
+
+
+
+
+    CurrencyManager currencyManager;
 
       const string starterPack_ProductID = "com.aspiregamesstudio.castleinvaders.starterpack";
       const string removeAds_ProductID = "com.aspiregamesstudio.castleinvaders.removeads";
@@ -35,10 +43,21 @@ public class ShopPanel : MonoBehaviour
         {
             this.adsStatus = "enabled";
         }
-
+        // Check if the starter pack has been purchased
+        if (PlayerPrefs.GetInt(starterPackPurchasedKey, 0) == 1)
+        {
+            // If purchased, disable the starter pack button
+            starterPackButton.SetActive(false);
+        }
         purchaseFailedPanel.SetActive(false);
         purchasedSucessPanel.SetActive(false);
         currencyManager = FindObjectOfType<CurrencyManager>();
+         
+    }
+
+     void Update()
+    {
+        StarterPackDealTimer();
     }
 
     public void OnPurchaseComplete(Product product)
@@ -55,8 +74,13 @@ public class ShopPanel : MonoBehaviour
             adsStatus = "disabled";
             PlayerPrefs.SetString("AdsStatusKey", adsStatus);
             currencyManager.SaveCurrencyData();
-            Debug.Log("Coins 500 has been added to you account with new balance of :"+currencyManager.GetCurrentGold());
             purchasedSucessPanel.SetActive(true);
+
+            // Mark the starter pack as purchased
+            PlayerPrefs.SetInt(starterPackPurchasedKey, 1);
+
+            // Disable the starter pack button
+            starterPackButton.SetActive(false);
         }
         else if (product.definition.id == coinsPack500_ProductID && currencyManager != null)
         {
@@ -99,4 +123,32 @@ public class ShopPanel : MonoBehaviour
         purchaseFailedPanel.SetActive(true);
     }
 
+
+    void StarterPackDealTimer()
+    {
+        // Load the saved time from PlayerPrefs
+        float savedTime = PlayerPrefs.GetFloat("StarterPackDealTime", toltalSeconds);
+
+        // Calculate the remaining time
+        float remainingTime = savedTime - Time.deltaTime;
+
+        // Check if the remaining time is less than or equal to 0
+        if (remainingTime <= 0)
+        {
+            // Reset remaining time to default (50 minutes)
+            remainingTime = toltalSeconds;
+      
+        }
+
+        // Save the remaining time back to PlayerPrefs
+        PlayerPrefs.SetFloat("StarterPackDealTime", remainingTime);
+
+        // Convert remaining time to hours, minutes, and seconds
+        int hours = (int)(remainingTime / 3600);
+        int minutes = (int)((remainingTime % 3600) / 60);
+        int seconds = (int)(remainingTime % 60);
+
+        // Update the text to display remaining time
+        starterPackTimeText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+    }
 }

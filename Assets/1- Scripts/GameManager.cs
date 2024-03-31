@@ -6,30 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
 
-
-    GamePlayUI gamePlayUI;
  
-
     protected override void Awake()
     {
         base.Awake();
                 
     }
+ 
 
-    void Start()
-    {
-        gamePlayUI = FindObjectOfType<GamePlayUI>();
-     }
-
-
-    
-   
-
-
-    public void StartGame()
-    {    
-         SceneManager.LoadScene(2);           
-    }
 
     public void LoadScene(int index)
     {

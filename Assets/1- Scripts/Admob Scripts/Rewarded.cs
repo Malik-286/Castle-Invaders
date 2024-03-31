@@ -10,7 +10,7 @@ public class Rewarded : MonoBehaviour
  #if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-1387627577986386/9790864494";
 #elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
+  private string _adUnitId = "ca-app-pub-1387627577986386/3453870059";
 #else
   private string _adUnitId = "unused";
 #endif

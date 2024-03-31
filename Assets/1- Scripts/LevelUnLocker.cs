@@ -6,23 +6,24 @@ using UnityEngine.UI;
 
 public class LevelUnLocker : MonoBehaviour
 {
-    // chnage the level to 2 after making loading slider
-    [SerializeField] int defaultInLockLevel = 0;
+   
+    [SerializeField] int defaultInLockLevelNumber = 2;
 
 
     [SerializeField] Button[] levelsButton;
     [SerializeField] Image[] lockedImages;
 
-
     GameManager gameManager;
- 
+    MainMenuUI mainMenuUI;
+
     void Start()
-    {   
+    {
+        mainMenuUI = FindObjectOfType<MainMenuUI>();
         gameManager = FindObjectOfType<GameManager>();
 
 
 
-        UnlockLevel(defaultInLockLevel);
+        UnlockLevel(defaultInLockLevelNumber);
        
 
         for (int i = 0; i < levelsButton.Length; i++)
@@ -58,10 +59,22 @@ public class LevelUnLocker : MonoBehaviour
 
     public void LoadLevel(int levelToLoad)
     {
-        if(gameManager != null)
+        
+        mainMenuUI.StartCoroutine(mainMenuUI.StartGame());
+        StartCoroutine(LoadScene(levelToLoad));
+        
+    }
+
+    IEnumerator LoadScene(int index)
+    {
+        yield return new WaitForSeconds(1.3f);
+        if (gameManager != null)
         {
-            gameManager.LoadScene(levelToLoad);
+            gameManager.LoadScene(index);
         }
     }
+
+ 
+ 
 }
 

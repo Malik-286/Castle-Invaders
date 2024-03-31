@@ -24,6 +24,11 @@ public class WinPanel : MonoBehaviour
         battleManager.RewardPlayerForWin();
         battleManager.DestroyAllTowers();
         gamePlayUI.DisableTowersPanel();
+
+        int nextLevelToUnlock = gameManager.GetCurrentSceneIndex()-1;
+        PlayerPrefs.SetInt("Level" + nextLevelToUnlock, 1);
+        PlayerPrefs.Save();
+        Debug.Log("New Level: "+ nextLevelToUnlock + " has been unlocked." );
     }
 
     public void LoadNextLevel()
@@ -37,5 +42,7 @@ public class WinPanel : MonoBehaviour
     {
         gameManager.LoadScene(1);
     }
+
+ 
 
 }
