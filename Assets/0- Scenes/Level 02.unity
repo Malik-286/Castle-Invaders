@@ -5049,6 +5049,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 367247660}
     m_Modifications:
+    - target: {fileID: 1905971412751044374, guid: 47c2d20e300f2e445b3a1df670deb2c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1882966715}
+    - target: {fileID: 1905971412751044374, guid: 47c2d20e300f2e445b3a1df670deb2c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 2478879032396108973, guid: 47c2d20e300f2e445b3a1df670deb2c9, type: 3}
       propertyPath: m_Name
       value: Currency Panel
