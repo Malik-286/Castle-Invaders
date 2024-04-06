@@ -22,7 +22,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     CurrencyManager currencyManager;
     AudioManager audioManager;
     GamePlayUI gamePlayUI;
-  
+   
     void Start()
     {
         mOriginalPosition = UIDragElement.localPosition;
@@ -113,9 +113,12 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Debug.Log("No prefab to instantiate");
             return;
         }
+       
 
         if (PositionWithinCell(position))
-        {         
+        {
+ 
+
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
             Destroy(obj, 15f);
             SpendGold(obj);

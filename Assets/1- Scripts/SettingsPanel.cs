@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class SettingsPanel : MonoBehaviour
 {
+    string fbURL = "https://www.facebook.com/profile.php?viewas=100000686899395&id=61556956161259";
+    string xURL = "https://twitter.com/aspiregames2024";
+    string youTubeURL = "https://www.youtube.com/@aspiregames286";
+    string discoedURL = "https://discord.gg/bMmsU8k8";
 
     [SerializeField] Slider volumeSwitch;
     [SerializeField] Slider musicSwitch;
@@ -52,4 +56,23 @@ public class SettingsPanel : MonoBehaviour
 
 
 
+    public void OpenFBPage()
+    {
+        Application.OpenURL(fbURL);
+    }
+
+    public void OpenYoutubeChannel()
+    {
+        Application.OpenURL(youTubeURL);
+    }
+
+    public void OpenXPage()
+    {
+        Application.OpenURL(xURL);
+    }
+
+    public void OpenDircordPage()
+    {
+        Application.OpenURL(discoedURL);
+    }
 }
