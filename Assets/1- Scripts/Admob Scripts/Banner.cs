@@ -1,11 +1,13 @@
-using GoogleMobileAds.Api;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds;
+using GoogleMobileAds.Api;
+using System;
 
-public class Banner : Singleton<Banner>  
+public class Banner : MonoBehaviour
 {
+ 
 
 #if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-1387627577986386/2885145995";
@@ -16,38 +18,21 @@ public class Banner : Singleton<Banner>
 #endif
 
 
+
+
     BannerView _bannerView;
 
-    protected override void Awake()
+
+
+    public void Start()
     {
-        base.Awake();
+      
+        MobileAds.Initialize((InitializationStatus initStatus) => { });    
+        LoadAd();
     }
 
 
-      void Start()
-    {
-        CheckAdsStatus();
-    }
 
-    void CheckAdsStatus()
-    {
-        if (PlayerPrefs.GetString("AdsStatusKey") == "disabled")
-        {
-            Debug.Log("Cant show ads becasuse ads are disabled with purchase.");
-            return;
-        }
-        else
-        {
-            MobileAds.Initialize((InitializationStatus initStatus) => { });
-            CreateBannerView();
-            LoadAd();
-            
-        }
-        
-    }
-
-
- 
     public void CreateBannerView()
     {
         Debug.Log("Creating banner view");
@@ -60,7 +45,7 @@ public class Banner : Singleton<Banner>
 
         // Create a 320x50 banner at top of the screen
         _bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
-        LoadAd();
+        
     }
 
   
@@ -82,7 +67,6 @@ public class Banner : Singleton<Banner>
     }
 
 
- 
     public void DestroyBannerView()
     {
         if (_bannerView != null)
@@ -92,7 +76,6 @@ public class Banner : Singleton<Banner>
             _bannerView = null;
         }
     }
-
  
 
 
@@ -138,6 +121,8 @@ public class Banner : Singleton<Banner>
             Debug.Log("Banner view full screen content closed.");
         };
     }
+ 
+ 
 
 
 }

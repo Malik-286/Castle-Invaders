@@ -1,13 +1,15 @@
-using GoogleMobileAds.Api;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds;
+using GoogleMobileAds.Api;
+using System;
 
-public class Interstitial : Singleton<Interstitial>
+public class Interstitial : MonoBehaviour
 {
 
-    public float firstLoad, secondLoad;
+    InterstitialAd _interstitialAd;
+
 
 #if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-1387627577986386/3116246139";
@@ -18,34 +20,16 @@ public class Interstitial : Singleton<Interstitial>
 #endif
 
 
-
-    InterstitialAd _interstitialAd;
-
-    protected override void Awake()
+    public void Start()
     {
-        base.Awake();
+         MobileAds.Initialize((InitializationStatus initStatus) =>  {});
+         LoadInterstitialAd();
+         ShowInterstitialAd();
     }
 
-    void Start()
-    {
-          InvokeRepeating("CheckAdsStatus", firstLoad,secondLoad);
-    }
 
-    void CheckAdsStatus()
-    {
-        if (PlayerPrefs.GetString("AdsStatusKey") == "disabled")
-        {
-            Debug.Log("Cant show ads becasuse ads are disabled with purchase.");
-            return;
-        }
-        else
-        {
-            MobileAds.Initialize((InitializationStatus initStatus) => { });
-            LoadInterstitialAd();
-        
-        }
 
-    }
+     
 
     public void LoadInterstitialAd()
     {
@@ -78,11 +62,8 @@ public class Interstitial : Singleton<Interstitial>
 
                 _interstitialAd = ad;
                 ShowInterstitialAd();
-                
-                
             });
     }
-
  
     public void ShowInterstitialAd()
     {
@@ -92,16 +73,17 @@ public class Interstitial : Singleton<Interstitial>
             _interstitialAd.Show();
             RegisterEventHandlers(_interstitialAd);
             RegisterReloadHandler(_interstitialAd);
-         }
+        }
         else
         {
             Debug.LogError("Interstitial ad is not ready yet.");
         }
     }
 
-      void RegisterEventHandlers(InterstitialAd interstitialAd)
+    private void RegisterEventHandlers(InterstitialAd interstitialAd)
     {
-         interstitialAd.OnAdPaid += (AdValue adValue) =>
+        // Raised when the ad is estimated to have earned money.
+        interstitialAd.OnAdPaid += (AdValue adValue) =>
         {
             Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
                 adValue.Value,
@@ -155,4 +137,5 @@ public class Interstitial : Singleton<Interstitial>
             LoadInterstitialAd();
         };
     }
+
 }

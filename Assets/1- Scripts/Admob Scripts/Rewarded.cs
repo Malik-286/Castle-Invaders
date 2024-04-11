@@ -1,13 +1,15 @@
-using GoogleMobileAds.Api;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds;
+using GoogleMobileAds.Api;
+using System;
+
 
 public class Rewarded : MonoBehaviour
 {
 
- #if UNITY_ANDROID
+#if UNITY_ANDROID
     private string _adUnitId = "ca-app-pub-1387627577986386/9790864494";
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-1387627577986386/3453870059";
@@ -15,21 +17,20 @@ public class Rewarded : MonoBehaviour
   private string _adUnitId = "unused";
 #endif
 
+
+
     RewardedAd rewardedAd;
     CurrencyManager currencyManager;
-    AudioManager audioManager;
+
 
     public void Start()
     {
-        MobileAds.Initialize((InitializationStatus initStatus) => { });
-        LoadRewardedAd();
+         MobileAds.Initialize((InitializationStatus initStatus) => { });
         currencyManager = FindObjectOfType<CurrencyManager>();
-        audioManager = FindObjectOfType<AudioManager>();
-       
+         LoadRewardedAd();
     }
 
  
-
     public void LoadRewardedAd()
     {
         // Clean up the old ad before loading a new one.
@@ -63,6 +64,7 @@ public class Rewarded : MonoBehaviour
             });
     }
 
+
     public void ShowRewardedAd()
     {
        
@@ -70,19 +72,17 @@ public class Rewarded : MonoBehaviour
         {
             rewardedAd.Show((Reward reward) =>
             {
-                // Rewarding the user
-                currencyManager.IncreaseGold(100);
-                currencyManager.SaveCurrencyData();
-                if (audioManager != null)
+                // TODO: Reward the user.
+
+                if (currencyManager != null)
                 {
-                    audioManager.PlayCoinsCollectionSoundEffect();
-                    
+                    currencyManager.IncreaseGold(100);
+                    currencyManager.SaveCurrencyData();
+
+                    RegisterEventHandlers(rewardedAd);
+                    RegisterReloadHandler(rewardedAd);
                 }
-
             });
-
-            RegisterEventHandlers(rewardedAd);
-            RegisterReloadHandler(rewardedAd);
         }
     }
 

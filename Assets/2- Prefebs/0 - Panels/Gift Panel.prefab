@@ -1955,9 +1955,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 679052474883538133}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
-        m_MethodName: LoadAd
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Rewarded, Assembly-CSharp
+        m_MethodName: LoadRewardedAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1967,9 +1967,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 679052474883538133}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
-        m_MethodName: ShowAd
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Rewarded, Assembly-CSharp
+        m_MethodName: ShowRewardedAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2332,7 +2332,6 @@ GameObject:
   - component: {fileID: 4531238219033710789}
   - component: {fileID: 6911580769624816807}
   - component: {fileID: 1333746766200189903}
-  - component: {fileID: 679052474883538133}
   m_Layer: 5
   m_Name: Gift Panel
   m_TagString: Untagged
@@ -2460,21 +2459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCountText: {fileID: 0}
   coinsAnimationPanel: {fileID: 8693242442062843843}
---- !u!114 &679052474883538133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5582809246173719764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b9b0c1c00a187e4aa62680a010c8758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showAdButton: {fileID: 5016978431163184326}
-  _androidAdUnitId: Rewarded_Android
-  _iOSAdUnitId: Rewarded_iOS
 --- !u!1 &5702850975753149618
 GameObject:
   m_ObjectHideFlags: 0
