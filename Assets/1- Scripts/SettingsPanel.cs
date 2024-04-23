@@ -10,6 +10,12 @@ public class SettingsPanel : MonoBehaviour
     string youTubeURL = "https://www.youtube.com/@aspiregames286";
     string discoedURL = "https://discord.gg/bMmsU8k8";
 
+
+
+    string privayPolicyUrl = "https://sites.google.com/view/castle-invaders-privacy-policy/home?read_current=1";
+    string appstoreUrl = "https://apps.apple.com/app/castle-invaders/id6480585969";
+    string googlePlayStoreUrl = "https://play.google.com/store/apps/details?id=com.AspireGamesStudio.CastleInvaders&pcampaignid=web_share";
+
     [SerializeField] Slider volumeSwitch;
     [SerializeField] Slider musicSwitch;
  
@@ -74,5 +80,19 @@ public class SettingsPanel : MonoBehaviour
     public void OpenDircordPage()
     {
         Application.OpenURL(discoedURL);
+    }
+
+
+    public void ViewPrivacyPolicy()
+    {
+        Application.OpenURL(privayPolicyUrl);
+    }
+     
+
+    public void RateUs()
+    {
+        // start logicv here 
+        Application.OpenURL(googlePlayStoreUrl);
+        Application.OpenURL(appstoreUrl);
     }
 }

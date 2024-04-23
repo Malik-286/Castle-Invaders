@@ -6,6 +6,8 @@ using UnityEngine.Purchasing;
 
 public class ShopPanel : MonoBehaviour
 {
+
+    [SerializeField] GameObject restoreButton;
    
     
     [SerializeField] GameObject purchaseFailedPanel;
@@ -38,6 +40,9 @@ public class ShopPanel : MonoBehaviour
 
     void Awake()
     {
+
+        CheckRestoreButton();
+
         adsStatus = PlayerPrefs.GetString("AdsStatusKey");
         if(adsStatus == string.Empty)
         {
@@ -53,6 +58,15 @@ public class ShopPanel : MonoBehaviour
         purchasedSucessPanel.SetActive(false);
         currencyManager = FindObjectOfType<CurrencyManager>();
          
+    }
+
+
+    void CheckRestoreButton()
+    {
+        if(Application.platform != RuntimePlatform.IPhonePlayer)
+        {
+            restoreButton.SetActive(false);
+        }
     }
 
      void Update()

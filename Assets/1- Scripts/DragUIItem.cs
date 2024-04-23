@@ -148,12 +148,9 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         else if(obj.CompareTag("Tower3"))
         {
-            currencyManager.DecreaseGold(30);
+            currencyManager.DecreaseGold(50);
         }
-        else if (obj.CompareTag("Tower4"))
-        {
-            currencyManager.DecreaseGold(40);
-        }
+    
     }
 
 
@@ -164,8 +161,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||
-                colliders[i].CompareTag("Tower3") || colliders[i].CompareTag("Tower4") || colliders[i].CompareTag("Tower5"))
+            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||  colliders[i].CompareTag("Tower3"))
             {
                 Debug.Log("Cannot place tower here, space is occupied by another tower.");
                 return;

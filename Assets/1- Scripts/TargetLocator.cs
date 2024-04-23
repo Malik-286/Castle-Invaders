@@ -10,25 +10,40 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] ParticleSystem towerShootingParticles;
 
     Transform target;
-    BattleManager battleManager;
- 
-      void Start()
-    {
- 
-        battleManager = FindObjectOfType<BattleManager>();
-    }
+
 
 
     void Update()
     {
-        
+
         FindClosestTarget();
         AimWeapon();
-      
+        if (this.gameObject.CompareTag("Tower3"))
+        {
+            CheckIfAnyEnemyisAlive();
+        }
+
     }
 
 
-
+    public void CheckIfAnyEnemyisAlive()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length > 0)
+        {
+            // Enemies are present, start emitting particles
+            if (!towerShootingParticles.isPlaying)
+                towerShootingParticles.Play();
+            Debug.Log("There are enemies");
+        }
+        else
+        {
+            // No enemies, stop emitting particles
+            if (towerShootingParticles.isPlaying)
+                towerShootingParticles.Stop();
+            Debug.Log("There are no enemies");
+        }
+    }
 
     void FindClosestTarget()
     {
@@ -51,7 +66,7 @@ public class TargetLocater : MonoBehaviour
         }
 
         target = closestTarget;
-       
+
 
 
     }
@@ -66,14 +81,14 @@ public class TargetLocater : MonoBehaviour
         }
 
         float targetDistance = Vector3.Distance(transform.position, target.position);
-  
+
 
         weapon.transform.LookAt(target);
 
         if (targetDistance < range)
         {
             Attack(true); // Target within range, start shooting
-         }
+        }
         else if (targetDistance > range)
         {
             Attack(false); // Target out of range, stop shooting
@@ -101,12 +116,11 @@ public class TargetLocater : MonoBehaviour
 
     void OnDrawGizmos()
     {
-         Gizmos.color = Color.green;
- 
+        Gizmos.color = Color.green;
+
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
 }
-
 
 
