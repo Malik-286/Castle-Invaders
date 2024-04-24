@@ -162,12 +162,10 @@ public class GamePlayUI : MonoBehaviour
         yield return new WaitForSeconds(3);
         bool isActivated = false;
         if(winPanel != null && isActivated == false)
-        {
-           
+        {        
             winPanel.SetActive(true);
             isActivated = true;
-            winParticles.SetActive(true);
-           
+            winParticles.SetActive(true);        
         }
          
     }

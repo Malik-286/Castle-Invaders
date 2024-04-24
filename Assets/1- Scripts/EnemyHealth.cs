@@ -15,6 +15,9 @@ public class EnemyHealth : MonoBehaviour
     CurrencyManager currencyManager;
     GamePlayUI gamePlayUI;
     PlayerCastleHealth playerHealth;
+
+    bool isDeathCountIncreased = false;
+
     void OnEnable()
     {
         currentHealthPoints = maxHealthPoints;
@@ -39,9 +42,14 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealthPoints <= 0)
         {
             maxHealthPoints += difficultyRamp;
-            gamePlayUI.enemiesKillsCout++;
+            
             currencyManager.IncreaseGold(5);
             deathParticles.SetActive(true);
+            if (isDeathCountIncreased == false)
+            {
+                gamePlayUI.enemiesKillsCout++;
+                isDeathCountIncreased = true;
+            }
             Destroy(gameObject, 0.1f);
         }
          
