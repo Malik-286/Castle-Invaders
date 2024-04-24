@@ -21,6 +21,17 @@ public class CurrencyPanel : MonoBehaviour
 
     void UpdateCurrencyText()
     {
-        currencyText.text  = currencyManager.GetCurrentGold().ToString();
+
+        int currentGold = currencyManager.GetCurrentGold();
+
+        if (currentGold >= 1000)
+        {
+            float goldInK = currentGold / 1000f;
+            currencyText.text = goldInK.ToString("0.#") + "k";
+        }
+        else
+        {
+            currencyText.text = currentGold.ToString();
+        }
     }
 }
