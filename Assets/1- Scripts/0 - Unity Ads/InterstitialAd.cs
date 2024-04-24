@@ -10,12 +10,20 @@ public class InterstitialAd : Singleton<InterstitialAd>, IUnityAdsLoadListener, 
     protected override void Awake()
     {
         base.Awake();
-        // Get the Ad Unit ID for the current platform:
-        _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
-            ? _iOsAdUnitId
-            : _androidAdUnitId;
 
-        InvokeRepeating("LoadAd",45f,50f);   
+        if (PlayerPrefs.GetString("AdsStatusKey") == "disabled")
+        {
+            return;
+        }
+        else
+        {
+            _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
+                 ? _iOsAdUnitId
+                 : _androidAdUnitId;
+
+            InvokeRepeating("LoadAd", 45f, 50f);
+
+        }
     }
 
     // Load content to the Ad Unit:

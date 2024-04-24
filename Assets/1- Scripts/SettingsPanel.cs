@@ -17,8 +17,7 @@ public class SettingsPanel : MonoBehaviour
     string googlePlayStoreUrl = "https://play.google.com/store/apps/details?id=com.AspireGamesStudio.CastleInvaders&pcampaignid=web_share";
 
     [SerializeField] Slider volumeSwitch;
-    [SerializeField] Slider musicSwitch;
- 
+  
 
     AudioManager audioManager;
      void Start()
@@ -43,24 +42,7 @@ public class SettingsPanel : MonoBehaviour
         }
     }
 
-    public void EnableOrDisableMusic()
-    {
-        if (audioManager != null)
-        {
-            if (musicSwitch.value == 1)
-            {
-                audioManager.audioSource.mute = true;
-            }
-            else if (musicSwitch.value == 0)
-            {
-                audioManager.audioSource.mute = false;
-            }
-
-        }
-
-    }
-
-
+ 
 
     public void OpenFBPage()
     {
@@ -87,12 +69,21 @@ public class SettingsPanel : MonoBehaviour
     {
         Application.OpenURL(privayPolicyUrl);
     }
-     
+
 
     public void RateUs()
     {
-        // start logicv here 
-        Application.OpenURL(googlePlayStoreUrl);
-        Application.OpenURL(appstoreUrl);
+        if (Application.platform != RuntimePlatform.IPhonePlayer)
+        {
+            // Open Google Play Store URL
+            Application.OpenURL(googlePlayStoreUrl);
+        }
+        else
+        {
+            // Open Apple App Store URL
+            Application.OpenURL(appstoreUrl);
+        }
     }
+
+
 }
