@@ -9,7 +9,7 @@ public class Banner : Singleton<Banner>
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-1387627577986386/5807102043";
 #else
-  private string _adUnitId = "unused";
+    private string _adUnitId = "unused";
 #endif
 
 

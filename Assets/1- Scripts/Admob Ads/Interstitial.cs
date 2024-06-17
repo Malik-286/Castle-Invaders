@@ -9,7 +9,7 @@ public class Interstitial : Singleton<Interstitial>
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-1387627577986386/3689673771";
 #else
-  private string _adUnitId = "unused";
+    private string _adUnitId = "unused";
 #endif
 
 
@@ -27,8 +27,11 @@ public class Interstitial : Singleton<Interstitial>
         else
         {
             MobileAds.Initialize((InitializationStatus initStatus) => { });
-            InvokeRepeating("LoadInterstitialAd", 30f, 30f);
-        }
+         }
+    }
+    void Start()
+    {
+        InvokeRepeating(nameof(LoadInterstitialAd), 40.0f, 70.0f);
     }
 
 

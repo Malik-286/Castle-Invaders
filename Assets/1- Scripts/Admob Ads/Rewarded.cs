@@ -20,11 +20,18 @@ public class Rewarded : MonoBehaviour
     RewardedAd rewardedAd;
     CurrencyManager currencyManager;
 
+
+    void Awake()
+    {
+        currencyManager = FindObjectOfType<CurrencyManager>();
+
+    }
+
     public void Start()
     {
          MobileAds.Initialize((InitializationStatus initStatus) => {  });
-         currencyManager = FindObjectOfType<CurrencyManager>();
          LoadRewardedAd();
+         
     }
 
     public void LoadRewardedAd()

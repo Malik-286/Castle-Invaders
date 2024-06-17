@@ -8,9 +8,9 @@ public class PausePanel : MonoBehaviour
 
     GameObject towersPanel;
     GameManager gameManager;
-     void Start()
+    void Start()
     {
-         
+
         towersPanel = GameObject.FindGameObjectWithTag("TowersPanel");
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -39,16 +39,17 @@ public class PausePanel : MonoBehaviour
         if(gameManager != null)
         {
             gameManager.LoadScene(1);
-        }
+        }     
     }
 
     public void RestartGame()
     {
         if(gameManager != null)
         {
-            // implement reload game logic here
+            int currentSceneIndex = gameManager.GetCurrentSceneIndex();
+            gameManager.LoadScene(currentSceneIndex);
+          
         }
     }
-
 
 }

@@ -12,11 +12,12 @@ public class DeathPanel : MonoBehaviour
  
     GameManager gameManager;
     BattleManager battleManager;
+ 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         battleManager = FindObjectOfType<BattleManager>();
-
+ 
         deathRewardText.text = battleManager.loseAmountToReward.ToString() + " Coins";
         battleManager.RewardPlayerForLose();
         battleManager.DestroyAllTowers();
@@ -25,12 +26,15 @@ public class DeathPanel : MonoBehaviour
 
     public void PlayAgain()
     {
+       
         gameManager.RestartCurrentLevel();
+      
     }
 
     public void GoToMainMenu()
     {
-        gameManager.LoadScene(0);
+        
+        gameManager.LoadScene(0);   
     }
 
     
