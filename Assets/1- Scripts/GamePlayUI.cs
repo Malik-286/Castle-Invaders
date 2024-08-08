@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GamePlayUI : MonoBehaviour
 {
-
+    public static GamePlayUI Instance;
 
     [SerializeField] TextMeshProUGUI currentLevelText;
 
@@ -59,10 +59,16 @@ public class GamePlayUI : MonoBehaviour
 
     GameManager gameManager;
     AudioManager audioManager;
- 
+    public GameObject Maincamera;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
- 
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.GetComponent<AudioSource>().enabled = true;
         gameManager = FindObjectOfType<GameManager>();

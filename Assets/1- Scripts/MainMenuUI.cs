@@ -33,9 +33,12 @@ public class MainMenuUI : MonoBehaviour
     }
 
    public IEnumerator StartGame()
-    {   
-        audioManager.audioSource.Stop();
-        audioManager.PlayTouchSoundEffect();
+    {
+        if (audioManager.audioSource)
+        {
+            audioManager.audioSource.Stop();
+            audioManager.PlayTouchSoundEffect();
+        }
         loadingPanel.SetActive(true);
 
         yield return new WaitForSeconds(0.2f);

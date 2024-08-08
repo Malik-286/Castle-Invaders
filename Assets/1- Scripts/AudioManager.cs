@@ -5,6 +5,11 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 {
 
+    [Header("Main Audio Source")]
+
+    public AudioSource audioSource;
+
+
     [SerializeField] AudioClip touchSFX;
     [SerializeField] AudioClip destroySFX;
     [SerializeField] AudioClip winSFX;
@@ -16,9 +21,6 @@ public class AudioManager : Singleton<AudioManager>
 
 
 
-
-    [HideInInspector]
-   public AudioSource audioSource;
   
 
 
@@ -29,7 +31,7 @@ public class AudioManager : Singleton<AudioManager>
 
       void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = this.gameObject.GetComponent<AudioSource>();
   
     }
 

@@ -31,7 +31,7 @@ public class Interstitial : Singleton<Interstitial>
     }
     void Start()
     {
-        InvokeRepeating(nameof(LoadInterstitialAd), 40.0f, 70.0f);
+        //InvokeRepeating(nameof(LoadInterstitialAd), 40.0f, 70.0f);
     }
 
 

@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject deathParticles;
 
 
-
+    public HealthFiller HealthFillReference;
     CurrencyManager currencyManager;
     GamePlayUI gamePlayUI;
     PlayerCastleHealth playerHealth;
@@ -31,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         playerHealth = FindObjectOfType<PlayerCastleHealth>();
         deathParticles.SetActive(false);
  
+        HealthFillReference.setMAXHealth(maxHealthPoints);
     }
 
 
@@ -38,7 +39,7 @@ public class EnemyHealth : MonoBehaviour
     void ProcessHit()
     {
         currentHealthPoints--;
-
+        HealthFillReference.SetHealth(currentHealthPoints);
         if (currentHealthPoints <= 0)
         {
             maxHealthPoints += difficultyRamp;
