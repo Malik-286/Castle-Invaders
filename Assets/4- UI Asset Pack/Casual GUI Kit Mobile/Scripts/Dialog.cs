@@ -11,7 +11,6 @@ namespace hardartcore.CasualGUI
     {
         public float AnimDuration = 0.2f;
         public GameObject DialogContent;
-        public TextMeshProUGUI gameVersionText;
 
         public void ShowDialog()
         {
@@ -20,7 +19,6 @@ namespace hardartcore.CasualGUI
             DialogContent.transform.localScale = Vector3.zero;
             DialogContent.SetActive(true);
             DialogContent.transform.DOScale(Vector3.one, AnimDuration);
-            gameVersionText.text = Application.version;
         }
 
         public void HideDialog()
