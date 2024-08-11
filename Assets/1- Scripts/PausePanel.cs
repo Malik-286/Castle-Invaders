@@ -1,3 +1,4 @@
+using hardartcore.CasualGUI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,11 @@ public class PausePanel : MonoBehaviour
 
 
     GameObject towersPanel;
-    GameManager gameManager;
-    void Start()
+     void Start()
     {
 
         towersPanel = GameObject.FindGameObjectWithTag("TowersPanel");
-        gameManager = FindObjectOfType<GameManager>();
-    }
+     }
 
 
 
@@ -21,7 +20,11 @@ public class PausePanel : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
         {
-            towersPanel.SetActive(false);
+            if(towersPanel != null)
+            {
+                towersPanel.SetActive(false);
+            }
+            
         }
     }
 
@@ -29,25 +32,28 @@ public class PausePanel : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1.0f;
-        towersPanel.SetActive(true);
-        gameObject.SetActive(false);
+        if (towersPanel != null)
+        {
+            towersPanel.SetActive(true);
+        }
+         gameObject.GetComponent<Dialog>().HideDialog();
          
     }
 
     public void GoToMianMenu()
     {
-        if(gameManager != null)
+        if(GameManager.Instance != null)
         {
-            gameManager.LoadScene(1);
+            GameManager.Instance.LoadScene(0);
         }     
     }
 
     public void RestartGame()
     {
-        if(gameManager != null)
+        if(GameManager.Instance != null)
         {
-            int currentSceneIndex = gameManager.GetCurrentSceneIndex();
-            gameManager.LoadScene(currentSceneIndex);
+            int currentSceneIndex = GameManager.Instance.GetCurrentSceneIndex();
+            GameManager.Instance.LoadScene(currentSceneIndex);
           
         }
     }

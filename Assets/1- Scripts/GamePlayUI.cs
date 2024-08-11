@@ -1,3 +1,4 @@
+using hardartcore.CasualGUI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -223,8 +224,8 @@ public class GamePlayUI : MonoBehaviour
 
     public void PauseGame()
     {
-        pausePanel.SetActive(true);
-        Time.timeScale = 0.0f;       
+        pausePanel.GetComponent<Dialog>().ShowDialog();
+        StartCoroutine(StopGame());  
     }
 
     void FixTimeToZero()
@@ -234,5 +235,11 @@ public class GamePlayUI : MonoBehaviour
             timeText.text = ("00:00");
         }
         
+    }
+
+    IEnumerator StopGame()
+    {
+        yield return new WaitForSeconds(0.50f);
+        Time.timeScale = 0.0f;
     }
 }

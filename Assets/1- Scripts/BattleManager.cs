@@ -10,10 +10,8 @@ public class BattleManager : MonoBehaviour
     GamePlayUI gamePlayUI;
     ObjectPool[] objectPools;
     GameManager gameManager;
-    CurrencyManager currencyManager;
-    PlayerCastleHealth playerCastleHealth;
-    AudioManager audioManager;
-  
+     PlayerCastleHealth playerCastleHealth;
+   
     public int winAmountToReward, loseAmountToReward;
   
 
@@ -23,9 +21,7 @@ public class BattleManager : MonoBehaviour
         objectPools = FindObjectsOfType<ObjectPool>();
         gameManager = FindObjectOfType<GameManager>();
         playerCastleHealth = FindObjectOfType<PlayerCastleHealth>();
-        currencyManager = FindObjectOfType<CurrencyManager>();
-        audioManager = FindObjectOfType<AudioManager>();
-  
+   
          CalculateRewardAmounts();
  
 
@@ -81,16 +77,16 @@ public class BattleManager : MonoBehaviour
     public int RewardPlayerForWin()
     {
         
-        currencyManager.IncreaseGold(winAmountToReward); 
-        currencyManager.SaveCurrencyData();
+        CurrencyManager.Instance.IncreaseGold(winAmountToReward);
+        CurrencyManager.Instance.SaveCurrencyData();
         Debug.Log("Player has been rewarded with " + winAmountToReward + "as battle winner");   
         return winAmountToReward;
         
     }
     public int RewardPlayerForLose()
-    {       
-        currencyManager.IncreaseGold(loseAmountToReward);
-        currencyManager.SaveCurrencyData();
+    {
+        CurrencyManager.Instance.IncreaseGold(loseAmountToReward);
+        CurrencyManager.Instance.SaveCurrencyData();
         Debug.Log("Player has been rewarded with " + loseAmountToReward + "as battle loser");
         return loseAmountToReward;
 
@@ -107,7 +103,7 @@ public class BattleManager : MonoBehaviour
 
     public void DestroyAllTowers()
     {
-         audioManager.audioSource.Stop();
+         AudioManager.Instance.audioSource.Stop();
          TargetLocater[] towers = FindObjectsOfType<TargetLocater>();
 
          foreach (TargetLocater tower in towers)
