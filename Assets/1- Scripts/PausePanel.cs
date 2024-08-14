@@ -2,9 +2,14 @@ using hardartcore.CasualGUI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
 {
+
+    [SerializeField] Image muteButtonImage;
+    [SerializeField] Sprite muteSprite;
+    [SerializeField] Sprite UnmuteSprite;
 
 
     GameObject towersPanel;
@@ -16,26 +21,10 @@ public class PausePanel : MonoBehaviour
 
 
 
-    void Update()
-    {
-        if (gameObject.activeInHierarchy)
-        {
-            if(towersPanel != null)
-            {
-                towersPanel.SetActive(false);
-            }
-            
-        }
-    }
-
-
     public void ResumeGame()
     {
         Time.timeScale = 1.0f;
-        if (towersPanel != null)
-        {
-            towersPanel.SetActive(true);
-        }
+     
          gameObject.GetComponent<Dialog>().HideDialog();
          
     }
@@ -55,6 +44,25 @@ public class PausePanel : MonoBehaviour
             int currentSceneIndex = GameManager.Instance.GetCurrentSceneIndex();
             GameManager.Instance.LoadScene(currentSceneIndex);
           
+        }
+    }
+
+
+    public void MuteAndUnMuteAudio()
+    {
+        if(AudioManager.Instance != null)
+        {
+            if(AudioManager.Instance.audioSource.mute == true)
+            {
+
+                AudioManager.Instance.audioSource.mute = false;
+                muteButtonImage.sprite = UnmuteSprite;
+            }
+            else if(AudioManager.Instance.audioSource.mute == false)
+            {
+                AudioManager.Instance.audioSource.mute = true;
+                muteButtonImage.sprite = muteSprite;
+            }
         }
     }
 

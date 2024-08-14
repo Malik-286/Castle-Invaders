@@ -239,7 +239,7 @@ public class GamePlayUI : MonoBehaviour
 
     IEnumerator StopGame()
     {
-        yield return new WaitForSeconds(0.50f);
+        yield return new WaitForSeconds(0.30f);
         Time.timeScale = 0.0f;
     }
 }
