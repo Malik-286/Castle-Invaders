@@ -61,12 +61,13 @@ public class GamePlayUI : MonoBehaviour
     GameManager gameManager;
     AudioManager audioManager;
     public GameObject Maincamera;
-    private void Awake()
+      void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+        Time.timeScale = 1.0f;
     }
     void Start()
     {

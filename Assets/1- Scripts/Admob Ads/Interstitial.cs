@@ -31,9 +31,9 @@ public class Interstitial : Singleton<Interstitial>
     }
     void Start()
     {
-        //InvokeRepeating(nameof(LoadInterstitialAd), 40.0f, 70.0f);
+        LoadInterstitialAd();
     }
-
+    
 
     public void LoadInterstitialAd()
     {
@@ -65,12 +65,10 @@ public class Interstitial : Singleton<Interstitial>
                           + ad.GetResponseInfo());
 
                 interstitialAd = ad;
-                ShowInterstitialAd();
-                RegisterEventHandlers(ad);
-                RegisterReloadHandler(ad);
+            
             });
     }
-
+    
 
     public void ShowInterstitialAd()
     {
@@ -78,6 +76,8 @@ public class Interstitial : Singleton<Interstitial>
         {
             Debug.Log("Showing interstitial ad.");
             interstitialAd.Show();
+            RegisterEventHandlers(interstitialAd);
+            RegisterReloadHandler(interstitialAd);
         }
         else
         {

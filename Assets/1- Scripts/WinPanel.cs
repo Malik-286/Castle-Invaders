@@ -12,9 +12,17 @@ public class WinPanel : MonoBehaviour
 
     BattleManager battleManager;
     GamePlayUI gamePlayUI;
-      
+
+    Interstitial interstitial;
+
+
     void Start()
     {
+
+        interstitial = FindObjectOfType<Interstitial>();
+        interstitial.LoadInterstitialAd();
+
+
         battleManager = FindObjectOfType<BattleManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
   
@@ -32,10 +40,13 @@ public class WinPanel : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        
-        
-        
-        
+
+        if (interstitial != null)
+        {
+            interstitial.ShowInterstitialAd();
+        }
+
+
         int index = GameManager.Instance.GetCurrentSceneIndex()+1;
          GameManager.Instance.LoadScene(index);
          AudioManager.Instance.audioSource.Play();
@@ -45,8 +56,11 @@ public class WinPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
-      
 
+        if (interstitial != null)
+        {
+            interstitial.ShowInterstitialAd();
+        }
 
         GameManager.Instance.LoadScene(0);
         AudioManager.Instance.audioSource.Play();

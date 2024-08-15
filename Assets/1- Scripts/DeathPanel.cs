@@ -9,13 +9,16 @@ public class DeathPanel : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI deathRewardText;
 
- 
-    GameManager gameManager;
-    BattleManager battleManager;
+
+     BattleManager battleManager;
+
+    Interstitial interstitial;
  
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+         
+        interstitial = FindObjectOfType<Interstitial>();
+        interstitial.LoadInterstitialAd();
         battleManager = FindObjectOfType<BattleManager>();
  
         deathRewardText.text = battleManager.loseAmountToReward.ToString() + " Coins";
@@ -26,18 +29,29 @@ public class DeathPanel : MonoBehaviour
 
     public void PlayAgain()
     {
-       
-        gameManager.RestartCurrentLevel();
-      
+        if (GameManager.Instance)
+        {
+            if(interstitial != null)
+            {
+                interstitial.ShowInterstitialAd();
+            }
+            GameManager.Instance.RestartCurrentLevel();
+        }
+            
     }
 
     public void GoToMainMenu()
     {
-        
-        gameManager.LoadScene(0);   
+        if (GameManager.Instance)
+        {
+            if (interstitial != null)
+            {
+                interstitial.ShowInterstitialAd();
+            }
+             GameManager.Instance.LoadScene(0);
+        }
     }
 
-    
 
 
 }

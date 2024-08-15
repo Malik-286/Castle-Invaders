@@ -17,7 +17,7 @@ public class PausePanel : MonoBehaviour
     {
 
         towersPanel = GameObject.FindGameObjectWithTag("TowersPanel");
-     }
+    }
 
 
 

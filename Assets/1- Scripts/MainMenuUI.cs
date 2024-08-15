@@ -13,13 +13,10 @@ public class MainMenuUI : MonoBehaviour
 
     [SerializeField] GameObject levelsPanel;
 
-    GameManager gameManager;
-    AudioManager audioManager;
-    void Start()
+     void Start()
     {
         Time.timeScale = 1.0f;
-        gameManager = FindObjectOfType<GameManager>();
-        audioManager = FindObjectOfType<AudioManager>();
+ 
         DeactivateUIPanels();
         loadingPanel.SetActive(false);
         levelsPanel.SetActive(false);
@@ -34,10 +31,10 @@ public class MainMenuUI : MonoBehaviour
 
    public IEnumerator StartGame()
     {
-        if (audioManager.audioSource)
+        if (AudioManager.Instance.audioSource)
         {
-            audioManager.audioSource.Stop();
-            audioManager.PlayTouchSoundEffect();
+            AudioManager.Instance.audioSource.Stop();
+            AudioManager.Instance.PlayTouchSoundEffect();
         }
         loadingPanel.SetActive(true);
 
