@@ -76,8 +76,7 @@ public class Interstitial : Singleton<Interstitial>
         {
             Debug.Log("Showing interstitial ad.");
             interstitialAd.Show();
-            RegisterEventHandlers(interstitialAd);
-            RegisterReloadHandler(interstitialAd);
+      
         }
         else
         {
