@@ -20,7 +20,11 @@ public class WinPanel : MonoBehaviour
     {
 
         interstitial = FindObjectOfType<Interstitial>();
-        interstitial.LoadInterstitialAd();
+        if(interstitial != null)
+        {
+            interstitial.LoadInterstitialAd();
+        }
+         
 
 
         battleManager = FindObjectOfType<BattleManager>();

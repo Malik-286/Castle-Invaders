@@ -122,8 +122,10 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
             Destroy(obj, 15f);
             SpendGold(obj);
-            wayPoint.SetPlaceable(false);
-            if(audioManager != null)
+            
+         
+           
+            if (audioManager != null)
             {
                 audioManager.PlayTowerPlacingSoundEffect();
             }
@@ -159,15 +161,25 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         Collider[] colliders = Physics.OverlapSphere(position, radius);
 
+        string Path = "path";
+
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||  colliders[i].CompareTag("Tower3"))
+            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||  colliders[i].CompareTag("Tower3") || colliders[i].CompareTag("Path"))
             {
                 Debug.Log("Cannot place tower here, space is occupied by another tower.");
                 return;
             }
+
+            Transform parent = colliders[i].transform.parent;
+            if (parent != null && parent.CompareTag("Path"))
+            {
+                Debug.Log("Cannot place tower here, space is part of the path.");
+                return;
+            }
         }
 
+        
         CreateObject(position);
         
     }
