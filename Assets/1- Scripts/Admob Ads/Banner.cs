@@ -15,7 +15,7 @@ public class Banner : Singleton<Banner>
 
     BannerView bannerView;
 
-
+ 
     protected override void Awake()
     {
         base.Awake();
