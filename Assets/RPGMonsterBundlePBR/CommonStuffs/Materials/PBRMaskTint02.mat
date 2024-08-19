@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PBRMaskTint02
+  m_Shader: {fileID: 4800000, guid: 2a211c71e73e4519a152ae43a8274e64, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: c26d93a46cf27144d9e8fa51fbf27ae8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emission:
+        m_Texture: {fileID: 2800000, guid: 061dbfc5d7ad4dd09b7c255438aaae98, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 76850db1bea2f9d40bff7c23c89a709f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask01:
+        m_Texture: {fileID: 2800000, guid: 7f786f943ac54007beefb42bfba19bd0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask02:
+        m_Texture: {fileID: 2800000, guid: be4e51d27ab94b95b0955751d8d25530, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask03:
+        m_Texture: {fileID: 2800000, guid: d897cbc1240d4f7bbc566a4e3d9515e6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicSmoothness:
+        m_Texture: {fileID: 2800000, guid: 327da36e01dd40e18f9c2a0692de554b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SAM:
+        m_Texture: {fileID: 2800000, guid: 9f9105e8376161f4bb30dc3a8b32b1ca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Brightness: 1.2
+    - _Color01Power: 5
+    - _Color02Power: 9.5
+    - _Color03Power: 6
+    - _Color04Power: 5.7
+    - _Color05Power: 9.4
+    - _Color06Power: 6.3
+    - _Color07Power: 6.5
+    - _Color08Power: 7.1
+    - _Color09Power: 6.7
+    - __dirty: 1
+    m_Colors:
+    - _Color01: {r: 0, g: 0.33682296, b: 0.8962264, a: 0}
+    - _Color02: {r: 0.10234961, g: 0.31568846, b: 0.9433962, a: 0}
+    - _Color03: {r: 0.21106264, g: 0.3215749, b: 0.8773585, a: 0}
+    - _Color04: {r: 0.30936277, g: 0.45233464, b: 0.8301887, a: 0}
+    - _Color05: {r: 0.13803844, g: 0.32152793, b: 0.6226415, a: 0}
+    - _Color06: {r: 0.34636667, g: 0.32694018, b: 0.8773585, a: 0}
+    - _Color07: {r: 0, g: 0.21154404, b: 1, a: 0}
+    - _Color08: {r: 0.35849056, g: 0.35849056, b: 0.35849056, a: 0}
+    - _Color09: {r: 0.380429, g: 0.578212, b: 0.7830189, a: 0}
+    - _EmissionPower: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
+  m_BuildTextureStacks: []
