@@ -61,6 +61,7 @@ public class GamePlayUI : MonoBehaviour
     GameManager gameManager;
     AudioManager audioManager;
     public GameObject Maincamera;
+    public GameObject Cutscene;
       void Awake()
     {
         if (Instance == null)
@@ -68,6 +69,9 @@ public class GamePlayUI : MonoBehaviour
             Instance = this;
         }
         Time.timeScale = 1.0f;
+
+        StartCoroutine(EndCutscene());
+
     }
     void Start()
     {
@@ -94,6 +98,14 @@ public class GamePlayUI : MonoBehaviour
 
     }
 
+    IEnumerator EndCutscene()
+    {
+        Cutscene.SetActive(true);
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        yield return new WaitForSeconds(12f);
+        Cutscene.SetActive(false);
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+    }
     void Update()
     {
         UpdateGamePlayTimer();

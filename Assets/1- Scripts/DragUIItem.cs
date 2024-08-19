@@ -117,14 +117,10 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (PositionWithinCell(position))
         {
- 
-
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
             Destroy(obj, 15f);
-            SpendGold(obj);
-            
-         
-           
+            SpendGold(obj);            
+                    
             if (audioManager != null)
             {
                 audioManager.PlayTowerPlacingSoundEffect();
