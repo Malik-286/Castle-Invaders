@@ -1,8 +1,14 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.UIElements;
+using System.Net.Security;
 
- 
+
 public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
      [SerializeField] private GameObject PrefabToInstantiate;
@@ -140,17 +146,32 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if(obj.CompareTag("Tower1"))
         {
             currencyManager.DecreaseGold(10);
+
+            gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            Invoke(nameof(removeFiller), 5f);
         }else if(obj.CompareTag("Tower2"))
         {
             currencyManager.DecreaseGold(20);
+            gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            Invoke(nameof(removeFiller), 5f);
         }
         else if(obj.CompareTag("Tower3"))
         {
             currencyManager.DecreaseGold(50);
+            gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            Invoke(nameof(removeFiller), 5f);
         }
     
     }
 
+    public void removeFiller()
+    {
+        gameObject.GetComponent<UnityEngine.UI.Image>().enabled = true;
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+    }
 
 
     void CheckSpaceForTower(Vector3 position, float radius)
