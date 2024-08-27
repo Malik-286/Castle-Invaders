@@ -28,6 +28,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     CurrencyManager currencyManager;
     AudioManager audioManager;
     GamePlayUI gamePlayUI;
+    bool FillerisWorking = false;
    
     void Start()
     {
@@ -54,52 +55,60 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
  
     public void OnDrag(PointerEventData data)
     {
-         Vector2 localPointerPosition;
-        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            Canvas,
-            data.position,
-            data.pressEventCamera,
-            out localPointerPosition))
+        if (!FillerisWorking)
         {
-             Vector3 offsetToOriginal = localPointerPosition - mOriginalLocalPointerPosition;
+            Vector2 localPointerPosition;
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                Canvas,
+                data.position,
+                data.pressEventCamera,
+                out localPointerPosition))
+            {
+                Vector3 offsetToOriginal = localPointerPosition - mOriginalLocalPointerPosition;
 
-             UIDragElement.localPosition = mOriginalPanelLocalPosition + offsetToOriginal;
+                UIDragElement.localPosition = mOriginalPanelLocalPosition + offsetToOriginal;
+            }
         }
-
   
     }
 
-   
+
     public IEnumerator Coroutine_MoveUIElement(RectTransform r, Vector2 targetPosition, float duration = 0.1f)
     {
-        float elapsedTime = 0;
-        Vector2 startingPos = r.localPosition;
-
-         while (elapsedTime < duration)
+        if (!FillerisWorking)
         {
-            r.localPosition = Vector2.Lerp(startingPos, targetPosition, (elapsedTime / duration));
-            elapsedTime += Time.deltaTime;
+            float elapsedTime = 0;
+            Vector2 startingPos = r.localPosition;
 
-             yield return new WaitForEndOfFrame();
+            while (elapsedTime < duration)
+            {
+                r.localPosition = Vector2.Lerp(startingPos, targetPosition, (elapsedTime / duration));
+                elapsedTime += Time.deltaTime;
+
+                yield return new WaitForEndOfFrame();
+            }
+
+            r.localPosition = targetPosition;
         }
-
-         r.localPosition = targetPosition;
     }
 
      
     public void OnEndDrag(PointerEventData eventData)
     {
-         StartCoroutine(Coroutine_MoveUIElement(UIDragElement, mOriginalPosition, 0.5f));
-
-         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(eventData.position);
-
-         if (Physics.Raycast(ray, out hit, 1000.0f))
+        if (!FillerisWorking)
         {
-            Vector3 worldPoint = hit.point;
+            StartCoroutine(Coroutine_MoveUIElement(UIDragElement, mOriginalPosition, 0.5f));
+
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(eventData.position);
+
+            if (Physics.Raycast(ray, out hit, 1000.0f))
+            {
+                Vector3 worldPoint = hit.point;
 
 
-             CheckSpaceForTower(worldPoint, 1.0f);
+                CheckSpaceForTower(worldPoint, 1.0f);
+            }
         }
     }
 
@@ -149,12 +158,14 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
             gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            FillerisWorking = true;
             Invoke(nameof(removeFiller), 5f);
         }else if(obj.CompareTag("Tower2"))
         {
             currencyManager.DecreaseGold(20);
             gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            FillerisWorking = true;
             Invoke(nameof(removeFiller), 5f);
         }
         else if(obj.CompareTag("Tower3"))
@@ -162,6 +173,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             currencyManager.DecreaseGold(50);
             gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            FillerisWorking = true;
             Invoke(nameof(removeFiller), 5f);
         }
     
@@ -171,6 +183,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         gameObject.GetComponent<UnityEngine.UI.Image>().enabled = true;
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        FillerisWorking = false;
     }
 
 
