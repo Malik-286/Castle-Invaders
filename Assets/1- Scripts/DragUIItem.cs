@@ -128,6 +128,16 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Debug.Log("No prefab to instantiate");
             return;
         }
+        else
+        {
+            if(PrefabToInstantiate.tag == "Tower4" && currencyManager.GetCurrentDiamond() <= 0)
+            {
+                Debug.Log("Not Enough Coins");
+                gamePlayUI.EnableShopPanel();
+
+                return;
+            }
+        }
 
      
 
@@ -191,7 +201,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             else if (currencyManager.GetCurrentDiamond() <= 0)
             {
                 Debug.Log("Not Enough Diamonds to place this tower.");
-                gamePlayUI.EnableShopPanel();
+                //gamePlayUI.EnableShopPanel();
                 return;
             }
 
