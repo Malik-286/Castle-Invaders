@@ -6,8 +6,10 @@ using UnityEngine;
 public class CurrencyPanel : MonoBehaviour
 {
 
-    [SerializeField] TextMeshProUGUI currencyText;
-  
+    [SerializeField] TextMeshProUGUI goldcurrencyText;
+    [SerializeField] TextMeshProUGUI diamondcurrencyText;
+
+
     CurrencyManager currencyManager;
      void Start()
     {
@@ -16,22 +18,31 @@ public class CurrencyPanel : MonoBehaviour
 
     void Update()
     {
-        UpdateCurrencyText();
+        UpdateGoldCurrencyText();
+        UpdateDiamondCurrencyText();
     }
 
-    void UpdateCurrencyText()
+   
+
+    void UpdateGoldCurrencyText()
     {
-
         int currentGold = currencyManager.GetCurrentGold();
-
         if (currentGold >= 1000)
         {
             float goldInK = currentGold / 1000f;
-            currencyText.text = goldInK.ToString("0.#") + "k";
+            goldcurrencyText.text = goldInK.ToString("0.#") + "k";
         }
         else
         {
-            currencyText.text = currentGold.ToString();
+            goldcurrencyText.text = currentGold.ToString();
         }
     }
+
+    void UpdateDiamondCurrencyText()
+    {
+           int currentDiamond = currencyManager.GetCurrentDiamond();
+       
+             diamondcurrencyText.text = currentDiamond.ToString();         
+    }
+
 }

@@ -6,7 +6,11 @@ public class CurrencyManager : Singleton<CurrencyManager>
 {
 
     [SerializeField] int currentGold;
-      const int defaultGold = 50;
+    [SerializeField] int currentDiamond;
+
+
+    const int defaultGold = 50;
+    const int defaultdiamond = 5;
 
 
     protected override void Awake()
@@ -17,16 +21,23 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
     void Start()
     {
-        if (currentGold <= 0)
+         if (currentGold <= 0)
         {
             currentGold = defaultGold;
             SaveCurrencyData();
+        }
+        if (currentDiamond <= 0)
+        {
+             SaveCurrencyData();
         }
     }
 
     void Update()
     {
         currentGold = (int)Mathf.Clamp(currentGold, 0, Mathf.Infinity);
+        currentDiamond = (int)Mathf.Clamp(currentDiamond, 0, Mathf.Infinity);
+
+
     }
 
 
@@ -37,10 +48,21 @@ public class CurrencyManager : Singleton<CurrencyManager>
     {    
         return currentGold;
     }
+    public int GetCurrentDiamond()
+    {
+        return currentDiamond;
+
+    }
 
     public void IncreaseGold(int amountToIncrease)
     {
         currentGold += amountToIncrease;
+        SaveCurrencyData();
+    }
+
+    public void IncreaseDiamond(int amountToIncrease)
+    {
+        currentDiamond += amountToIncrease;
         SaveCurrencyData();
     }
 
@@ -56,6 +78,17 @@ public class CurrencyManager : Singleton<CurrencyManager>
         SaveCurrencyData(); 
     }
 
+    public void DecreaseDiamond(int amountToDecrease)
+    {
+        if (currentDiamond <= 0)
+        {
+            Debug.Log("Not Enough Diamond");
+            return;
+        }
+        currentDiamond -= amountToDecrease;
+        SaveCurrencyData();
+    }
+
 
     public void SaveCurrencyData()
     {
@@ -66,6 +99,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
     {
         Data data = SaveSystem.LoadData();
         this.currentGold = data.gold;
+        this.currentDiamond = data.diamond;
     }
 
 

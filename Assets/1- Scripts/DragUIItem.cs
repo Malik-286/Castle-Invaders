@@ -134,7 +134,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             GameObject obj = Instantiate(PrefabToInstantiate, position, Quaternion.identity);
             Destroy(obj, 15f);
-            SpendGold(obj);            
+            PlaceTowersInTheWorld(obj);            
                     
             if (audioManager != null)
             {
@@ -150,7 +150,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
          return true;
     }
 
-    void SpendGold(GameObject obj)
+    void PlaceTowersInTheWorld(GameObject obj)
     {
         if(obj.CompareTag("Tower1"))
         {
@@ -176,7 +176,15 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             FillerisWorking = true;
             Invoke(nameof(removeFiller), 5f);
         }
-    
+        else if (obj.CompareTag("Tower4"))
+        {           
+            currencyManager.DecreaseDiamond(1);
+            gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            FillerisWorking = true;
+            Invoke(nameof(removeFiller), 5f);
+        }
+
     }
 
     public void removeFiller()
