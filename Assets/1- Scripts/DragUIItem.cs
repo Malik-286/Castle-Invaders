@@ -117,7 +117,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (currencyManager.GetCurrentGold() <= 5)
         {
-            Debug.Log("Not Enough Coins");
+             Debug.Log("Not Enough Coins");
              gamePlayUI.EnableShopPanel();
                        
             return;
@@ -128,7 +128,8 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Debug.Log("No prefab to instantiate");
             return;
         }
-       
+
+     
 
         if (PositionWithinCell(position))
         {
@@ -177,12 +178,25 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Invoke(nameof(removeFiller), 5f);
         }
         else if (obj.CompareTag("Tower4"))
-        {           
-            currencyManager.DecreaseDiamond(1);
-            gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
-            gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            FillerisWorking = true;
-            Invoke(nameof(removeFiller), 5f);
+        {
+            // Check if the player has at least 1 diamond before placing Tower4
+            if (currencyManager.GetCurrentDiamond() > 0)
+            {
+                currencyManager.DecreaseDiamond(1);
+                gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
+                gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                FillerisWorking = true;
+                Invoke(nameof(removeFiller), 5f);
+            }
+            else if (currencyManager.GetCurrentDiamond() <= 0)
+            {
+                Debug.Log("Not Enough Diamonds to place this tower.");
+                gamePlayUI.EnableShopPanel();
+                return;
+            }
+
+
+            
         }
 
     }
@@ -203,7 +217,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||  colliders[i].CompareTag("Tower3") || colliders[i].CompareTag("Path"))
+            if (colliders[i].CompareTag("Tower1") || colliders[i].CompareTag("Tower2") ||  colliders[i].CompareTag("Tower3") || colliders[i].CompareTag("Tower4") || colliders[i].CompareTag("Path"))
             {
                 Debug.Log("Cannot place tower here, space is occupied by another tower.");
                 return;
