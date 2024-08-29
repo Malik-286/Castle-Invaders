@@ -183,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 7536622493916270617}
   serializedVersion: 2
   m_LocalRotation: {x: 0.056960966, y: -0.0041801822, z: -0.00022136474, w: 0.99836767}
-  m_LocalPosition: {x: -0.02, y: 4.45, z: 1.93}
+  m_LocalPosition: {x: -0.03, y: 4.39, z: 2.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -325,7 +325,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 50
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -443,7 +443,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1026,7 +1026,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4994,6 +4994,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4939996705135754}
     m_Modifications:
+    - target: {fileID: 94186211542482538, guid: 81a74a0aefeb7674ca32535d1a269b4a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846737273117095031, guid: 81a74a0aefeb7674ca32535d1a269b4a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8846737274113074932, guid: 81a74a0aefeb7674ca32535d1a269b4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5037,6 +5045,10 @@ PrefabInstance:
     - target: {fileID: 8846737274113074935, guid: 81a74a0aefeb7674ca32535d1a269b4a, type: 3}
       propertyPath: m_Name
       value: Area_magic_multicolor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846737274401868928, guid: 81a74a0aefeb7674ca32535d1a269b4a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
