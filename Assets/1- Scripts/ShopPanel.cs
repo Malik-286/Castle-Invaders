@@ -1,3 +1,4 @@
+using hardartcore.CasualGUI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,7 +27,10 @@ public class ShopPanel : MonoBehaviour
 
       const string starterPack_ProductID = "com.aspiregamesstudio.castleinvaders.starterpack";
       const string removeAds_ProductID = "com.aspiregamesstudio.castleinvaders.removeads";
-      const string coinsPack500_ProductID = "com.aspiregamesstudio.castleinvaders.coins500";
+      const string jemsPack100_ProductID = "com.aspiregamesstudio.castleinvaders.jems100";
+      const string jemsPack500_ProductID = "com.aspiregamesstudio.castleinvaders.jems500";
+
+   
       const string coinsPack1000_ProductID = "com.aspiregamesstudio.castleinvaders.coins1000";
       const string coinsPack5000_ProductID = "com.aspiregamesstudio.castleinvaders.coins5000";  
       const string coinsPack10000_ProductID = "com.aspiregamesstudio.castleinvaders.coins10000";
@@ -80,7 +84,7 @@ public class ShopPanel : MonoBehaviour
         {
             adsStatus = "disabled";
             PlayerPrefs.SetString("AdsStatusKey", adsStatus);
-            purchasedSucessPanel.SetActive(true);
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
         }
         else if(product.definition.id == starterPack_ProductID && currencyManager != null)
         {
@@ -88,7 +92,7 @@ public class ShopPanel : MonoBehaviour
             adsStatus = "disabled";
             PlayerPrefs.SetString("AdsStatusKey", adsStatus);
             currencyManager.SaveCurrencyData();
-            purchasedSucessPanel.SetActive(true);
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
 
             // Mark the starter pack as purchased
             PlayerPrefs.SetInt(starterPackPurchasedKey, 1);
@@ -96,12 +100,20 @@ public class ShopPanel : MonoBehaviour
             // Disable the starter pack button
             starterPackButton.SetActive(false);
         }
-        else if (product.definition.id == coinsPack500_ProductID && currencyManager != null)
+        else if (product.definition.id == jemsPack100_ProductID && currencyManager != null)
         {
-            currencyManager.IncreaseGold(500);
+            currencyManager.IncreaseDiamond(100);
             currencyManager.SaveCurrencyData();
-            Debug.Log("Coins 500 has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
-            purchasedSucessPanel.SetActive(true);
+            Debug.Log("100 Diamonds has been added to you account with new balance of :" + currencyManager.GetCurrentDiamond());
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
+
+        }
+        else if (product.definition.id == jemsPack500_ProductID && currencyManager != null)
+        {
+            currencyManager.IncreaseDiamond(500);
+            currencyManager.SaveCurrencyData();
+            Debug.Log("500 Diamonds has been added to you account with new balance of :" + currencyManager.GetCurrentDiamond());
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
 
         }
         else if (product.definition.id == coinsPack1000_ProductID && currencyManager != null)
@@ -109,7 +121,7 @@ public class ShopPanel : MonoBehaviour
             currencyManager.IncreaseGold(1000);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 1000 has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
-            purchasedSucessPanel.SetActive(true);
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
 
         }
         else if (product.definition.id == coinsPack5000_ProductID && currencyManager != null)
@@ -118,7 +130,7 @@ public class ShopPanel : MonoBehaviour
             currencyManager.IncreaseGold(5000);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 5K has been added to your account with new balance of :" + currencyManager.GetCurrentGold());
-            purchasedSucessPanel.SetActive(true);
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
 
         }
         else if (product.definition.id == coinsPack10000_ProductID && currencyManager != null)
@@ -126,7 +138,7 @@ public class ShopPanel : MonoBehaviour
             currencyManager.IncreaseGold(10000);
             currencyManager.SaveCurrencyData();
             Debug.Log("Coins 10K has been added to you account with new balance of :" + currencyManager.GetCurrentGold());
-            purchasedSucessPanel.SetActive(true);
+            purchasedSucessPanel.GetComponent<Dialog>().ShowDialog();
 
         }
 
@@ -134,7 +146,7 @@ public class ShopPanel : MonoBehaviour
 
     public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
     {
-        purchaseFailedPanel.SetActive(true);
+        purchaseFailedPanel.GetComponent<Dialog>().ShowDialog();
     }
 
 
