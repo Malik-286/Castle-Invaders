@@ -9,10 +9,14 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] float range = 15f;
     [SerializeField] ParticleSystem towerShootingParticles;
 
+
+  
+
+
     Transform target;
 
-
-
+ 
+ 
     void Update()
     {
 
@@ -104,7 +108,7 @@ public class TargetLocater : MonoBehaviour
             if (!emissionModule.enabled)
             {
                 emissionModule.enabled = true; // Enable particle emission
-
+ 
             }
         }
         else
@@ -112,6 +116,18 @@ public class TargetLocater : MonoBehaviour
             emissionModule.enabled = false; // Disable particle emission
         }
 
+
+        
+
+    }
+
+    IEnumerator PlayTowerShootingSoundEffect(AudioClip audioClip, float volume)
+    {
+         
+           
+          Debug.Log("Playing Shooting Audio");
+         yield return new WaitForSeconds(2f); 
+        
     }
 
     void OnDrawGizmos()

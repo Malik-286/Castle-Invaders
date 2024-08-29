@@ -19,9 +19,12 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioClip gernadeSFX;
     [SerializeField] AudioClip coinsCollectionSFX;
 
+    [Header("Shooting Sounds")]
 
-
-  
+    public AudioClip tower01ShootingSound;
+    public AudioClip tower02ShootingSound;
+    public AudioClip tower03ShootingSound;
+    public AudioClip tower04ShootingSound;
 
 
     protected override void Awake()
