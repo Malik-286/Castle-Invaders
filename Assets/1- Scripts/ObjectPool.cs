@@ -21,9 +21,9 @@ public class ObjectPool : MonoBehaviour
     {
         while (true && numberofPools >= 1)
         {
+            yield return new WaitForSeconds(spawnWaitTime);
             Instantiate(enemyPrefebs[0], transform);
             numberofPools--;
-            yield return new WaitForSeconds(spawnWaitTime);
         }
         
     }
