@@ -9,14 +9,13 @@ public class GiftPanel : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI timeCountText;
     [SerializeField] GameObject coinsAnimationPanel;
-
-   
+    [SerializeField] CurrencyManager Currency;
 
 
     public void ActivateCoinsAnimationPanel()
     {
        coinsAnimationPanel.SetActive(true);
-       
+        Currency.IncreaseGold(10);
         StartCoroutine(DeactivateRewardsPanel());       
     }
     

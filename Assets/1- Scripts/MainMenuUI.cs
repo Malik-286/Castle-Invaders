@@ -5,15 +5,24 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour
 {
-    [SerializeField] GameObject[] UI_Panels;
+
+    public static MainMenuUI instance;
+
+    public GameObject[] UI_Panels;
     [SerializeField] GameObject loadingPanel;
 
     [SerializeField] float loadingPanelWaitTime = 1.5f;
     [SerializeField] TextMeshProUGUI loadingText;
 
     [SerializeField] GameObject levelsPanel;
-
-     void Start()
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }    
+    }
+    void Start()
     {
         Time.timeScale = 1.0f;
  
