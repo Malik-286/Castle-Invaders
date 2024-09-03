@@ -1,46 +1,44 @@
 using GoogleMobileAds.Api;
+using hardartcore.CasualGUI;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rewarded : MonoBehaviour
 {
 
+
+
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-1387627577986386/4829179834";
+    string _adUnitId = "ca-app-pub-1387627577986386/4829179834";
 #elif UNITY_IPHONE
-  private string _adUnitId = "ca-app-pub-1387627577986386/3453870059";
+    string _adUnitId = "ca-app-pub-1387627577986386/3453870059";
 #else
-  private string _adUnitId = "unused";
+    string _adUnitId = "unused";
 #endif
 
 
 
-    RewardedAd rewardedAd;
-    CurrencyManager currencyManager;
 
+    RewardedAd _rewardedAd;
 
-    void Awake()
-    {
-        currencyManager = FindObjectOfType<CurrencyManager>();
-
-    }
-
+ 
     public void Start()
     {
-         MobileAds.Initialize((InitializationStatus initStatus) => {  });
-         LoadRewardedAd();
-         
+        MobileAds.Initialize((InitializationStatus initStatus) => { });
+      
+        LoadRewardedAd();
     }
+
+
 
     public void LoadRewardedAd()
     {
         // Clean up the old ad before loading a new one.
-        if (rewardedAd != null)
+        if (_rewardedAd != null)
         {
-            rewardedAd.Destroy();
-            rewardedAd = null;
+            _rewardedAd.Destroy();
+            _rewardedAd = null;
         }
 
         Debug.Log("Loading the rewarded ad.");
@@ -63,31 +61,34 @@ public class Rewarded : MonoBehaviour
                 Debug.Log("Rewarded ad loaded with response : "
                           + ad.GetResponseInfo());
 
-                rewardedAd = ad;
+                _rewardedAd = ad;
+             
             });
     }
 
     public void ShowRewardedAd()
     {
-       
-        if (rewardedAd != null && rewardedAd.CanShowAd())
+        if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
-            rewardedAd.Show((Reward reward) =>
+            _rewardedAd.Show((Reward reward) =>
             {
                 // TODO: Reward the user.
 
-                if(currencyManager != null)
+
+                if (CurrencyManager.Instance != null)
                 {
-                    currencyManager.IncreaseGold(100);
-                    currencyManager.SaveCurrencyData();
-                }
-                RegisterEventHandlers(rewardedAd);
-                RegisterReloadHandler(rewardedAd);
+                    CurrencyManager.Instance.IncreaseGold(100);
+                    RegisterEventHandlers(_rewardedAd);
+                    RegisterReloadHandler(_rewardedAd);
+                 }
+
             });
+
+            gameObject.GetComponent<Dialog>().HideDialog();
         }
     }
 
-      void RegisterEventHandlers(RewardedAd ad)
+    void RegisterEventHandlers(RewardedAd ad)
     {
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
@@ -124,7 +125,7 @@ public class Rewarded : MonoBehaviour
         };
     }
 
-      void RegisterReloadHandler(RewardedAd ad)
+    void RegisterReloadHandler(RewardedAd ad)
     {
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
@@ -145,4 +146,6 @@ public class Rewarded : MonoBehaviour
         };
     }
 
+
+  
 }

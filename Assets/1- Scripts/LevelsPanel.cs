@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
+
     [SerializeField] AudioClip whooshSFX;
     [SerializeField] GameObject[] levelsPanels;
 
@@ -14,8 +15,10 @@ public class LevelSelection : MonoBehaviour
     int currentPanelIndex = 0;
     private const string PanelIndexKey = "CurrentPanelIndex";
 
+ 
     void Start()
     {
+ 
         // Load the saved panel index or default to 0 if not set
         currentPanelIndex = PlayerPrefs.GetInt(PanelIndexKey, 0);
         ShowCurrentPanel();

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SettingsPanel : MonoBehaviour
 {
     string fbURL = "https://www.facebook.com/profile.php?viewas=100000686899395&id=61556956161259";
-    string xURL = "https://twitter.com/aspiregames2024";
+    string instaURL = "https://www.instagram.com/aspire_games_studio/?igsh=dGZhemd3bGpiNHh0";
     string youTubeURL = "https://www.youtube.com/@aspiregames286";
     string discoedURL = "https://discord.gg/bMmsU8k8";
 
@@ -54,9 +54,9 @@ public class SettingsPanel : MonoBehaviour
         Application.OpenURL(youTubeURL);
     }
 
-    public void OpenXPage()
+    public void OpenInstagramPage()
     {
-        Application.OpenURL(xURL);
+        Application.OpenURL(instaURL);
     }
 
     public void OpenDircordPage()
