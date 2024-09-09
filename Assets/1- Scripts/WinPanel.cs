@@ -1,3 +1,4 @@
+using GoogleMobileAds.Api;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,20 +14,10 @@ public class WinPanel : MonoBehaviour
     BattleManager battleManager;
     GamePlayUI gamePlayUI;
 
-    Interstitial interstitial;
 
 
     void Start()
     {
-
-        interstitial = FindObjectOfType<Interstitial>();
-        if(interstitial != null)
-        {
-            interstitial.LoadInterstitialAd();
-        }
-         
-
-
         battleManager = FindObjectOfType<BattleManager>();
         gamePlayUI = FindObjectOfType<GamePlayUI>();
   
@@ -44,13 +35,10 @@ public class WinPanel : MonoBehaviour
 
     public void LoadNextLevel()
     {
-
-        if (interstitial != null)
+        if (Adsmanager.Instance)
         {
-            interstitial.ShowInterstitialAd();
+            Adsmanager.Instance.ShowIntersitial();
         }
-
-
         int index = GameManager.Instance.GetCurrentSceneIndex()+1;
          GameManager.Instance.LoadScene(index);
          AudioManager.Instance.audioSource.Play();
@@ -60,12 +48,10 @@ public class WinPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
-
-        if (interstitial != null)
+        if (Adsmanager.Instance)
         {
-            interstitial.ShowInterstitialAd();
+            Adsmanager.Instance.ShowIntersitial();
         }
-
         GameManager.Instance.LoadScene(0);
         AudioManager.Instance.audioSource.Play();
         

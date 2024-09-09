@@ -11,14 +11,9 @@ public class DeathPanel : MonoBehaviour
 
 
      BattleManager battleManager;
-
-    Interstitial interstitial;
  
     void Start()
-    {
-         
-        interstitial = FindObjectOfType<Interstitial>();
-        interstitial.LoadInterstitialAd();
+    {         
         battleManager = FindObjectOfType<BattleManager>();
  
         deathRewardText.text = battleManager.loseAmountToReward.ToString() + " Coins";
@@ -29,12 +24,12 @@ public class DeathPanel : MonoBehaviour
 
     public void PlayAgain()
     {
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
         if (GameManager.Instance)
         {
-            if(interstitial != null)
-            {
-                interstitial.ShowInterstitialAd();
-            }
             GameManager.Instance.RestartCurrentLevel();
         }
             
@@ -42,13 +37,13 @@ public class DeathPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
         if (GameManager.Instance)
         {
-            if (interstitial != null)
-            {
-                interstitial.ShowInterstitialAd();
-            }
-             GameManager.Instance.LoadScene(0);
+            GameManager.Instance.LoadScene(0);
         }
     }
 
