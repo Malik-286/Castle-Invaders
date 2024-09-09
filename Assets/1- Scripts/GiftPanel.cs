@@ -15,7 +15,7 @@ public class GiftPanel : MonoBehaviour
     public void ActivateCoinsAnimationPanel()
     {
        coinsAnimationPanel.SetActive(true);
-        Currency.IncreaseGold(10);
+        Currency.IncreaseGold(50);
         StartCoroutine(DeactivateRewardsPanel());       
     }
     

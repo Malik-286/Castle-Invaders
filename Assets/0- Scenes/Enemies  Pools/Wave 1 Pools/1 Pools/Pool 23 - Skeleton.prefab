@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8083497157525737226
+--- !u!1 &3494573509087742320
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2061230560618985589}
-  - component: {fileID: 2863644985075643859}
+  - component: {fileID: 7980032631726163752}
+  - component: {fileID: 5721392859043547432}
   m_Layer: 0
-  m_Name: Pool 21 -  RatWorrior
+  m_Name: Pool 23 - Skeleton
   m_TagString: EnemiesPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2061230560618985589
+--- !u!4 &7980032631726163752
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083497157525737226}
+  m_GameObject: {fileID: 3494573509087742320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40, y: 0, z: 0}
@@ -32,19 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2863644985075643859
+--- !u!114 &5721392859043547432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8083497157525737226}
+  m_GameObject: {fileID: 3494573509087742320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f286abae9dc8942a1665584e3306bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefebs:
-  - {fileID: 1854083004498198600, guid: 796e05c0789b99b489d46b65cbefae34, type: 3}
-  spawnWaitTime: 2
-  numberofPools: 5
+  - {fileID: 3656077285520183663, guid: 64a10cc4c314f474092b3a2474084cae, type: 3}
+  spawnWaitTime: 10
+  numberofPools: 6

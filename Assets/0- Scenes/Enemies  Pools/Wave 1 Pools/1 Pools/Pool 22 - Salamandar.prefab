@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5819497567617826035
+--- !u!1 &5457484971954059427
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7415271296928897812}
-  - component: {fileID: 2774980782357343702}
+  - component: {fileID: 2300576014454768155}
+  - component: {fileID: 1495552464832395408}
   m_Layer: 0
-  m_Name: Pool 15 - LizardWorrior
+  m_Name: Pool 22 - Salamandar
   m_TagString: EnemiesPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7415271296928897812
+--- !u!4 &2300576014454768155
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5819497567617826035}
+  m_GameObject: {fileID: 5457484971954059427}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40, y: 0, z: 0}
@@ -32,19 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2774980782357343702
+--- !u!114 &1495552464832395408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5819497567617826035}
+  m_GameObject: {fileID: 5457484971954059427}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f286abae9dc8942a1665584e3306bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefebs:
-  - {fileID: 7690567152234562734, guid: d79280909199aa843b6a722ae30f6f09, type: 3}
-  spawnWaitTime: 2
-  numberofPools: 5
+  - {fileID: 1914621545860542669, guid: 2bba244c519d0f14dba3962ed609077a, type: 3}
+  spawnWaitTime: 7
+  numberofPools: 6

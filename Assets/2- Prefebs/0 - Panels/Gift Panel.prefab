@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +10 COINS
+  m_text: +50 COINS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36de43f64c2f0f44188ed2ce070385bc, type: 2}
   m_sharedMaterial: {fileID: 903804157609115575, guid: 36de43f64c2f0f44188ed2ce070385bc, type: 2}
@@ -1024,8 +1024,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1333746766200189903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GiftPanel, Assembly-CSharp
         m_MethodName: ActivateCoinsAnimationPanel
         m_Mode: 1
@@ -2420,6 +2420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeCountText: {fileID: 0}
   coinsAnimationPanel: {fileID: 8693242442062843843}
+  Currency: {fileID: 0}
 --- !u!114 &3502480306774349157
 MonoBehaviour:
   m_ObjectHideFlags: 0

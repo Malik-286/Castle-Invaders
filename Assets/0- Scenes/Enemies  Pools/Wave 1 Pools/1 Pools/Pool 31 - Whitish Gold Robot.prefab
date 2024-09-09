@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4185166027488191374
+--- !u!1 &1214321800266216210
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8153072259364076675}
-  - component: {fileID: 8675353542494485380}
+  - component: {fileID: 3147512119777980059}
+  - component: {fileID: 42896644352638119}
   m_Layer: 0
-  m_Name: Pool 25 - SpectorMage
+  m_Name: Pool 31 - Whitish Gold Robot
   m_TagString: EnemiesPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8153072259364076675
+--- !u!4 &3147512119777980059
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185166027488191374}
+  m_GameObject: {fileID: 1214321800266216210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40, y: 0, z: 0}
@@ -32,19 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8675353542494485380
+--- !u!114 &42896644352638119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185166027488191374}
+  m_GameObject: {fileID: 1214321800266216210}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f286abae9dc8942a1665584e3306bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefebs:
-  - {fileID: 6769091236386027873, guid: be44709ae4a12bf41accbe14cfacb00f, type: 3}
-  spawnWaitTime: 2
-  numberofPools: 5
+  - {fileID: 8422842336677735411, guid: 790c18eecf664774eb020a7f26037816, type: 3}
+  spawnWaitTime: 8
+  numberofPools: 6

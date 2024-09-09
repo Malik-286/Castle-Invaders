@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1677093998352515538
+--- !u!1 &3459217288329450337
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7227043333135369790}
-  - component: {fileID: 5864771095917503122}
+  - component: {fileID: 7043395795533146987}
+  - component: {fileID: 2979313418175161557}
   m_Layer: 0
-  m_Name: Pool 24 - Slime
+  m_Name: Pool 20 - NagaWizard
   m_TagString: EnemiesPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7227043333135369790
+--- !u!4 &7043395795533146987
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677093998352515538}
+  m_GameObject: {fileID: 3459217288329450337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40, y: 0, z: 0}
@@ -32,19 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5864771095917503122
+--- !u!114 &2979313418175161557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677093998352515538}
+  m_GameObject: {fileID: 3459217288329450337}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f286abae9dc8942a1665584e3306bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefebs:
-  - {fileID: 901451711240316174, guid: 816f1fcd3d2585244b894e6e1cf17ab0, type: 3}
-  spawnWaitTime: 2
-  numberofPools: 5
+  - {fileID: 3472669143259681409, guid: 6d74eddfc27d8054f8bb15d9d9bd70da, type: 3}
+  spawnWaitTime: 8
+  numberofPools: 8
