@@ -26,11 +26,8 @@ public class LevelSelection : MonoBehaviour
 
     public void LeftClick()
     {
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlaySingleShotAudio(whooshSFX, 1.0f);
-        }
-
+        
+        PlayTapSoundEffect();   
         // Move to the previous panel with circular wrap-around
         currentPanelIndex--;
         if (currentPanelIndex < 0)
@@ -43,10 +40,7 @@ public class LevelSelection : MonoBehaviour
 
     public void RightClick()
     {
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlaySingleShotAudio(whooshSFX, 1.0f);
-        }
+        PlayTapSoundEffect();
 
         // Move to the next panel with circular wrap-around
         currentPanelIndex++;
@@ -99,5 +93,13 @@ public class LevelSelection : MonoBehaviour
         // Save the current panel index to PlayerPrefs
         PlayerPrefs.SetInt(PanelIndexKey, currentPanelIndex);
         PlayerPrefs.Save(); // Ensure the data is saved immediately
+    }
+
+    public void PlayTapSoundEffect()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySingleShotAudio(whooshSFX, 1.0f);
+        }
     }
 }

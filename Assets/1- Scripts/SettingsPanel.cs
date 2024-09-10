@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,26 +18,27 @@ public class SettingsPanel : MonoBehaviour
     string googlePlayStoreUrl = "https://play.google.com/store/apps/details?id=com.AspireGamesStudio.CastleInvaders&pcampaignid=web_share";
 
     [SerializeField] Slider volumeSwitch;
+    [SerializeField] TextMeshProUGUI gameVersionText;
   
 
-    AudioManager audioManager;
+ 
      void Start()
     {
-        audioManager  =FindObjectOfType<AudioManager>();
+         UpdateGameVersionText();
     }
 
 
     public void EnableOrDisableVolume()
     {
-        if (audioManager != null)
+        if (AudioManager.Instance != null)
         {
             if (volumeSwitch.value == 0)
             {
-                audioManager.audioSource.Pause();
+                AudioManager.Instance.audioSource.Pause();
             }
             else if (volumeSwitch.value == 1)
             {
-                audioManager.audioSource.Play();
+                AudioManager.Instance.audioSource.Play();
             }
 
         }
@@ -85,5 +87,9 @@ public class SettingsPanel : MonoBehaviour
         }
     }
 
+    void UpdateGameVersionText()
+    {
+        gameVersionText.text = Application.version;
+    }
 
 }

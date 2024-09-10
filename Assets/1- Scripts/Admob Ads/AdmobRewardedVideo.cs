@@ -31,6 +31,32 @@ public class AdmobRewardedVideo : MonoBehaviour
                 MainMenuUI.instance.UI_Panels[1].GetComponent<Dialog>().ShowDialog();
             }
         }
+        if (Index == 1)
+        {
+            if (CurrencyManager.Instance)
+            {
+                CurrencyManager.Instance.IncreaseGold(50);
+                CurrencyManager.Instance.SaveCurrencyData();
+            }
+        }
+        if (Index == 2)
+        {
+            if (CurrencyManager.Instance)
+            {
+                CurrencyManager.Instance.IncreaseGold(200);
+                CurrencyManager.Instance.SaveCurrencyData();
+
+            }
+        }
+        if (Index == 3)
+        {
+            if (CurrencyManager.Instance)
+            {
+                CurrencyManager.Instance.IncreaseDiamond(5);
+                CurrencyManager.Instance.SaveCurrencyData();
+
+            }
+        }
     }
     #endregion
     public void ShowRewardedVideo()
