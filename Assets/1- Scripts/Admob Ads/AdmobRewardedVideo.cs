@@ -9,11 +9,9 @@ public class AdmobRewardedVideo : MonoBehaviour
     public static AdmobRewardedVideo Instance;
 
     public int Index;
-    public GameObject coinsAnimationPanel;
-    public GameObject jemssAnimationPanel;
 
-    CurrencyManager currencyManager;
-
+    RewardsPanel rewardsPanel;
+ 
 
 
       void Awake()
@@ -26,10 +24,10 @@ public class AdmobRewardedVideo : MonoBehaviour
 
     void Start()
     {
-        currencyManager = FindObjectOfType<CurrencyManager>();
-        coinsAnimationPanel.SetActive(false);
-        jemssAnimationPanel.SetActive(false);
+        rewardsPanel = FindObjectOfType<RewardsPanel>();
     }
+
+
 
     #region Give Reward
 
@@ -37,30 +35,17 @@ public class AdmobRewardedVideo : MonoBehaviour
     {
         if (Index == 0)
         {
-            if (MainMenuUI.instance)
-            {
-                MainMenuUI.instance.UI_Panels[1].GetComponent<Dialog>().ShowDialog();
-            }
+            rewardsPanel.ActivateCoinAnimationPanel();
+            StartCoroutine(rewardsPanel.IncreaseGoldCurrency());
         }
         if (Index == 1)
         {
-            if (currencyManager != null)
-            {
-                 StartCoroutine(IncreaseGoldCurrency());
-                coinsAnimationPanel.GetComponent<Dialog>().ShowDialog();
-            }
-        }
-        if (Index == 2)
-        {
-            if (currencyManager != null)
-            {
-                 StartCoroutine(IncreaseDiamondCurrency());
-                jemssAnimationPanel.GetComponent<Dialog>().ShowDialog();
-            }
-                 
-        }
-     
+            rewardsPanel.ActivateJemsAnimationPanel();
+            StartCoroutine(rewardsPanel.IncreaseDiamondCurrency());
+        }    
     }
+
+
     #endregion
     public void ShowRewardedVideo()
     {
@@ -71,21 +56,6 @@ public class AdmobRewardedVideo : MonoBehaviour
     {
         if (Adsmanager.Instance)
             Adsmanager.Instance.ShowRewardedVideoAd();
-    }
-
-    IEnumerator IncreaseGoldCurrency()
-    {      
-        yield return new WaitForSeconds(2.2f);
-        currencyManager.IncreaseGold(100);
-        currencyManager.SaveCurrencyData();
-
-    }
-
-    IEnumerator IncreaseDiamondCurrency()
-    {
-        yield return new WaitForSeconds(2.2f);
-        currencyManager.IncreaseDiamond(5);
-        currencyManager.SaveCurrencyData();
-
-    }
+    } 
+ 
 }
