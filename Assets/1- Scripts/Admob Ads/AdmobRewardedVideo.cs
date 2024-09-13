@@ -2,22 +2,33 @@ using GoogleMobileAds.Api;
 using System;
 using UnityEngine.UI; 
 using UnityEngine;
-using GoogleMobileAds.Sample;
-using UnityEngine.SceneManagement;
 using hardartcore.CasualGUI;
+using System.Collections;
 public class AdmobRewardedVideo : MonoBehaviour
 {
     public static AdmobRewardedVideo Instance;
 
     public int Index;
+    public GameObject coinsAnimationPanel;
+    public GameObject jemssAnimationPanel;
+
+    CurrencyManager currencyManager;
 
 
-    private void Awake()
+
+      void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+    }
+
+    void Start()
+    {
+        currencyManager = FindObjectOfType<CurrencyManager>();
+        coinsAnimationPanel.SetActive(false);
+        jemssAnimationPanel.SetActive(false);
     }
 
     #region Give Reward
@@ -33,30 +44,22 @@ public class AdmobRewardedVideo : MonoBehaviour
         }
         if (Index == 1)
         {
-            if (CurrencyManager.Instance)
+            if (currencyManager != null)
             {
-                CurrencyManager.Instance.IncreaseGold(50);
-                CurrencyManager.Instance.SaveCurrencyData();
+                 StartCoroutine(IncreaseGoldCurrency());
+                coinsAnimationPanel.GetComponent<Dialog>().ShowDialog();
             }
         }
         if (Index == 2)
         {
-            if (CurrencyManager.Instance)
+            if (currencyManager != null)
             {
-                CurrencyManager.Instance.IncreaseGold(200);
-                CurrencyManager.Instance.SaveCurrencyData();
-
+                 StartCoroutine(IncreaseDiamondCurrency());
+                jemssAnimationPanel.GetComponent<Dialog>().ShowDialog();
             }
+                 
         }
-        if (Index == 3)
-        {
-            if (CurrencyManager.Instance)
-            {
-                CurrencyManager.Instance.IncreaseDiamond(5);
-                CurrencyManager.Instance.SaveCurrencyData();
-
-            }
-        }
+     
     }
     #endregion
     public void ShowRewardedVideo()
@@ -68,5 +71,21 @@ public class AdmobRewardedVideo : MonoBehaviour
     {
         if (Adsmanager.Instance)
             Adsmanager.Instance.ShowRewardedVideoAd();
+    }
+
+    IEnumerator IncreaseGoldCurrency()
+    {      
+        yield return new WaitForSeconds(2.2f);
+        currencyManager.IncreaseGold(100);
+        currencyManager.SaveCurrencyData();
+
+    }
+
+    IEnumerator IncreaseDiamondCurrency()
+    {
+        yield return new WaitForSeconds(2.2f);
+        currencyManager.IncreaseDiamond(5);
+        currencyManager.SaveCurrencyData();
+
     }
 }

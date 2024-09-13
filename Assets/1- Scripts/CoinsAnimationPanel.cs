@@ -1,36 +1,76 @@
+using hardartcore.CasualGUI;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinsAnimationPanel : MonoBehaviour
 {
     public GameObject[] coins;
     public Transform targetPosition;
-    public float movementSpeed = 1500;
+    public float movementSpeed = 2000;
+    public float minScale = 0.2f; // Minimum scale to shrink to
 
-     bool isMoving = false;
+    public AudioClip coinSpillSoundEffect;
 
-    void Start()
+    private AudioManager audioManager;
+
+    void OnEnable()
     {
-         StartCoinMovement();
-    }
+        StartCoroutine(StartCoinMovement());
+        audioManager = FindObjectOfType<AudioManager>();
 
-    void Update()
-    {
-         if (isMoving)
+        if (audioManager == null)
         {
-            foreach (GameObject coin in coins)
-            {
-                coin.transform.position = Vector3.MoveTowards(coin.transform.position, targetPosition.position, movementSpeed * Time.deltaTime);
-            }
+            Debug.LogError("AudioManager not found in the scene!");
         }
     }
 
-    void StartCoinMovement()
+    IEnumerator StartCoinMovement()
     {
-         isMoving = true;
-        
+        for (int i = 0; i < coins.Length; i++)
+        {
+            GameObject coin = coins[i];
+            StartCoroutine(MoveCoin(coin));
+            yield return new WaitForSeconds(0.33f); // Delay between each coin movement
+        }
+
+        // Wait 1 second after the last coin has moved
+        yield return new WaitForSeconds(1f);
+
+        // Deactivate the parent and this game object after all coins have moved
+        if (transform.parent != null)
+        {
+            transform.parent.gameObject.GetComponent<Dialog>().HideDialog();  // Deactivate the parent GameObject
+        }
+     //   gameObject.GetComponent<Dialog>().HideDialog();  // Deactivate this GameObject
     }
 
-    
+    IEnumerator MoveCoin(GameObject coin)
+    {
+        if (coin == null) yield break;
+
+        while (coin != null && Vector3.Distance(coin.transform.position, targetPosition.position) > 0.1f)
+        {
+            // Move the coin towards the target position
+            coin.transform.position = Vector3.MoveTowards(coin.transform.position, targetPosition.position, movementSpeed * Time.deltaTime);
+
+            // Scale down the coin
+            coin.transform.localScale = Vector3.Lerp(coin.transform.localScale, Vector3.one * minScale, Time.deltaTime * 2); // Smooth scaling
+
+            yield return null; // Wait for the next frame
+        }
+
+        if (coin != null)
+        {
+            if (audioManager != null && coinSpillSoundEffect != null)
+            {
+                // Play the sound effect before destroying the coin
+                audioManager.PlaySingleShotAudio(coinSpillSoundEffect, 1f);
+            }
+
+            Destroy(coin); // Destroy the coin once it reaches the destination
+        }
+    }
 }
+
+
+
