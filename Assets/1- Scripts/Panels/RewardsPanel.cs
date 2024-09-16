@@ -14,8 +14,8 @@ public class RewardsPanel : MonoBehaviour
     {
         currencyManager = FindObjectOfType<CurrencyManager>();
 
-        coinsAnimationPanel.SetActive(false);
-        jemsAnimationPanel.SetActive(false);
+        DeActivateCoinAnimationPanel();
+        DeActivateJemsAnimationPanel();
     }
 
     public IEnumerator IncreaseGoldCurrency()
@@ -46,11 +46,13 @@ public class RewardsPanel : MonoBehaviour
 
     public void ActivateCoinAnimationPanel()
     {
+        jemsAnimationPanel.SetActive(false);
         coinsAnimationPanel.SetActive(true);
     }
 
     public void ActivateJemsAnimationPanel()
     {
+        coinsAnimationPanel.SetActive(false);
         jemsAnimationPanel.SetActive(true);
     }
 }

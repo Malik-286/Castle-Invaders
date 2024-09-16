@@ -28635,8 +28635,8 @@ RectTransform:
   - {fileID: 1364006500741257714}
   - {fileID: 1526353255}
   - {fileID: 1236640291}
-  - {fileID: 464047140}
   - {fileID: 1701319165}
+  - {fileID: 464047140}
   m_Father: {fileID: 2078919306386198900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -28957,7 +28957,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1678212485132840935}
     m_Modifications:
-    - target: {fileID: 375066595088891246, guid: dfdaa06e9e43e4c029af732ac2670e3b, type: 3}
+    - target: {fileID: 411097147143176271, guid: dfdaa06e9e43e4c029af732ac2670e3b, type: 3}
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 425163869}
@@ -29044,6 +29044,10 @@ PrefabInstance:
     - target: {fileID: 7286797612626867996, guid: dfdaa06e9e43e4c029af732ac2670e3b, type: 3}
       propertyPath: m_Name
       value: 'Jems Animation Panel '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286797612626867996, guid: dfdaa06e9e43e4c029af732ac2670e3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29261,6 +29265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coins Animation Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 3243060757113724164, guid: 305e70b77edd14e728dbda1166bf3c88, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7160467284474229963, guid: 305e70b77edd14e728dbda1166bf3c88, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -29323,7 +29331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7160467284474229963, guid: 305e70b77edd14e728dbda1166bf3c88, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7160467284474229963, guid: 305e70b77edd14e728dbda1166bf3c88, type: 3}
       propertyPath: m_AnchoredPosition.y

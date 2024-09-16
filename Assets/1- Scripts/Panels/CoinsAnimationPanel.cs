@@ -12,9 +12,25 @@ public class CoinsAnimationPanel : MonoBehaviour
     public AudioClip coinSpillSoundEffect;
 
     private AudioManager audioManager;
+    private Vector3[] originalPositions;
+    private Vector3[] originalScales;
 
     void OnEnable()
     {
+        // Initialize the original positions and scales of the coins
+        originalPositions = new Vector3[coins.Length];
+        originalScales = new Vector3[coins.Length];
+
+        for (int i = 0; i < coins.Length; i++)
+        {
+            if (coins[i] != null)
+            {
+                coins[i].SetActive(true); // Make coins visible again when the panel is re-enabled
+                originalPositions[i] = coins[i].transform.position;
+                originalScales[i] = coins[i].transform.localScale;
+            }
+        }
+
         StartCoroutine(StartCoinMovement());
         audioManager = FindObjectOfType<AudioManager>();
 
@@ -29,7 +45,7 @@ public class CoinsAnimationPanel : MonoBehaviour
         for (int i = 0; i < coins.Length; i++)
         {
             GameObject coin = coins[i];
-            StartCoroutine(MoveCoin(coin));
+            StartCoroutine(MoveCoin(coin, i));
             yield return new WaitForSeconds(0.33f); // Delay between each coin movement
         }
 
@@ -41,10 +57,9 @@ public class CoinsAnimationPanel : MonoBehaviour
         {
             transform.parent.gameObject.GetComponent<Dialog>().HideDialog();  // Deactivate the parent GameObject
         }
-     //   gameObject.GetComponent<Dialog>().HideDialog();  // Deactivate this GameObject
     }
 
-    IEnumerator MoveCoin(GameObject coin)
+    IEnumerator MoveCoin(GameObject coin, int index)
     {
         if (coin == null) yield break;
 
@@ -63,14 +78,17 @@ public class CoinsAnimationPanel : MonoBehaviour
         {
             if (audioManager != null && coinSpillSoundEffect != null)
             {
-                // Play the sound effect before destroying the coin
+                // Play the sound effect
                 audioManager.PlaySingleShotAudio(coinSpillSoundEffect, 1f);
             }
 
-            Destroy(coin); // Destroy the coin once it reaches the destination
+            // Reset the coin's position and scale
+            coin.transform.position = originalPositions[index];
+            coin.transform.localScale = originalScales[index];
+
+            // Hide the coin after it reaches its destination
+            coin.SetActive(false);
         }
     }
 }
-
-
 

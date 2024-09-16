@@ -31,8 +31,8 @@ public class Banner : Singleton<Banner>
         else
         {
             MobileAds.Initialize((InitializationStatus initStatus) => { });
-           // CreateBannerView();
-           // LoadAd();
+            LoadAd();
+          
         }
 
          
@@ -53,9 +53,7 @@ public class Banner : Singleton<Banner>
         }
 
         // Create a 320x50 banner at top of the screen
-        bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);
-        LoadAd();
-        
+        bannerView = new BannerView(_adUnitId, AdSize.Banner, AdPosition.Top);        
     }
 
  
