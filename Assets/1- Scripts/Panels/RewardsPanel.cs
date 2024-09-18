@@ -5,11 +5,19 @@ using UnityEngine;
 public class RewardsPanel : MonoBehaviour
 {
 
+    public static RewardsPanel instance;
+
     public GameObject coinsAnimationPanel;
     public GameObject jemsAnimationPanel;
 
     CurrencyManager currencyManager;
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     void OnEnable()
     {
         currencyManager = FindObjectOfType<CurrencyManager>();
@@ -46,13 +54,11 @@ public class RewardsPanel : MonoBehaviour
 
     public void ActivateCoinAnimationPanel()
     {
-        jemsAnimationPanel.SetActive(false);
         coinsAnimationPanel.SetActive(true);
     }
 
     public void ActivateJemsAnimationPanel()
     {
-        coinsAnimationPanel.SetActive(false);
         jemsAnimationPanel.SetActive(true);
     }
 }

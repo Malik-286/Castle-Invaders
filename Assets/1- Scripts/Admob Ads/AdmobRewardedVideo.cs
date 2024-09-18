@@ -10,11 +10,8 @@ public class AdmobRewardedVideo : MonoBehaviour
 
     public int Index;
 
-    RewardsPanel rewardsPanel;
- 
 
-
-      void Awake()
+    void Awake()
     {
         if (Instance == null)
         {
@@ -22,26 +19,27 @@ public class AdmobRewardedVideo : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        rewardsPanel = FindObjectOfType<RewardsPanel>();
-    }
-
-
-
     #region Give Reward
 
     public void RewardAfterAd()
     {
+        print("Rewarded Ad Index is " + Index);
+
         if (Index == 0)
         {
-            rewardsPanel.ActivateCoinAnimationPanel();
-            StartCoroutine(rewardsPanel.IncreaseGoldCurrency());
+            if (RewardsPanel.instance)
+            {
+                RewardsPanel.instance.ActivateCoinAnimationPanel();
+                StartCoroutine(RewardsPanel.instance.IncreaseGoldCurrency());
+            }
         }
         if (Index == 1)
         {
-            rewardsPanel.ActivateJemsAnimationPanel();
-            StartCoroutine(rewardsPanel.IncreaseDiamondCurrency());
+            if (RewardsPanel.instance)
+            {
+                RewardsPanel.instance.ActivateJemsAnimationPanel();
+                StartCoroutine(RewardsPanel.instance.IncreaseDiamondCurrency());
+            }
         }    
     }
 
