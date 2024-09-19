@@ -10,8 +10,13 @@ public class TargetLocater : MonoBehaviour
     [SerializeField] ParticleSystem towerShootingParticles;
 
 
-  
+    [SerializeField] AudioClip tower01ShootingSFX;
+    [SerializeField] AudioClip tower02ShootingSFX;
+    [SerializeField] AudioClip tower03ShootingSFX;
+    [SerializeField] AudioClip tower04ShootingSFX;
 
+
+    string[] towersTags = { "Tower1", "Tower2", "Tower3", "Tower4" };
 
     Transform target;
 
@@ -108,7 +113,9 @@ public class TargetLocater : MonoBehaviour
             if (!emissionModule.enabled)
             {
                 emissionModule.enabled = true; // Enable particle emission
- 
+                PlayShootingSoundEffect();
+
+
             }
         }
         else
@@ -137,6 +144,31 @@ public class TargetLocater : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+
+    void  PlayShootingSoundEffect()
+    {
+        if(AudioManager.Instance != null)
+        {
+            if (this.gameObject.CompareTag(towersTags[0]))
+            {
+                AudioManager.Instance.PlaySingleShotAudio(tower01ShootingSFX, 2.0f);
+            }
+            else if (this.gameObject.CompareTag(towersTags[1]))
+            {
+                AudioManager.Instance.PlaySingleShotAudio(tower02ShootingSFX, 2.0f);
+            }
+            else if (this.gameObject.CompareTag(towersTags[2]))
+            {
+                AudioManager.Instance.PlaySingleShotAudio(tower03ShootingSFX, 2.0f);
+            }
+            else if (this.gameObject.CompareTag(towersTags[3]))
+            {
+                AudioManager.Instance.PlaySingleShotAudio(tower04ShootingSFX, 2.0f);
+            }
+      
+
+        }
+    }
 }
 
 
