@@ -55,10 +55,17 @@ public class RewardsPanel : MonoBehaviour
     public void ActivateCoinAnimationPanel()
     {
         coinsAnimationPanel.SetActive(true);
+        Invoke(nameof(DeActivateCoinAnimationPanel), 2.5f);
+    }
+
+    public void DeactivateMainPanel()
+    {
+        this.gameObject.SetActive(false);
     }
 
     public void ActivateJemsAnimationPanel()
     {
         jemsAnimationPanel.SetActive(true);
+        Invoke(nameof(DeActivateJemsAnimationPanel), 2.5f);
     }
 }

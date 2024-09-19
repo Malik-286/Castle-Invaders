@@ -12,9 +12,13 @@ public class SetRewardedIndexing : MonoBehaviour
 
     public void SetIndex(int Tellme)
     {
-        print("Ad Index is " + Tellme);
+        print("Rewarded Ad Index is " + Tellme);
+
+        if (AdmobRewardedVideo.Instance)
+        {
         print(" Clicking Rewarded Ad Index is " + AdmobRewardedVideo.Instance.Index);
-        AdmobRewardedVideo.Instance.Index = Tellme;
+            AdmobRewardedVideo.Instance.Index = Tellme;
+        }
     }
     // Update is called once per frame
     void Update()

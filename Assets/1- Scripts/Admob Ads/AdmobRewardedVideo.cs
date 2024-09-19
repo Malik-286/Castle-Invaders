@@ -29,7 +29,7 @@ public class AdmobRewardedVideo : MonoBehaviour
         {
             if (RewardsPanel.instance)
             {
-                RewardsPanel.instance.ActivateCoinAnimationPanel();
+                //RewardsPanel.instance.ActivateCoinAnimationPanel();
                 StartCoroutine(RewardsPanel.instance.IncreaseGoldCurrency());
             }
         }
@@ -37,7 +37,7 @@ public class AdmobRewardedVideo : MonoBehaviour
         {
             if (RewardsPanel.instance)
             {
-                RewardsPanel.instance.ActivateJemsAnimationPanel();
+                //RewardsPanel.instance.ActivateJemsAnimationPanel();
                 StartCoroutine(RewardsPanel.instance.IncreaseDiamondCurrency());
             }
         }    
