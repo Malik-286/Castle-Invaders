@@ -62,6 +62,7 @@ public class GamePlayUI : MonoBehaviour
     AudioManager audioManager;
     public GameObject Maincamera;
     public GameObject Cutscene;
+    public bool StartingLevels;
       void Awake()
     {
         if (Instance == null)
@@ -102,8 +103,15 @@ public class GamePlayUI : MonoBehaviour
     {
         Cutscene.SetActive(true);
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        yield return new WaitForSeconds(12f);
-        Cutscene.SetActive(false);
+        if (StartingLevels)
+        {
+            yield return new WaitForSeconds(12f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(18f);
+        }
+            Cutscene.SetActive(false);
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
     void Update()
