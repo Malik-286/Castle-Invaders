@@ -12586,7 +12586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8459160216273971395, guid: 68bd6adc65b95f848932edafa38ff5f5, type: 3}
       propertyPath: numberofPools
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8459160216273971395, guid: 68bd6adc65b95f848932edafa38ff5f5, type: 3}
       propertyPath: spawnWaitTime
@@ -16163,6 +16163,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2127090022697350327, guid: e9c65dc2a7bdce24a8ef568f48998bc8, type: 3}
   m_PrefabInstance: {fileID: 1507810558}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1515415666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5090171124843539820, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_Name
+      value: (2) Pool 08- CrabMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 93.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343335663670687313, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803199409795819932, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: numberofPools
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803199409795819932, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
+      propertyPath: spawnWaitTime
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9ffceafc92291d4ca7974f31c433380, type: 3}
 --- !u!1001 &1515786653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97421,3 +97486,4 @@ SceneRoots:
   - {fileID: 1506736240}
   - {fileID: 2104375721}
   - {fileID: 1718419568}
+  - {fileID: 1515415666}
