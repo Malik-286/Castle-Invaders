@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelSelection : MonoBehaviour
+public class LevelsPanel : MonoBehaviour
 {
 
     [SerializeField] AudioClip whooshSFX;
