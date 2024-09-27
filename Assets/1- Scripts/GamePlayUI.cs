@@ -63,7 +63,8 @@ public class GamePlayUI : MonoBehaviour
     public GameObject Maincamera;
     public GameObject Cutscene;
     public bool StartingLevels;
-      void Awake()
+    public bool MiddleLevels;
+    void Awake()
     {
         if (Instance == null)
         {
@@ -109,7 +110,14 @@ public class GamePlayUI : MonoBehaviour
         }
         else
         {
+            if (MiddleLevels)
+            {
+                yield return new WaitForSeconds(15f);
+            }
+            else
+            {
             yield return new WaitForSeconds(18f);
+            }
         }
             Cutscene.SetActive(false);
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
