@@ -112,7 +112,7 @@ public class GamePlayUI : MonoBehaviour
         {
             if (MiddleLevels)
             {
-                yield return new WaitForSeconds(15f);
+                yield return new WaitForSeconds(20f);
             }
             else
             {
