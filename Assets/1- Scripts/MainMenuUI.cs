@@ -36,6 +36,7 @@ public class MainMenuUI : MonoBehaviour
     public void PressPlayButton()
     {
           levelsPanel.SetActive(true);
+
     }
 
    public IEnumerator StartGame()
