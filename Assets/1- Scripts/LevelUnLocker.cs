@@ -20,14 +20,11 @@ public class LevelUnLocker : MonoBehaviour
 
 
     MainMenuUI mainMenuUI;
-    Interstitial interstitial;
 
     void Start()
     {
         mainMenuUI = FindObjectOfType<MainMenuUI>();
-        interstitial = FindObjectOfType<Interstitial>();
-        interstitial.LoadInterstitialAd();
- 
+  
 
 
 
@@ -71,11 +68,7 @@ public class LevelUnLocker : MonoBehaviour
 
     public void LoadLevel(int levelToLoad)
     {
-        if(interstitial != null)
-        {
-            interstitial.ShowInterstitialAd();
-        }
-
+     
         if (mainMenuUI != null)
         {
             mainMenuUI.StartCoroutine(mainMenuUI.StartGame());
