@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
+    public static BattleManager instance;
 
-    
+
 
     GamePlayUI gamePlayUI;
     ObjectPool[] objectPools;
@@ -13,10 +14,22 @@ public class BattleManager : MonoBehaviour
      PlayerCastleHealth playerCastleHealth;
    
     public int winAmountToReward, loseAmountToReward;
-  
+    public bool missionCompleted;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
+        missionCompleted = false;
         gamePlayUI = FindObjectOfType<GamePlayUI>();
         objectPools = FindObjectsOfType<ObjectPool>();
         gameManager = FindObjectOfType<GameManager>();
@@ -58,7 +71,8 @@ public class BattleManager : MonoBehaviour
 
             // Check if all pools are empty, no enemies alive, and player's health is greater than zero
             if (allPoolsEmpty && !anyEnemiesAlive && playerCastleHealth.GetCurretHealth() > 0)
-            {             
+            {  
+                missionCompleted = true;
                 StartCoroutine(gamePlayUI.ActivateWinPanel());
                                  
             }

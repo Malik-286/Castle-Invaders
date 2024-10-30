@@ -58,6 +58,12 @@ public class GamePlayUI : MonoBehaviour
     [Header("Pause Panel")]
     [SerializeField] GameObject giftPanel;
 
+    [Header("Defence Power Slider")]
+    [SerializeField] Slider defencePowerSlider;
+
+    [Header("Attack Power Slider")]
+    [SerializeField] Slider attackPowerSlider;
+
     GameManager gameManager;
     AudioManager audioManager;
     public GameObject Maincamera;
@@ -128,6 +134,8 @@ public class GamePlayUI : MonoBehaviour
         UpdateEnemiesCountText();
         UpdatePlayerHealthSlider();
         FixTimeToZero();
+        UpdateDefencePowerValue();
+        UpdateAttackPowerValue();
     }
 
     public int GetPoolEnemies()
@@ -270,5 +278,28 @@ public class GamePlayUI : MonoBehaviour
     {
         yield return new WaitForSeconds(0.30f);
         Time.timeScale = 0.0f;
+    }
+
+
+    void UpdateDefencePowerValue()
+    {
+        if(BattleManager.instance.missionCompleted)
+        {
+            return;
+        }
+        defencePowerSlider.maxValue = 5;
+
+        defencePowerSlider.value = DefencePowerManager.instance.GetTotalTowersInSceneValue();
+    }
+
+    void UpdateAttackPowerValue()
+    {
+        if (BattleManager.instance.missionCompleted)
+        {
+            return;
+        }
+        attackPowerSlider.maxValue = totalPoolEnemies;
+
+        attackPowerSlider.value = AttackPowerManager.instance.GetTotalEnemiesInSceneValue();
     }
 }
