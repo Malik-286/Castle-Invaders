@@ -83,9 +83,9 @@ public class GamePlayUI : MonoBehaviour
     }
     void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        audioManager = AudioManager.Instance;
         audioManager.GetComponent<AudioSource>().enabled = true;
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = GameManager.Instance;
         UpdateCurrentLevelText();
         levelStartupTime = levelCompletionTime;
         enemiesKillsCout = 0;

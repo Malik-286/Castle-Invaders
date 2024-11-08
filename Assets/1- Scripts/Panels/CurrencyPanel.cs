@@ -8,12 +8,9 @@ public class CurrencyPanel : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI goldcurrencyText;
     [SerializeField] TextMeshProUGUI diamondcurrencyText;
-
-
-    CurrencyManager currencyManager;
      void Start()
     {
-        currencyManager = FindObjectOfType<CurrencyManager>();
+
     }
 
     void Update()
@@ -26,23 +23,32 @@ public class CurrencyPanel : MonoBehaviour
 
     void UpdateGoldCurrencyText()
     {
-        int currentGold = currencyManager.GetCurrentGold();
-        if (currentGold >= 1000)
+        if (CurrencyManager.Instance)
         {
-            float goldInK = currentGold / 1000f;
-            goldcurrencyText.text = goldInK.ToString("0.#") + "k";
-        }
-        else
-        {
-            goldcurrencyText.text = currentGold.ToString();
+            int currentGold = CurrencyManager.Instance.GetCurrentGold();
+            if (currentGold >= 1000)
+            {
+                float goldInK = currentGold / 1000f;
+                goldcurrencyText.text = goldInK.ToString("0.#") + "k";
+            }
+            else
+            {
+                goldcurrencyText.text = currentGold.ToString();
+            }
+            if (currentGold < 0)
+            {
+                currentGold = 0;
+            }
         }
     }
 
     void UpdateDiamondCurrencyText()
     {
-           int currentDiamond = currencyManager.GetCurrentDiamond();
-       
-             diamondcurrencyText.text = currentDiamond.ToString();         
+        if (CurrencyManager.Instance)
+        {
+            int currentDiamond = CurrencyManager.Instance.GetCurrentDiamond();
+            diamondcurrencyText.text = currentDiamond.ToString();
+        }
     }
 
 }

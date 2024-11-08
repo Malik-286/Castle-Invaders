@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CurrencyManager : Singleton<CurrencyManager>  
@@ -34,14 +35,16 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
     void Update()
     {
+        if (currentGold <= 0)
+        {
+            currentGold = 0;
+        }
+
         currentGold = (int)Mathf.Clamp(currentGold, 0, Mathf.Infinity);
         currentDiamond = (int)Mathf.Clamp(currentDiamond, 0, Mathf.Infinity);
 
 
     }
-
-
-
 
 
     public int GetCurrentGold()
