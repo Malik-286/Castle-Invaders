@@ -55,8 +55,7 @@ public class GamePlayUI : MonoBehaviour
     [Header("Pause Panel")]
     [SerializeField] GameObject pausePanel;
 
-    [Header("Pause Panel")]
-    [SerializeField] GameObject giftPanel;
+ 
 
     [Header("Defence Power Slider")]
     [SerializeField] Slider defencePowerSlider;
@@ -66,7 +65,7 @@ public class GamePlayUI : MonoBehaviour
 
     GameManager gameManager;
     AudioManager audioManager;
-    public GameObject Maincamera;
+    [HideInInspector] public GameObject Maincamera;
     public GameObject Cutscene;
     public bool StartingLevels;
     public bool MiddleLevels;
@@ -98,8 +97,8 @@ public class GamePlayUI : MonoBehaviour
         pausePanel.SetActive(false);
         winParticles.SetActive(false);
         winPanel.SetActive(false);
-        giftPanel.SetActive(false);
-
+        Maincamera = Camera.main.gameObject;
+ 
 
         fadeImage.gameObject.SetActive(true);
         StartCoroutine(FadeImageToTransparentWhite(1.5f));
@@ -146,7 +145,11 @@ public class GamePlayUI : MonoBehaviour
    
     void UpdateCurrentLevelText()
     {
-      currentLevelText.text =  gameManager.GetCurrentSceneName();
+        if(GameManager.Instance)
+        {
+            currentLevelText.text = GameManager.Instance.GetCurrentSceneName();
+
+        }
     }
 
 
