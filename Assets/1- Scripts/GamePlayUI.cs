@@ -79,6 +79,8 @@ public class GamePlayUI : MonoBehaviour
 
         StartCoroutine(EndCutscene());
 
+        levelCompletionTime = GetCurrentLevelCompletionTime();
+
     }
     void Start()
     {
@@ -305,4 +307,41 @@ public class GamePlayUI : MonoBehaviour
 
         attackPowerSlider.value = AttackPowerManager.instance.GetTotalEnemiesInSceneValue();
     }
+
+
+    public float GetCurrentLevelCompletionTime()
+    {
+        if (GameManager.Instance)
+        {
+            int levelIndex = GameManager.Instance.GetCurrentSceneIndex();
+ 
+            // Ensure levelIndex is within the valid range (1 to 100)
+            if (levelIndex >= 1 && levelIndex <= 100)
+            {
+                // Calculate the time based on the level index.
+                // Divide the levelIndex by 5 (integer division) to determine the "block" of 5 levels.
+                int timeBlock = (levelIndex - 1) / 5;  // Subtract 1 to ensure level 1 starts with time 140f
+
+                // The starting time is 140f for levels 1-5, then it increases by 5 units every 5 levels.
+                float timeForLevel = 145f + (timeBlock * 5);
+
+                 return timeForLevel;
+            }
+            else
+            {
+                Debug.LogWarning("Level index out of range: " + levelIndex); // Level index is out of the expected range.
+            }
+        }
+        else
+        {
+            Debug.LogError("GameManager.Instance is null!"); // If GameManager is null, log an error.
+        }
+
+         return 0f;
+    }
+
+   
+
+
+
 }
