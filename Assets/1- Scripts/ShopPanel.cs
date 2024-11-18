@@ -23,7 +23,7 @@ public class ShopPanel : MonoBehaviour
 
 
 
-    CurrencyManager currencyManager;
+     CurrencyManager currencyManager;
 
       const string starterPack_ProductID = "com.aspiregamesstudio.castleinvaders.starterpack";
       const string removeAds_ProductID = "com.aspiregamesstudio.castleinvaders.removeads";
