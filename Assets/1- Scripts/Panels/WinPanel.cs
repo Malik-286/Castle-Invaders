@@ -34,7 +34,12 @@ public class WinPanel : MonoBehaviour
 
     public void LoadNextLevel()
     {
-       
+
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
+
         int index = GameManager.Instance.GetCurrentSceneIndex()+1;
          GameManager.Instance.LoadScene(index);
          AudioManager.Instance.audioSource.Play();
@@ -44,7 +49,11 @@ public class WinPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
-       
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
+
         GameManager.Instance.LoadScene(0);
         AudioManager.Instance.audioSource.Play();
         

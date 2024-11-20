@@ -51,11 +51,13 @@ public class GamePlayUI : MonoBehaviour
 
     [Header("Scene Startup Image")]
     [SerializeField] Image fadeImage;
+    [SerializeField] GameObject SkipButton;
 
     [Header("Pause Panel")]
     [SerializeField] GameObject pausePanel;
 
- 
+    [Header("Reward Panel")]
+    public GameObject RewardPanel;
 
     [Header("Defence Power Slider")]
     [SerializeField] Slider defencePowerSlider;
@@ -80,6 +82,9 @@ public class GamePlayUI : MonoBehaviour
         StartCoroutine(EndCutscene());
 
         levelCompletionTime = GetCurrentLevelCompletionTime();
+
+        SkipButton.SetActive(false);
+        Invoke(nameof(ActivateSkipCutsceneButton), 2f);
 
     }
     void Start()
@@ -107,6 +112,16 @@ public class GamePlayUI : MonoBehaviour
 
     }
 
+    public void ActivateSkipCutsceneButton()
+    {
+        SkipButton.SetActive(true);
+    }
+    public void SkipTheCutsceneNow()
+    {
+        Cutscene.SetActive(false);
+        SkipButton.SetActive(false);
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+    }
     IEnumerator EndCutscene()
     {
         Cutscene.SetActive(true);
@@ -126,7 +141,8 @@ public class GamePlayUI : MonoBehaviour
             yield return new WaitForSeconds(18f);
             }
         }
-            Cutscene.SetActive(false);
+        Cutscene.SetActive(false);
+        SkipButton.SetActive(false);
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
     void Update()
@@ -173,6 +189,13 @@ public class GamePlayUI : MonoBehaviour
          }
     }
 
+    public void ClaimReward()
+    {
+        if (CurrencyManager.Instance)
+        {
+            CurrencyManager.Instance.IncreaseDiamond(5);
+        }
+    }
 
     public void RestTime()
     {
@@ -220,9 +243,21 @@ public class GamePlayUI : MonoBehaviour
     }
 
 
+    public void ClaimGameplayGEMS()
+    {
+        RewardPanel.transform.GetChild(0).gameObject.SetActive(true);
+        RewardPanel.transform.GetChild(1).gameObject.SetActive(false);
+        Invoke(nameof(DisableRewardPanel), 1f);
+    }
 
+    public void DisableRewardPanel()
+    {
+        RewardPanel.transform.GetChild(0).gameObject.SetActive(false);
+        RewardPanel.transform.GetChild(1).gameObject.SetActive(true);
+        RewardPanel.SetActive(false);
+    }
 
-      void GetTotalPoolEnemies()
+    void GetTotalPoolEnemies()
     {
 
         GameObject[] enemyPools = GameObject.FindGameObjectsWithTag("EnemiesPool");

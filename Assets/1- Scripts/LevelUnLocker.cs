@@ -68,6 +68,10 @@ public class LevelUnLocker : MonoBehaviour
 
     public void LoadLevel(int levelToLoad)
     {
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
      
         if (mainMenuUI != null)
         {

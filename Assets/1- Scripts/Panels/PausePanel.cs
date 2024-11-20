@@ -31,7 +31,12 @@ public class PausePanel : MonoBehaviour
 
     public void GoToMianMenu()
     {
-        if(GameManager.Instance != null)
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
+
+        if (GameManager.Instance != null)
         {
             GameManager.Instance.LoadScene(0);
         }     
@@ -39,7 +44,13 @@ public class PausePanel : MonoBehaviour
 
     public void RestartGame()
     {
-        if(GameManager.Instance != null)
+
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
+
+        if (GameManager.Instance != null)
         {
             int currentSceneIndex = GameManager.Instance.GetCurrentSceneIndex();
             GameManager.Instance.LoadScene(currentSceneIndex);

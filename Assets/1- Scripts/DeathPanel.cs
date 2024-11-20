@@ -24,7 +24,11 @@ public class DeathPanel : MonoBehaviour
 
     public void PlayAgain()
     {
-     
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
+
         if (GameManager.Instance)
         {
             GameManager.Instance.RestartCurrentLevel();
@@ -34,7 +38,11 @@ public class DeathPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
-     
+        if (Adsmanager.Instance)
+        {
+            Adsmanager.Instance.ShowIntersitial();
+        }
+
         if (GameManager.Instance)
         {
             GameManager.Instance.LoadScene(0);

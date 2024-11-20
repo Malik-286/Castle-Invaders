@@ -23,7 +23,27 @@ public class AdmobRewardedVideo : MonoBehaviour
 
     public void RewardAfterAd()
     {
-
+        if (Index == 0)
+        {
+            if (CurrencyManager.Instance)
+            {
+                CurrencyManager.Instance.IncreaseGold(100);
+            }
+        }
+        if (Index == 1)
+        {
+            if (CurrencyManager.Instance)
+            {
+                CurrencyManager.Instance.IncreaseDiamond(5);
+            }
+        }
+        if (Index == 2)
+        {
+            if (GamePlayUI.Instance)
+            {
+                GamePlayUI.Instance.RewardPanel.SetActive(true);
+            }
+        }
     }
     #endregion
     public void ShowRewardedVideo()
