@@ -22,6 +22,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
     void Start()
     {
+
          if (currentGold <= 0)
         {
             currentGold = defaultGold;
@@ -65,7 +66,11 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
     public void IncreaseDiamond(int amountToIncrease)
     {
+        print("diamond before" + currentDiamond);
         currentDiamond += amountToIncrease;
+        print("diamond After" + currentDiamond);
+        print("Amount to increase" + amountToIncrease);
+
         SaveCurrencyData();
     }
 
@@ -75,6 +80,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
         if(currentGold <= 0)
         {
             Debug.Log("Not Enough Gold");
+            currentGold = 0;
             return;
         }
         currentGold -= amountToDecrease;
@@ -86,6 +92,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
         if (currentDiamond <= 0)
         {
             Debug.Log("Not Enough Diamond");
+            currentDiamond = 0;
             return;
         }
         currentDiamond -= amountToDecrease;

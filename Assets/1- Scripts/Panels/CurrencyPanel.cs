@@ -44,14 +44,18 @@ public class CurrencyPanel : MonoBehaviour
 
     void UpdateDiamondCurrencyText()
     {
+        print("Update Text");
         if (CurrencyManager.Instance)
         {
+            print("Update Text1");
+
             int currentDiamond = CurrencyManager.Instance.GetCurrentDiamond();
              if (currentDiamond >= 1000)
             {
                 float diamondInK = currentDiamond / 1000f;
                 diamondcurrencyText.text = diamondInK.ToString("0.#") + "k";
-                
+
+                print("Update Text2");
 
             }
             else

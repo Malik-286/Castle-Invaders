@@ -2995,6 +2995,7 @@ GameObject:
   - component: {fileID: 1236640293}
   - component: {fileID: 1236640292}
   - component: {fileID: 1236640295}
+  - component: {fileID: 1236640296}
   m_Layer: 5
   m_Name: Video Ad 02 Button
   m_TagString: Untagged
@@ -3069,6 +3070,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1236640296}
+        m_TargetAssemblyTypeName: SetRewardedIndexing, Assembly-CSharp
+        m_MethodName: SetIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1236640295}
         m_TargetAssemblyTypeName: AdmobRewardedVideo, Assembly-CSharp
         m_MethodName: ShowRewardedVideo
@@ -3132,6 +3145,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 1
+--- !u!114 &1236640296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236640290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcaa4fc381505a4c9e49428a17b9b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1283037652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,6 +3785,7 @@ GameObject:
   - component: {fileID: 1526353257}
   - component: {fileID: 1526353256}
   - component: {fileID: 1526353259}
+  - component: {fileID: 1526353260}
   m_Layer: 5
   m_Name: Video Ad 01 Button
   m_TagString: Untagged
@@ -3834,6 +3860,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1526353260}
+        m_TargetAssemblyTypeName: SetRewardedIndexing, Assembly-CSharp
+        m_MethodName: SetIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1526353259}
         m_TargetAssemblyTypeName: AdmobRewardedVideo, Assembly-CSharp
         m_MethodName: ShowRewardedVideo
@@ -3897,6 +3935,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Index: 0
+--- !u!114 &1526353260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526353254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcaa4fc381505a4c9e49428a17b9b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1529317603
 GameObject:
   m_ObjectHideFlags: 0
