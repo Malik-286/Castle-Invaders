@@ -28,6 +28,8 @@ public class AdmobRewardedVideo : MonoBehaviour
             if (CurrencyManager.Instance)
             {
                 CurrencyManager.Instance.IncreaseGold(100);
+                CurrencyManager.Instance.SaveCurrencyData();
+
             }
         }
         if (Index == 1)
@@ -35,6 +37,8 @@ public class AdmobRewardedVideo : MonoBehaviour
             if (CurrencyManager.Instance)
             {
                 CurrencyManager.Instance.IncreaseDiamond(5);
+                CurrencyManager.Instance.SaveCurrencyData();
+
             }
         }
         if (Index == 2)
