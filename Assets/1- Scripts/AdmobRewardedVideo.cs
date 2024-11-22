@@ -25,20 +25,22 @@ public class AdmobRewardedVideo : MonoBehaviour
     {
         if (Index == 0)
         {
-            if (CurrencyManager.Instance)
+            if (MainMenuUI.instance)
             {
-                CurrencyManager.Instance.IncreaseGold(100);
-                CurrencyManager.Instance.SaveCurrencyData();
-
+                MainMenuUI.instance.RewardPanel.transform.GetChild(4).gameObject.SetActive(true);
+                MainMenuUI.instance.RewardPanel.transform.GetChild(3).gameObject.SetActive(false);
+                MainMenuUI.instance.RewardPanelText.text = "GREAT WORK!\r\nYOU GOT 100 Coins".ToString();
+                MainMenuUI.instance.RewardPanel.SetActive(true);
             }
         }
         if (Index == 1)
         {
-            if (CurrencyManager.Instance)
+            if (MainMenuUI.instance)
             {
-                CurrencyManager.Instance.IncreaseDiamond(5);
-                CurrencyManager.Instance.SaveCurrencyData();
-
+                MainMenuUI.instance.RewardPanel.transform.GetChild(4).gameObject.SetActive(false);
+                MainMenuUI.instance.RewardPanel.transform.GetChild(3).gameObject.SetActive(true);
+                MainMenuUI.instance.RewardPanelText.text = "GREAT WORK!\r\nYOU GOT 5 GEMS".ToString();
+                MainMenuUI.instance.RewardPanel.SetActive(true);
             }
         }
         if (Index == 2)

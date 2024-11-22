@@ -247,6 +247,7 @@ public class GamePlayUI : MonoBehaviour
     {
         RewardPanel.transform.GetChild(0).gameObject.SetActive(true);
         RewardPanel.transform.GetChild(1).gameObject.SetActive(false);
+
         Invoke(nameof(DisableRewardPanel), 1f);
     }
 
@@ -255,6 +256,12 @@ public class GamePlayUI : MonoBehaviour
         RewardPanel.transform.GetChild(0).gameObject.SetActive(false);
         RewardPanel.transform.GetChild(1).gameObject.SetActive(true);
         RewardPanel.SetActive(false);
+        if (CurrencyManager.Instance)
+        {
+            CurrencyManager.Instance.IncreaseDiamond(5);
+            CurrencyManager.Instance.SaveCurrencyData();
+
+        }
     }
 
     void GetTotalPoolEnemies()
