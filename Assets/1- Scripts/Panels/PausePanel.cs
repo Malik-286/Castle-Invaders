@@ -31,10 +31,7 @@ public class PausePanel : MonoBehaviour
 
     public void GoToMianMenu()
     {
-        if (Adsmanager.Instance)
-        {
-            Adsmanager.Instance.ShowIntersitial();
-        }
+        
 
         if (GameManager.Instance != null)
         {
@@ -45,10 +42,7 @@ public class PausePanel : MonoBehaviour
     public void RestartGame()
     {
 
-        if (Adsmanager.Instance)
-        {
-            Adsmanager.Instance.ShowIntersitial();
-        }
+        
 
         if (GameManager.Instance != null)
         {

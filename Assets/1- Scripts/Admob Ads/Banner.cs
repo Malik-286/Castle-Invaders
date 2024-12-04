@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using GoogleMobileAds.Api;
 using System;
@@ -134,3 +135,4 @@ public class Banner : Singleton<Banner>
 
 
 }
+

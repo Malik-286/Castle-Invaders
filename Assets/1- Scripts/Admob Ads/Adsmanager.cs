@@ -54,3 +54,6 @@ public class Adsmanager : MonoBehaviour
         
     }
 }
+
+
+

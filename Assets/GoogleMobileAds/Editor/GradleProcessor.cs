@@ -15,7 +15,7 @@ public class GradleProcessor : IPostGenerateGradleAndroidProject
       "apply from: 'GoogleMobileAdsPlugin.androidlib/packaging_options.gradle'";
 
     private const string GMA_VALIDATE_GRADLE_DEPENDENCIES =
-      "gradle.projectsEvaluated { apply from: 'GoogleMobileAdsPlugin.androidlib/validate_dependencies.gradle' }";
+      "apply from: 'GoogleMobileAdsPlugin.androidlib/validate_dependencies.gradle'";
 
     public void OnPostGenerateGradleAndroidProject(string path)
     {

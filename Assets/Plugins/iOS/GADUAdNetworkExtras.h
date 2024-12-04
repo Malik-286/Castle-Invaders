@@ -4,7 +4,7 @@
 
 @protocol GADUAdNetworkExtras <NSObject>
 
-- (nonnull id<GADAdNetworkExtras>)adNetworkExtrasWithDictionary:
-    (nonnull NSDictionary<NSString *, NSString *> *)extras;
+- (id<GADAdNetworkExtras>)adNetworkExtrasWithDictionary:
+    (NSDictionary<NSString *, NSString *> *)extras;
 
 @end

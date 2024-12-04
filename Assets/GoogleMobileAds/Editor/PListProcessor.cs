@@ -60,6 +60,11 @@ public static class PListProcessor
             plist.root.SetString("NSUserTrackingUsageDescription", userTrackingDescription);
         }
 
+        if (instance.DelayAppMeasurementInit)
+        {
+            plist.root.SetBoolean("GADDelayAppMeasurementInit", true);
+        }
+
         List<string> skNetworkIds = ReadSKAdNetworkIdentifiersFromXML();
         if (skNetworkIds.Count > 0)
         {
