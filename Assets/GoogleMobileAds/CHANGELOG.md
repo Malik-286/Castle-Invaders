@@ -1,6 +1,75 @@
 Google Mobile Ads Unity Plugin Change Log
 
 **************
+Version 9.2.0
+**************
+- Added `IsCollapsible` API to `BannerView` to check if a collapsible banner was loaded.
+- Fixed [#3369] by using appropriate LayoutParams.
+- Fixed [#3455] Banner ad positioning not working on iOS.
+- Updated GoogleMobileAds iOS SDK to 11.7.0.
+
+Built and tested with:
+- Google Mobile Ads Android SDK 23.2.0
+- Google Mobile Ads iOS SDK 11.7.0
+- Google User Messaging Platform 2.2.0
+- External Dependency Manager for Unity 1.2.181
+
+**************
+Version 9.1.1
+**************
+- Updated GoogleMobileAds Android SDK to 23.2.0.
+- Updated GoogleMobileAds iOS SDK to 11.6.0.
+- Updated External Dependency Manager for Unity to 1.2.181.
+- Added the AndroidJNI dependency to the UPM package.
+
+Built and tested with:
+- Google Mobile Ads Android SDK 23.2.0
+- Google Mobile Ads iOS SDK 11.6.0
+- Google User Messaging Platform 2.2.0
+- External Dependency Manager for Unity 1.2.181
+
+**************
+Version 9.1.0
+**************
+
+- Removed the app measurement feature as Android/iOS SDKs [no longer](https://support.google.com/admob/answer/13973847) initialize App measurement.
+- Fixed [#3290] by calling static putPublisherFirstPartyIdEnabled with boolean return type.
+- Fixed [#3042] by explicitly adding gradle.projectsEvaluated for executing validate_dependencies gradle script.
+- Fixed [#2801] incorrect value for `AdapterResponseInfo.LatencyMillis` on iOS.
+- Added `GetAdUnitID` API that allows reading the ad unit id for all ad formats.
+- Enabled passing AdManagerAdRequest as part of Load API for Rewarded, Rewarded Interstitial and AppOpen formats.
+- Updated Google Mobile Ads SDK dependency to use v11.3.0 on iOS.
+
+Built and tested with:
+- Google Mobile Ads Android SDK 23.0.0
+- Google Mobile Ads iOS SDK 11.3.0
+- Google User Messaging Platform 2.2.0
+- External Dependency Manager for Unity 1.2.179
+
+**************
+Version 9.0.0
+**************
+
+- Removed `SameAppKeyEnabled` in `RequestConfiguration`. Use `PublisherFirstPartyIdEnabled` instead.
+- Removed `ServerSideVerificationOptions.Builder`. Use `ServerSideVerificationOptions` directly.
+- Removed `RequestConfiguration.Builder`. Use `RequestConfiguration` directly.
+- Removed `AdRequest.Builder`. Use `AdRequest` directly.
+- Removed `AdErrorEventArgs`. Use `AdError` directly.
+- Removed `AppOpenAd.Load` API that takes a `ScreenOrientation` parameter.
+- Made `AdValueEventArgs` Obsolete. Use `AdValue` directly.
+- Made `AdFailedToLoadEventArgs` Obsolete. Use `LoadAdError` directly.
+- Updated Google Mobile Ads SDK dependency to use v11.2.0 on iOS.
+- Updated the Android User Messaging Platform dependency version to 2.2.0.
+- Added the `NativeOverlayAd` class to fetch and display native ads using templates.
+- Using `CFPreferences` APIs for `ApplicationPreferences` instead of `NSUserDefaults` on iOS.
+
+Built and tested with:
+- Google Mobile Ads Android SDK 23.0.0
+- Google Mobile Ads iOS SDK 11.2.0
+- Google User Messaging Platform 2.2.0
+- External Dependency Manager for Unity 1.2.179
+
+**************
 Version 8.7.0
 **************
 
