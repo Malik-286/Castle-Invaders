@@ -29,20 +29,22 @@ public class AdmobRewardedVideo : MonoBehaviour
         {
             if (MainMenuUI.instance)
             {
-                MainMenuUI.instance.RewardPanel.transform.GetChild(4).gameObject.SetActive(true);
-                MainMenuUI.instance.RewardPanel.transform.GetChild(3).gameObject.SetActive(false);
-                MainMenuUI.instance.RewardPanelText.text = "GREAT WORK!\r\nYOU GOT 100 Coins".ToString();
+                MainMenuUI.instance.RewardPanel.transform.GetChild(5).gameObject.SetActive(true);
+                MainMenuUI.instance.RewardPanel.transform.GetChild(4).gameObject.SetActive(false);
+                MainMenuUI.instance.RewardPanelText.text = "YOU GOT 100 Coins".ToString();
                 MainMenuUI.instance.RewardPanel.SetActive(true);
+                MainMenuUI.instance.UI_Panels[1].SetActive(false);
             }
         }
         if (Index == 1)
         {
             if (MainMenuUI.instance)
             {
-                MainMenuUI.instance.RewardPanel.transform.GetChild(4).gameObject.SetActive(false);
-                MainMenuUI.instance.RewardPanel.transform.GetChild(3).gameObject.SetActive(true);
-                MainMenuUI.instance.RewardPanelText.text = "GREAT WORK!\r\nYOU GOT 5 GEMS".ToString();
+                MainMenuUI.instance.RewardPanel.transform.GetChild(5).gameObject.SetActive(false);
+                MainMenuUI.instance.RewardPanel.transform.GetChild(4).gameObject.SetActive(true);
+                MainMenuUI.instance.RewardPanelText.text = "YOU GOT 5 GEMS".ToString();
                 MainMenuUI.instance.RewardPanel.SetActive(true);
+                MainMenuUI.instance.UI_Panels[1].SetActive(false);
             }
         }
         if (Index == 2)
