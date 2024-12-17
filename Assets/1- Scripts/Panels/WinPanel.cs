@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinPanel : MonoBehaviour
 {
@@ -45,13 +46,16 @@ public class WinPanel : MonoBehaviour
 
     public void GoToMainMenu()
     {
-         
-
         GameManager.Instance.LoadScene(0);
-        AudioManager.Instance.audioSource.Play();
-        
+        AudioManager.Instance.audioSource.Play();       
     }
 
- 
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 
 }

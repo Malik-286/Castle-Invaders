@@ -23,14 +23,11 @@ public class DeathPanel : MonoBehaviour
     }
 
     public void PlayAgain()
-    {
-        
-
+    {      
         if (GameManager.Instance)
         {
             GameManager.Instance.RestartCurrentLevel();
-        }
-            
+        }         
     }
 
     public void GoToMainMenu()
