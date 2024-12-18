@@ -14,10 +14,6 @@ public class LevelUnLocker : MonoBehaviour
     [SerializeField] Image[] lockedImages;
 
 
-    [SerializeField] Sprite currentLevelGreenSprite;
-    [SerializeField] Sprite defaultButtonSprite;
-
-
 
     MainMenuUI mainMenuUI;
 
@@ -107,6 +103,8 @@ public class LevelUnLocker : MonoBehaviour
             }
         }
 
+        /*
+
         // Revert all buttons to their default appearance
         for (int i = 0; i < levelsButton.Length; i++)
         {
@@ -127,6 +125,7 @@ public class LevelUnLocker : MonoBehaviour
         {
             levelsButton[maxUnlockedIndex + 1].GetComponent<Image>().sprite = defaultButtonSprite; // Ensure the next button is default
         }
+        */
     }
 
  
