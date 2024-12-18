@@ -61,7 +61,8 @@ public class LevelsPanel : MonoBehaviour
         }
 
         // Show the current panel
-        levelsPanels[currentPanelIndex].SetActive(true);
+        //  levelsPanels[currentPanelIndex].SetActive(true);
+        levelsPanels[currentPanelIndex].GetComponent<Dialog>().ShowDialog();
 
         // Adjust panel count sizes
         AdjustPanelCountSizes();

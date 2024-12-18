@@ -11,18 +11,14 @@ public class LevelUnLocker : MonoBehaviour
 
 
     [SerializeField] Button[] levelsButton;
-    [SerializeField] Image[] lockedImages;
+    [SerializeField] GameObject[] lockedImages;
 
 
 
-    MainMenuUI mainMenuUI;
-
+ 
     void Start()
     {
-        mainMenuUI = FindObjectOfType<MainMenuUI>();
-  
-
-
+   
 
         UnlockLevel(defaultInLockLevelNumber);
        
@@ -32,12 +28,12 @@ public class LevelUnLocker : MonoBehaviour
             if (IsLevelUnlocked(i))
             {
                 levelsButton[i].interactable = true;
-                lockedImages[i].enabled = false;
+                lockedImages[i].SetActive(false);
              }
             else
             {
                 levelsButton[i].interactable = false;
-                lockedImages[i].enabled = true;
+                lockedImages[i].SetActive(true);
             }
         }
 
@@ -52,7 +48,7 @@ public class LevelUnLocker : MonoBehaviour
         PlayerPrefs.Save();
 
         levelsButton[index].interactable = true;
-        lockedImages[index].enabled = false;
+        lockedImages[index].SetActive(false);
      }
     
 
@@ -66,9 +62,9 @@ public class LevelUnLocker : MonoBehaviour
     {
        
      
-        if (mainMenuUI != null)
+        if (MainMenuUI.instance)
         {
-            mainMenuUI.StartCoroutine(mainMenuUI.StartGame());
+            MainMenuUI.instance.StartCoroutine(MainMenuUI.instance.StartGame());
             StartCoroutine(LoadScene(levelToLoad));
         }
         else
@@ -102,30 +98,7 @@ public class LevelUnLocker : MonoBehaviour
                 maxUnlockedIndex = i;
             }
         }
-
-        /*
-
-        // Revert all buttons to their default appearance
-        for (int i = 0; i < levelsButton.Length; i++)
-        {
-            if (i == maxUnlockedIndex)
-            {
-                // Change the maximum unlocked button to the green sprite
-                levelsButton[i].GetComponent<Image>().sprite = currentLevelGreenSprite;
-            }
-            else
-            {
-                // Revert other buttons to their default appearance
-                levelsButton[i].GetComponent<Image>().sprite = defaultButtonSprite; // or set to your default sprite
-            }
-        }
-
-        // Ensure the next level is not interactable yet
-        if (maxUnlockedIndex + 1 < levelsButton.Length)
-        {
-            levelsButton[maxUnlockedIndex + 1].GetComponent<Image>().sprite = defaultButtonSprite; // Ensure the next button is default
-        }
-        */
+    
     }
 
  
