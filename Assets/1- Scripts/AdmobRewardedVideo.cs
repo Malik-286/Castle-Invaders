@@ -1,10 +1,10 @@
 
   
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System;
 using UnityEngine.UI; 
 using UnityEngine;
-using GoogleMobileAds.Sample;
+//using GoogleMobileAds.Sample;
 using UnityEngine.SceneManagement;
 public class AdmobRewardedVideo : MonoBehaviour
 {
@@ -58,12 +58,12 @@ public class AdmobRewardedVideo : MonoBehaviour
     #endregion
     public void ShowRewardedVideo()
     {
-        if (Adsmanager.Instance)
-            Adsmanager.Instance.ShowRewardedVideoAd();
+        if (UnityAdsManager.instance)
+            UnityAdsManager.instance.ShowRewardedVideoAd();
     }
     public void Show_RewardedInterstitial_Video()
     {
-        if (Adsmanager.Instance)
-            Adsmanager.Instance.ShowRewardedVideoAd();
+        if (UnityAdsManager.instance)
+            UnityAdsManager.instance.ShowRewardedVideoAd();
     }
 }
