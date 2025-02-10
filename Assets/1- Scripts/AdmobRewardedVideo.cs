@@ -58,12 +58,12 @@ public class AdmobRewardedVideo : MonoBehaviour
     #endregion
     public void ShowRewardedVideo()
     {
-        if (UnityAdsManager.instance)
-            UnityAdsManager.instance.ShowRewardedVideoAd();
+        //if (//UnityAdsManager.instance)
+            //UnityAdsManager.instance.ShowRewardedVideoAd();
     }
     public void Show_RewardedInterstitial_Video()
     {
-        if (UnityAdsManager.instance)
-            UnityAdsManager.instance.ShowRewardedVideoAd();
+        //if (//UnityAdsManager.instance)
+            //UnityAdsManager.instance.ShowRewardedVideoAd();
     }
 }
