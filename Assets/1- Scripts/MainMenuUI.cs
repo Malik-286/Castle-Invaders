@@ -16,8 +16,7 @@ public class MainMenuUI : MonoBehaviour
 
     [SerializeField] GameObject levelsPanel;
 
-    public GameObject RewardPanel;
-    public TextMeshProUGUI RewardPanelText;
+
     private void Awake()
     {
         if(instance == null)
@@ -66,49 +65,9 @@ public class MainMenuUI : MonoBehaviour
          
     }
 
-    public void ClaimReward(int RewardIndex) //0 for Diamond, 1 for Gold
-    {
-        if (RewardIndex == 0)
-        {
-            RewardPanel.transform.GetChild(0).gameObject.SetActive(true);
-            RewardPanel.transform.GetChild(2).gameObject.SetActive(false);
-            Invoke(nameof(DisableRewardPanel), 1f);
-        }
-        if (RewardIndex == 1)
-        {
-            RewardPanel.transform.GetChild(1).gameObject.SetActive(true);
-            RewardPanel.transform.GetChild(2).gameObject.SetActive(false);
-            Invoke(nameof(DisableRewardPanelCoins), 2f);
-        }
-            RewardPanel.transform.GetChild(3).gameObject.SetActive(false);
-            RewardPanel.transform.GetChild(4).gameObject.SetActive(false);
-    }
+  
 
-    public void DisableRewardPanel()
-    {
-        RewardPanel.transform.GetChild(0).gameObject.SetActive(false);
-        RewardPanel.transform.GetChild(2).gameObject.SetActive(true);
-        RewardPanel.SetActive(false);
-        if (CurrencyManager.Instance)
-        {
-            CurrencyManager.Instance.IncreaseDiamond(5);
-            CurrencyManager.Instance.SaveCurrencyData();
-
-        }
-    }
-
-    public void DisableRewardPanelCoins()
-    {
-        RewardPanel.transform.GetChild(1).gameObject.SetActive(false);
-        RewardPanel.transform.GetChild(2).gameObject.SetActive(true);
-        RewardPanel.SetActive(false);
-        if (CurrencyManager.Instance)
-        {
-            CurrencyManager.Instance.IncreaseGold(100);
-            CurrencyManager.Instance.SaveCurrencyData();
-
-        }
-    }
+   
 
     void DeactivateUIPanels()
     {
