@@ -12,8 +12,8 @@ public class LevelsPanel : MonoBehaviour
 
     [SerializeField] Image[] panels_Counts;
 
-    int currentPanelIndex = 0;
-    private const string PanelIndexKey = "CurrentPanelIndex";
+    [SerializeField] int currentPanelIndex = 0;
+    [SerializeField] const string PanelIndexKey = "CurrentPanelIndex";
 
  
     void Start()

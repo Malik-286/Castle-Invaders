@@ -6,16 +6,16 @@ using UnityEngine.UI;
 
 public class LevelUnLocker : MonoBehaviour
 {
-
+ 
     [SerializeField] int defaultInLockLevelNumber = 2;
-
+    [SerializeField] int maxUnlockedLevelNo;
 
     [SerializeField] Button[] levelsButton;
     [SerializeField] GameObject[] lockedImages;
+     
 
 
 
- 
     void Start()
     {
    
@@ -40,7 +40,12 @@ public class LevelUnLocker : MonoBehaviour
         GetTheMaximumUnlockedButton();
     }
 
-     
+
+    public int GetMaxUnlockedLevelNumber()
+    {
+        return maxUnlockedLevelNo;
+    }
+
     public void UnlockLevel(int index)
     {
         // Set the level as unlocked in PlayerPrefs
@@ -96,6 +101,7 @@ public class LevelUnLocker : MonoBehaviour
             if (IsLevelUnlocked(i))
             {
                 maxUnlockedIndex = i;
+                maxUnlockedLevelNo = maxUnlockedIndex;
             }
         }
     

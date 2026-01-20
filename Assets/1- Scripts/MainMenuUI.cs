@@ -1,3 +1,4 @@
+using hardartcore.CasualGUI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,6 +16,8 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI loadingText;
 
     [SerializeField] GameObject levelsPanel;
+    [SerializeField] GameObject quitGamePanel;
+
 
 
     private void Awake()
@@ -31,6 +34,15 @@ public class MainMenuUI : MonoBehaviour
         DeactivateUIPanels();
         loadingPanel.SetActive(false);
         levelsPanel.SetActive(false);
+        quitGamePanel.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {      
+            ActivateQuitGamePanel();
+        }
     }
 
 
@@ -74,6 +86,23 @@ public class MainMenuUI : MonoBehaviour
         foreach (GameObject panels in UI_Panels)
         {
             panels.SetActive(false);
+        }
+    }
+
+    public void ActivateQuitGamePanel()
+    {
+        if (quitGamePanel != null)
+        {
+            if (quitGamePanel.gameObject.activeInHierarchy)
+            {
+                quitGamePanel.gameObject.GetComponent<Dialog>().HideDialog();
+                return;
+            }
+
+            quitGamePanel.gameObject.GetComponent<Dialog>().ShowDialog();
+
+
+
         }
     }
 

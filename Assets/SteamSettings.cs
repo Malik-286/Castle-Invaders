@@ -3,7 +3,23 @@ using UnityEngine;
 
 public class SteamSettings : MonoBehaviour
 {
-    [SerializeField] string testName;
+    public static SteamSettings instance;
+
+    public string userName;
+
+    void Awake()
+    {
+        // Make sure there is only one instance of SteamSettings
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: to keep it across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instance
+        }
+    }
 
     void Start()
     {
@@ -12,9 +28,8 @@ public class SteamSettings : MonoBehaviour
             return;
         }
         string name = SteamFriends.GetPersonaName();
-        testName = name;
-        Debug.Log(testName);
+        this.userName = name;
+        Debug.Log(userName);
     }
-
-     
 }
+

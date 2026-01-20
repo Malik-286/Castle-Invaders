@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CurrencyManager : Singleton<CurrencyManager>  
@@ -11,7 +10,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
 
 
     const int defaultGold = 50;
-    const int defaultdiamond = 5;
+  //  const int defaultdiamond = 1;
 
 
     protected override void Awake()
@@ -30,15 +29,20 @@ public class CurrencyManager : Singleton<CurrencyManager>
         }
         if (currentDiamond <= 0)
         {
+           //  currentDiamond = defaultdiamond;
              SaveCurrencyData();
         }
     }
 
     void Update()
     {
-        if (currentGold <= 0)
+        if (currentGold <= -1)
         {
             currentGold = 0;
+        }
+        if (currentDiamond <= -1)
+        {
+            currentDiamond = 0;
         }
 
         currentGold = (int)Mathf.Clamp(currentGold, 0, Mathf.Infinity);
