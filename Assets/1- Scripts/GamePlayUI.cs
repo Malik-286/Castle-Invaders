@@ -43,21 +43,23 @@ public class GamePlayUI : MonoBehaviour
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject winParticles;
 
-    [Header("Shop Panel Variables")]
-    [SerializeField] GameObject shopPanel;
+    [Header("Quit Game Panel Variables")]
+
+    [SerializeField] GameObject quitGamePanel;
+
+
+
 
     [Header("Enemies Pool Variables")]
     [SerializeField] int totalPoolEnemies;
 
     [Header("Scene Startup Image")]
     [SerializeField] Image fadeImage;
-    [SerializeField] GameObject SkipButton;
-
+ 
     [Header("Pause Panel")]
     [SerializeField] GameObject pausePanel;
 
-    [Header("Reward Panel")]
-    public GameObject RewardPanel;
+   
 
     [Header("Defence Power Slider")]
     [SerializeField] Slider defencePowerSlider;
@@ -68,7 +70,6 @@ public class GamePlayUI : MonoBehaviour
     GameManager gameManager;
     AudioManager audioManager;
     [HideInInspector] public GameObject Maincamera;
-    public GameObject Cutscene;
     public bool StartingLevels;
     public bool MiddleLevels;
     void Awake()
@@ -79,13 +80,10 @@ public class GamePlayUI : MonoBehaviour
         }
         Time.timeScale = 1.0f;
 
-        StartCoroutine(EndCutscene());
-
+ 
         levelCompletionTime = GetCurrentLevelCompletionTime();
 
-        SkipButton.SetActive(false);
-        Invoke(nameof(ActivateSkipCutsceneButton), 2f);
-
+  
     }
     void Start()
     {
@@ -100,7 +98,6 @@ public class GamePlayUI : MonoBehaviour
         deathPanel.SetActive(false);
         GetTotalPoolEnemies();
         audioManager.audioSource.Play();
-        shopPanel.SetActive(false);
         pausePanel.SetActive(false);
         winParticles.SetActive(false);
         winPanel.SetActive(false);
@@ -112,39 +109,7 @@ public class GamePlayUI : MonoBehaviour
 
     }
 
-    public void ActivateSkipCutsceneButton()
-    {
-        SkipButton.SetActive(true);
-    }
-    public void SkipTheCutsceneNow()
-    {
-        Cutscene.SetActive(false);
-        SkipButton.SetActive(false);
-        this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-    }
-    IEnumerator EndCutscene()
-    {
-        Cutscene.SetActive(true);
-        this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        if (StartingLevels)
-        {
-            yield return new WaitForSeconds(12f);
-        }
-        else
-        {
-            if (MiddleLevels)
-            {
-                yield return new WaitForSeconds(20f);
-            }
-            else
-            {
-            yield return new WaitForSeconds(18f);
-            }
-        }
-        Cutscene.SetActive(false);
-        SkipButton.SetActive(false);
-        this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-    }
+    
     void Update()
     {
         UpdateGamePlayTimer();
@@ -153,6 +118,11 @@ public class GamePlayUI : MonoBehaviour
         FixTimeToZero();
         UpdateDefencePowerValue();
         UpdateAttackPowerValue();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ActivateQuitGamePanel();
+        }
     }
 
     public int GetPoolEnemies()
@@ -183,9 +153,8 @@ public class GamePlayUI : MonoBehaviour
             timeText.text = ("00:00");
          
             Time.timeScale = 0.0f;
-            // watch video ad to get extra 15 seconds 
-            // Implement google admob rewarded ad here 
-
+            // use 10 coins to get extra 30 seconds to continue playing
+ 
          }
     }
 
@@ -243,26 +212,7 @@ public class GamePlayUI : MonoBehaviour
     }
 
 
-    public void ClaimGameplayGEMS()
-    {
-        RewardPanel.transform.GetChild(0).gameObject.SetActive(true);
-        RewardPanel.transform.GetChild(1).gameObject.SetActive(false);
-
-        Invoke(nameof(DisableRewardPanel), 1f);
-    }
-
-    public void DisableRewardPanel()
-    {
-        RewardPanel.transform.GetChild(0).gameObject.SetActive(false);
-        RewardPanel.transform.GetChild(1).gameObject.SetActive(true);
-        RewardPanel.SetActive(false);
-        if (CurrencyManager.Instance)
-        {
-            CurrencyManager.Instance.IncreaseDiamond(5);
-            CurrencyManager.Instance.SaveCurrencyData();
-
-        }
-    }
+    
 
     void GetTotalPoolEnemies()
     {
@@ -275,15 +225,7 @@ public class GamePlayUI : MonoBehaviour
             totalPoolEnemies += pool.GetComponent<ObjectPool>().GetNumberOfPools();
         }
     }
-
-    public void EnableShopPanel()
-    {
-        shopPanel.SetActive(true);
-    }
-    public void DisableShopPanel()
-    {
-        shopPanel.SetActive(false);
-    }
+ 
     
     IEnumerator FadeImageToTransparentWhite(float fadeDuration)
     {
@@ -382,7 +324,21 @@ public class GamePlayUI : MonoBehaviour
          return 0f;
     }
 
-   
+    public void ActivateQuitGamePanel()
+    {
+        if (quitGamePanel != null)
+        {
+            if (quitGamePanel.gameObject.activeInHierarchy)
+            {
+                quitGamePanel.gameObject.GetComponent<Dialog>().HideDialog();
+                return;
+            }
+
+            quitGamePanel.gameObject.GetComponent<Dialog>().ShowDialog();
+
+        }
+    }
+
 
 
 

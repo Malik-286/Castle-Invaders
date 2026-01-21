@@ -101,8 +101,6 @@ public class MainMenuUI : MonoBehaviour
 
             quitGamePanel.gameObject.GetComponent<Dialog>().ShowDialog();
 
-
-
         }
     }
 

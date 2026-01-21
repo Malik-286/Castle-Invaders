@@ -113,8 +113,8 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (currencyManager.GetCurrentGold() <= 5)
         {
              Debug.Log("Not Enough Coins");
-             gamePlayUI.EnableShopPanel();
-                       
+            // play again or sell somting
+                        
             return;
         }
 
@@ -128,8 +128,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             if(PrefabToInstantiate.tag == "Tower4" && currencyManager.GetCurrentDiamond() <= 0)
             {
                 Debug.Log("Not Enough Coins");
-                gamePlayUI.EnableShopPanel();
-
+               // play again or sell something
                 return;
             }
         }
