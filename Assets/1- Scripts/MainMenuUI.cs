@@ -20,12 +20,12 @@ public class MainMenuUI : MonoBehaviour
 
 
 
-    private void Awake()
+    void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
-        }    
+        }
     }
     void Start()
     {

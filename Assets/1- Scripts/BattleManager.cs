@@ -14,6 +14,8 @@ public class BattleManager : MonoBehaviour
      PlayerCastleHealth playerCastleHealth;
    
     public int winAmountToReward, loseAmountToReward;
+
+    public int winDiamondAmount;     // start from here
     public bool missionCompleted;
 
     void Awake()
