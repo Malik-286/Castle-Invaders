@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.autodesk.fbx": {
-      "version": "5.1.2",
+      "version": "5.1.1",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
@@ -14,64 +14,36 @@
       "dependencies": {}
     },
     "com.unity.2d.animation": {
-      "version": "13.0.2",
-      "depth": 1,
+      "version": "10.2.2",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "12.0.1",
+        "com.unity.2d.common": "9.1.1",
         "com.unity.2d.sprite": "1.0.0",
-        "com.unity.collections": "2.4.3",
+        "com.unity.collections": "1.2.4",
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.2d.aseprite": {
-      "version": "3.0.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.1",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.mathematics": "1.2.6",
-        "com.unity.modules.animation": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.2d.common": {
-      "version": "12.0.1",
+      "version": "9.1.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.4",
         "com.unity.2d.sprite": "1.0.0",
-        "com.unity.collections": "2.4.3",
         "com.unity.mathematics": "1.1.0",
         "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0"
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.pixel-perfect": {
-      "version": "5.1.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.imgui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.psdimporter": {
-      "version": "12.0.1",
+      "version": "5.0.3",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.1",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.tilemap": "1.0.0"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.sprite": {
@@ -81,11 +53,11 @@
       "dependencies": {}
     },
     "com.unity.2d.spriteshape": {
-      "version": "13.0.0",
-      "depth": 1,
+      "version": "10.1.0",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "12.0.0",
+        "com.unity.2d.common": "9.1.0",
         "com.unity.mathematics": "1.1.0",
         "com.unity.modules.physics2d": "1.0.0"
       },
@@ -101,8 +73,8 @@
       }
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "6.0.1",
-      "depth": 1,
+      "version": "4.1.0",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.tilemap": "1.0.0",
@@ -111,18 +83,8 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.2d.tooling": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.1",
-        "com.unity.modules.uielements": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.animation.rigging": {
-      "version": "1.4.0",
+      "version": "1.4.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -151,16 +113,9 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.collab-proxy": {
-      "version": "2.10.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.collections": {
       "version": "2.6.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.23",
@@ -184,28 +139,12 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.feature.2d": {
-      "version": "2.0.2",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.2d.animation": "13.0.2",
-        "com.unity.2d.pixel-perfect": "5.1.1",
-        "com.unity.2d.psdimporter": "12.0.1",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.spriteshape": "13.0.0",
-        "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.2d.tilemap.extras": "6.0.1",
-        "com.unity.2d.aseprite": "3.0.1",
-        "com.unity.2d.tooling": "1.0.0"
-      }
-    },
     "com.unity.feature.characters-animation": {
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.animation.rigging": "1.4.0",
+        "com.unity.animation.rigging": "1.4.1",
         "com.unity.timeline": "1.8.10",
         "com.unity.cinemachine": "2.10.5",
         "com.unity.formats.fbx": "5.1.4"
@@ -216,12 +155,12 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.ide.visualstudio": "2.0.25",
-        "com.unity.ide.rider": "3.0.38",
+        "com.unity.ide.visualstudio": "2.0.26",
+        "com.unity.ide.rider": "3.0.39",
         "com.unity.editorcoroutines": "1.0.1",
-        "com.unity.performance.profile-analyzer": "1.2.4",
+        "com.unity.performance.profile-analyzer": "1.3.1",
         "com.unity.test-framework": "1.6.0",
-        "com.unity.testtools.codecoverage": "1.2.7"
+        "com.unity.testtools.codecoverage": "1.3.0"
       }
     },
     "com.unity.formats.fbx": {
@@ -235,7 +174,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.38",
+      "version": "3.0.39",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -244,37 +183,30 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.25",
+      "version": "2.0.26",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.31"
+        "com.unity.test-framework": "1.1.33"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
-      "version": "1.3.3",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.mobile.android-logcat": {
-      "version": "1.4.6",
-      "depth": 0,
+      "version": "1.3.2",
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.mono-cecil": {
-      "version": "1.11.6",
-      "depth": 3,
+      "version": "1.11.5",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.performance.profile-analyzer": {
-      "version": "1.2.4",
+      "version": "1.3.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -290,7 +222,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.settings-manager": {
-      "version": "2.1.1",
+      "version": "2.1.0",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
@@ -308,7 +240,7 @@
     },
     "com.unity.test-framework.performance": {
       "version": "3.2.0",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.33",
@@ -317,12 +249,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.testtools.codecoverage": {
-      "version": "1.2.7",
+      "version": "1.3.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.0.16",
-        "com.unity.settings-manager": "1.0.1"
+        "com.unity.test-framework": "1.4.5",
+        "com.unity.settings-manager": "2.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -362,14 +294,6 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
-    },
-    "com.unity.modules.adaptiveperformance": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.subsystems": "1.0.0"
-      }
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
@@ -513,8 +437,7 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.hierarchycore": "1.0.0",
-        "com.unity.modules.physics": "1.0.0"
+        "com.unity.modules.hierarchycore": "1.0.0"
       }
     },
     "com.unity.modules.umbra": {
@@ -576,16 +499,6 @@
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0"
-      }
-    },
-    "com.unity.modules.vectorgraphics": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.uielements": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0"
       }
     },
     "com.unity.modules.vehicles": {
