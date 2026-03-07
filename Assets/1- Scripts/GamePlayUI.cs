@@ -158,13 +158,7 @@ public class GamePlayUI : MonoBehaviour
          }
     }
 
-    public void ClaimReward()
-    {
-        if (CurrencyManager.Instance)
-        {
-            CurrencyManager.Instance.IncreaseDiamond(5);
-        }
-    }
+   
 
     public void RestTime()
     {

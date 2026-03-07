@@ -6,12 +6,10 @@ public class CurrencyManager : Singleton<CurrencyManager>
 {
 
     [SerializeField] int currentGold;
-    [SerializeField] int currentDiamond;
-
+ 
 
     const int defaultGold = 50;
-  //  const int defaultdiamond = 1;
-
+ 
 
     protected override void Awake()
     {
@@ -27,11 +25,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
             currentGold = defaultGold;
             SaveCurrencyData();
         }
-        if (currentDiamond <= 0)
-        {
-           //  currentDiamond = defaultdiamond;
-             SaveCurrencyData();
-        }
+       
     }
 
     void Update()
@@ -40,14 +34,10 @@ public class CurrencyManager : Singleton<CurrencyManager>
         {
             currentGold = 0;
         }
-        if (currentDiamond <= -1)
-        {
-            currentDiamond = 0;
-        }
+       
 
         currentGold = (int)Mathf.Clamp(currentGold, 0, Mathf.Infinity);
-        currentDiamond = (int)Mathf.Clamp(currentDiamond, 0, Mathf.Infinity);
-
+ 
 
     }
 
@@ -56,11 +46,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
     {    
         return currentGold;
     }
-    public int GetCurrentDiamond()
-    {
-        return currentDiamond;
-
-    }
+  
 
     public void IncreaseGold(int amountToIncrease)
     {
@@ -68,15 +54,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
         SaveCurrencyData();
     }
 
-    public void IncreaseDiamond(int amountToIncrease)
-    {
-        print("diamond before" + currentDiamond);
-        currentDiamond += amountToIncrease;
-        print("diamond After" + currentDiamond);
-        print("Amount to increase" + amountToIncrease);
-
-        SaveCurrencyData();
-    }
+   
 
 
     public void  DecreaseGold(int amountToDecrease)
@@ -91,17 +69,7 @@ public class CurrencyManager : Singleton<CurrencyManager>
         SaveCurrencyData(); 
     }
 
-    public void DecreaseDiamond(int amountToDecrease)
-    {
-        if (currentDiamond <= 0)
-        {
-            Debug.Log("Not Enough Diamond");
-            currentDiamond = 0;
-            return;
-        }
-        currentDiamond -= amountToDecrease;
-        SaveCurrencyData();
-    }
+  
 
 
     public void SaveCurrencyData()
@@ -113,7 +81,6 @@ public class CurrencyManager : Singleton<CurrencyManager>
     {
         Data data = SaveSystem.LoadData();
         this.currentGold = data.gold;
-        this.currentDiamond = data.diamond;
     }
 
 

@@ -123,15 +123,7 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             Debug.Log("No prefab to instantiate");
             return;
         }
-        else
-        {
-            if(PrefabToInstantiate.tag == "Tower4" && currencyManager.GetCurrentDiamond() <= 0)
-            {
-                Debug.Log("Not Enough Coins");
-               // play again or sell something
-                return;
-            }
-        }
+         
 
      
 
@@ -183,24 +175,12 @@ public class DragUIItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         else if (obj.CompareTag("Tower4"))
         {
-            // Check if the player has at least 1 diamond before placing Tower4
-            if (currencyManager.GetCurrentDiamond() > 0)
-            {
-                currencyManager.DecreaseDiamond(1);
-                gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
-                gameObject.transform.GetChild(1).gameObject.SetActive(true);
-                FillerisWorking = true;
-                Invoke(nameof(removeFiller), 5f);
-            }
-            else if (currencyManager.GetCurrentDiamond() <= 0)
-            {
-                Debug.Log("Not Enough Diamonds to place this tower.");
-                //gamePlayUI.EnableShopPanel();
-                return;
-            }
+            currencyManager.DecreaseGold(100);
+            gameObject.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            FillerisWorking = true;
+            Invoke(nameof(removeFiller), 5f);
 
-
-            
         }
 
     }
